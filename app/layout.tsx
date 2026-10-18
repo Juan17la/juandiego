@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Bricolage_Grotesque, Permanent_Marker, JetBrains_Mono, Silkscreen } from 'next/font/google'
 import './globals.css'
+import { LangProvider } from '@/lib/i18n'
 
 const body = Bricolage_Grotesque({ subsets: ['latin'], variable: '--nf-body', display: 'swap' })
 const hand = Permanent_Marker({ subsets: ['latin'], weight: '400', variable: '--nf-hand', display: 'swap' })
@@ -16,7 +17,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${body.variable} ${hand.variable} ${data.variable} ${pixel.variable}`}>
-      <body>{children}</body>
+      <body>
+        <LangProvider>{children}</LangProvider>
+      </body>
     </html>
   )
 }

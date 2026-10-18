@@ -1,5 +1,14 @@
-import Rail from '@/components/Rail'
-import { About, Academic, Beyond, Contact, Experience, Footer, Intro, Projects, Stack, Voices } from '@/components/Sections'
+import Footer from '@/components/organisms/Footer'
+import Rail from '@/components/organisms/Rail'
+import About from '@/components/sections/About'
+import Academic from '@/components/sections/Academic'
+import Archive from '@/components/sections/Archive'
+import Contact from '@/components/sections/Contact'
+import Experience from '@/components/sections/Experience'
+import Intro from '@/components/sections/Intro'
+import Projects from '@/components/sections/Projects'
+import Techs from '@/components/sections/Techs'
+import Voices from '@/components/sections/Voices'
 
 export default function Page() {
   return (
@@ -10,11 +19,11 @@ export default function Page() {
           <Intro />
           <About />
           <Projects />
-          <Stack />
+          <Techs />
           <Voices />
           <Academic />
           <Experience />
-          <Beyond />
+          <Archive />
           <Contact />
           <Footer />
         </main>

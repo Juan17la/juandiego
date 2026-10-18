@@ -8,8 +8,6 @@ export type TNode =
 export const term = raw as unknown as {
   user: string
   host: string
-  motd: string[]
-  help: string[]
   neofetch: string[]
   root: Extract<TNode, { type: 'dir' }>
 }

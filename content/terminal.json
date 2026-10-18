@@ -2,25 +2,6 @@
   "_readme": "Edit this file to change the terminal in 'Too online since 2012'. Directories: {type:'dir', children:{...}}. Text files: {type:'text', lines:[...]}. Names starting with '.' are hidden (ls -a). No ASCII-art fallbacks are used; images should have a real src path if added.",
   "user": "juan",
   "host": "debian",
-  "motd": [
-    "Acer Aspire, Windows XP, and a slow connection.",
-    "Somewhere between Minecraft mods and Linux, I started learning how computers work.",
-    "",
-    "Type 'help' to see what you can do."
-  ],
-  "help": [
-    "This works like a tiny Linux terminal.",
-    "",
-    "  ls            list what is in this folder (ls -a shows hidden)",
-    "  cd <folder>   go into a folder         cd ..   go back one level",
-    "  cd            go home                  pwd     where am I?",
-    "  cat <file>    read a note",
-    "  tree          show every folder and file",
-    "  fastfetch     the system I use now",
-    "  clear         clean the screen",
-    "",
-    "Tab completes names. Arrow up repeats commands. You can also just click names."
-  ],
   "fastfetch": [
     "       _,met$$$$$gg.      juan@debian",
     "    ,g$$$$$$$$$$$$$$$P.   ------------",

@@ -4,31 +4,31 @@
 export const profile = {
   name: 'Juan Diego',
   role: 'Software developer & engineer',
-  tagline: 'I want to have Jarvis in Claude Code.',
+  tagline: 'Still figuring it out, one commit at a time.',
   location: 'Colombia',
   pitch:
     'I build things most people wouldn’t bother to: a Go desktop launcher, a video editor that runs FFmpeg in your browser, a smartwatch app that talks in Morse. Current tech, real products, good company.',
   // Photos: drop files in /public and set paths, e.g. '/photos/me.webp'. Empty = placeholder frame.
-  photos: { hero: '', about: '', online: '' },
-  facts: ['Colombia', 'Software development', 'Looking for a job'],
+  photos: { hero: 'photos/photo4.jpeg', about: 'photos/photo3.jpeg', online: 'photo6' },
+  facts: ['Colombia', 'Open to work!', 'en/es'],
 }
 
-export type Section = { id: string; title: string; time: string }
+export type NavSection = { id: string; title: string; time: string }
 
 // Page order = contents order. `time` is the section's read time.
-export const sections: Section[] = [
+export const navSections: NavSection[] = [
   { id: 'intro', title: 'Intro', time: '0:20' },
   { id: 'about', title: 'About me', time: '0:40' },
   { id: 'projects', title: 'Projects', time: '2:30' },
-  { id: 'stack', title: 'Technologies I’ve used', time: '0:30' },
+  { id: 'techs', title: 'Techs', time: '0:30' },
   { id: 'voices', title: 'Voices', time: '0:40' },
   { id: 'academic', title: 'Academic', time: '0:20' },
   { id: 'experience', title: 'Experience', time: '1:00' },
-  { id: 'beyond', title: 'The Acer Archive', time: '1:30' },
+  { id: 'archive', title: 'The Archive', time: '1:30' },
   { id: 'contact', title: 'Contact', time: '0:10' },
 ]
 
-export const about = [
+export const aboutParagraphs = [
   'I’m a software engineering student from Colombia who learns by building. I work mostly with TypeScript, React and Node, and reach for Java/Spring Boot, Python, Kotlin or Go when the problem asks for it.',
   'I sit somewhere between logic and making things mine. I like clean backend design, tools that feel good to use, and shipping things people can actually open and try. I like patterns, and I like when everything follows them.',
   'You’ll see it everywhere: my Linux setups, the cities I built in Minecraft for months, the fanfics I wrote when an anime went somewhere I didn’t like. I’m the person who will rewrite the ending, then build the tool to do it.',
@@ -37,7 +37,7 @@ export const about = [
 export type Project = {
   name: string
   blurb: string
-  stack: string[]
+  techs: string[]
   repo: string
   preview?: string
   // Screenshot path in /public, e.g. '/projects/udeos.webp'. Without one, `logo` (an SVG mark) is shown.
@@ -51,7 +51,7 @@ export const projects: Project[] = [
   {
     name: 'Udeos Launcher',
     blurb: 'Open-source Minecraft launcher for Windows, Linux and macOS. Vanilla, Forge or Fabric, plus an addons library, local servers, a skin editor and a built-in AI assistant.',
-    stack: ['Go', 'Desktop', 'AI'],
+    techs: ['Go', 'Desktop', 'AI'],
     repo: gh('Udeos_Launcher'),
     preview: 'https://udeouslauncherwebsite.pages.dev/#download',
     image: '/projects/udeos.webp',
@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     name: 'AloMedia',
     blurb: 'Browser-based non-linear video editor: multi-track timeline, real-time preview and client-side processing with FFmpeg compiled to WebAssembly. Auto-subtitles and AI audio cleanup on a Spring Boot backend.',
-    stack: ['React', 'WASM', 'Spring Boot', 'PostgreSQL'],
+    techs: ['React', 'WASM', 'Spring Boot', 'PostgreSQL'],
     repo: gh('AloMediaReact'),
     preview: 'https://alo-media.vercel.app',
     image: '/projects/alomedia.webp',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
   {
     name: 'Shareboard',
     blurb: 'Collaborative whiteboard, no account needed. Share a six-character code and draw together with live cursors. Works offline, on web and Android.',
-    stack: ['TypeScript', 'React Native', 'Realtime'],
+    techs: ['TypeScript', 'React Native', 'Realtime'],
     repo: gh('shareboard_web'),
     preview: 'https://shareboard-web.vercel.app',
     image: '/projects/shareboard.webp',
@@ -75,14 +75,14 @@ export const projects: Project[] = [
   {
     name: 'Morse',
     blurb: 'Wear OS app that lets small groups of smartwatches talk in haptic Morse code, with AI dictation and smart replies.',
-    stack: ['Kotlin', 'Wear OS', 'AI'],
+    techs: ['Kotlin', 'Wear OS', 'AI'],
     repo: gh('Morse'),
     logo: '/projects/morse-logo.svg',
   },
   {
     name: 'Miku’s Money',
     blurb: 'A Nequi/CashApp-style wallet where every user is a Miku with a unique public code. Transfers, balances and auth on a Java backend.',
-    stack: ['React', 'Java', 'Spring Boot'],
+    techs: ['React', 'Java', 'Spring Boot'],
     repo: gh('MikusMoneyReact'),
     preview: 'https://mikus-money-react.vercel.app',
     image: '/projects/mikus.webp',
@@ -90,41 +90,41 @@ export const projects: Project[] = [
   {
     name: 'University Agreement Manager',
     blurb: 'Backend for a real university problem: managing agreements with documents and digital signatures on AWS S3, 5+ roles and per-agreement workflows.',
-    stack: ['Java', 'Spring Boot', 'AWS S3'],
+    techs: ['Java', 'Spring Boot', 'AWS S3'],
     repo: gh('UniversityAgreementManager'),
     logo: '/projects/agreements-logo.svg',
   },
   {
     name: 'Downforce Analytics',
     blurb: 'A website for simulating how different race cars (and other kinds of cars) behave aerodynamically at different speeds.',
-    stack: ['JavaScript', 'HTML', 'Aerodynamics'],
+    techs: ['JavaScript', 'HTML', 'Aerodynamics'],
     repo: gh('Downforce-Analitics'),
     logo: '/projects/downforce-logo.svg',
   },
   {
     name: 'Muegy',
     blurb: 'A web music player.',
-    stack: ['TypeScript', 'CSS'],
+    techs: ['TypeScript', 'CSS'],
     repo: gh('Muegy'),
     logo: '/projects/muegy-logo.svg',
   },
   {
     name: 'Medical Appointment Scheduler',
     blurb: 'A web app for scheduling medical appointments, built with Django.',
-    stack: ['Python', 'Django'],
+    techs: ['Python', 'Django'],
     repo: gh('AgendadorCitasMedicas'),
     logo: '/projects/scheduler-logo.svg',
   },
   {
     name: 'Anti-Aircraft Simulator',
     blurb: 'Physics project modelling the interception of a falling bomb. Uses SciPy and numerical approximations to find the optimal firing force and angle.',
-    stack: ['Python', 'SciPy', 'Physics'],
+    techs: ['Python', 'SciPy', 'Physics'],
     repo: gh('AntiAircraftSimulator'),
     logo: '/projects/aaa-logo.svg',
   },
 ]
 
-export const stack = {
+export const techs = {
   main: ['TypeScript', 'React', 'Node.js', 'Tailwind CSS'],
   groups: [
     { title: 'Languages and frameworks', items: ['Python', 'Go', 'Java', 'Kotlin', 'React Native', 'Next.js', 'NestJS', 'Fastify', 'Django', 'Spring Boot'] },
@@ -146,9 +146,9 @@ export const testimonials: Testimonial[] = [
 ]
 
 // certificate: path in /public (e.g. '/certs/aws.webp'); credentialUrl: optional verify link.
-export type Academic = { title: string; org: string; detail: string; facts: string[]; placeholder?: boolean; certificate?: string; credentialUrl?: string }
+export type AcademicItem = { title: string; org: string; detail: string; facts: string[]; placeholder?: boolean; certificate?: string; credentialUrl?: string }
 
-export const academic: Academic[] = [
+export const academicItems: AcademicItem[] = [
   {
     title: 'English, intensive course',
     org: 'Institution name',
@@ -169,14 +169,14 @@ export const academic: Academic[] = [
 ]
 
 // No professional jobs yet, so "experience" is what was built.
-export const experience = [
-  { when: 'Ongoing', title: 'Open-source desktop builder', where: 'Udeos Launcher', text: 'Designed and shipped a cross-platform Go launcher with mod loaders, a skin editor and an AI assistant, plus its download site.' },
-  { when: 'Project', title: 'Full-stack: web, mobile and server', where: 'Shareboard', text: 'Built a realtime collaborative board across three repos: React web, React Native app and a TypeScript server.' },
-  { when: 'Project', title: 'Media and AI pipeline', where: 'AloMedia', text: 'FFmpeg in WebAssembly on the client, Spring Boot and PostgreSQL for projects, and a Python service for AI audio and subtitles.' },
-  { when: 'Real problem', title: 'Backend for a university', where: 'Agreement Manager', text: 'Role-based workflows, document storage and digital signatures on AWS S3 for real university agreements.' },
+export const experienceItems = [
+  { when: 'Since September', title: 'Open-source desktop builder', where: 'Udeos Launcher', text: 'Designed and shipped a cross-platform Go launcher with mod loaders, a skin editor and an AI assistant, plus its download site.' },
+  { when: 'Since August', title: 'Full-stack: web, mobile and server', where: 'Shareboard', text: 'Built a realtime collaborative board across three repos: React web, React Native app and a TypeScript server.' },
+  { when: 'Since May', title: 'Media and AI pipeline', where: 'AloMedia', text: 'FFmpeg in WebAssembly on the client, Spring Boot and PostgreSQL for projects, and a Python service for AI audio and subtitles.' },
+  { when: 'November 2025', title: 'Backend for a university', where: 'Agreement Manager', text: 'Role-based workflows, document storage and digital signatures on AWS S3 for real university agreements.' },
 ]
 
-export const beyond = {
+export const archive = {
   intro:
     'My dad let me use his old Acer laptop. It ran Windows XP, and it was my way out into the internet. I’ve been too online ever since, and that’s honestly how I ended up writing code.',
   intro2:
@@ -205,8 +205,70 @@ export const beyond = {
 }
 
 export const contacts = {
-  email: 'juandiegolopezarias07@gmail.com',
+  email: 'jdloar17@gmail.com',
   github: 'https://github.com/Juan17la',
   linkedin: 'https://www.linkedin.com/in/juan07diego',
   x: 'https://x.com/1714Jud',
+}
+
+// Interface strings. Spanish lives in lib/content.ts.
+export const ui = {
+  switchLang: { short: 'ES', name: 'Español' },
+  expandSidebar: 'Expand sidebar',
+  collapseSidebar: 'Collapse sidebar',
+  seeProjects: 'See the projects',
+  emailMe: 'Email me',
+  mainTechs: 'Main techs',
+  quickFacts: 'Quick facts',
+  captions: { hero: 'that’s me', about: 'off the clock', archive: 'the Acer era' },
+  photoHere: 'Photo goes here',
+  livePreview: 'Live preview',
+  repository: 'Repository',
+  screenshotPending: 'Screenshot pending',
+  projectsPages: 'Projects pages',
+  previousPage: 'Previous page',
+  nextPage: 'Next page',
+  page: (n: number) => `Page ${n}`,
+  pager: (count: number, page: number, pages: number) => `${count} projects · page ${page} of ${pages}`,
+  previous: 'Previous',
+  next: 'Next',
+  testimonials: 'Testimonials',
+  placeholder: 'Placeholder',
+  certificateHere: 'Certificate goes here',
+  certificateAlt: (title: string) => `${title} certificate`,
+  verify: 'Verify credential',
+  techsNote: 'I’ve worked with all of these, though I’m not an expert in every one.',
+  experienceNote: 'No job titles yet. This is the work I’ve shipped instead.',
+  archivePrompt: 'Open the archive: type help, or just click the names.',
+  contactCta: 'Let’s build something.',
+  footer: {
+    explore: 'Explore',
+    findMe: 'Find me',
+    about: 'About this site',
+    builtWith: 'Built with Next.js, TypeScript and Tailwind CSS',
+    fonts: 'Fonts: Bricolage Grotesque, JetBrains Mono, Permanent Marker, Silkscreen',
+    top: 'Back to the top',
+    thanks: 'Thanks for scrolling.',
+  },
+  terminal: {
+    motd: [
+      "Acer Aspire, Windows XP, and a slow connection.",
+      "Somewhere between Minecraft mods and Linux, I started learning how computers work.",
+      "",
+      "Type 'help' to see what you can do."
+    ],
+    help: [
+      "This works like a tiny Linux terminal.",
+      "",
+      "  ls            list what is in this folder (ls -a shows hidden)",
+      "  cd <folder>   go into a folder         cd ..   go back one level",
+      "  cd            go home                  pwd     where am I?",
+      "  cat <file>    read a note",
+      "  tree          show every folder and file",
+      "  fastfetch     the system I use now",
+      "  clear         clean the screen",
+      "",
+      "Tab completes names. Arrow up repeats commands. You can also just click names."
+    ],
+  },
 }
