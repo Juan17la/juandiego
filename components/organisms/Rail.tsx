@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Briefcase, ChatCircleText, Code, EnvelopeSimple, GithubLogo, GraduationCap, House, LinkedinLogo, Stack, SidebarSimple, TerminalWindow, User, XLogo } from '@phosphor-icons/react'
-import { sections, contacts } from '@/lib/data'
-import Logo from './Logo'
+import { contacts } from '@/lib/data'
+import { useContent } from '@/lib/i18n'
+import LangSwitch from '../atoms/LangSwitch'
+import Logo from '../atoms/Logo'
 
 const pad = (n: number) => String(n + 1).padStart(2, '0')
 
@@ -14,9 +16,9 @@ const icons: Record<string, typeof House> = {
   voices: ChatCircleText,
   academic: GraduationCap,
   experience: Briefcase,
-  beyond: TerminalWindow,
+  archive: TerminalWindow,
   contact: EnvelopeSimple,
-  stack: Stack,
+  techs: Stack,
 }
 
 const social = [
@@ -27,6 +29,7 @@ const social = [
 ]
 
 export default function Rail() {
+  const { navSections, ui } = useContent()
   const [active, setActive] = useState(0)
   const [queued, setQueued] = useState<number | null>(null)
   const [slim, setSlim] = useState(false)
@@ -36,13 +39,13 @@ export default function Rail() {
     const max = document.documentElement.scrollHeight - innerHeight
     const line = innerHeight * 0.35
     let idx = 0
-    sections.forEach((s, i) => {
+    navSections.forEach((s, i) => {
       const el = document.getElementById(s.id)
       if (el && el.getBoundingClientRect().top <= line) idx = i
     })
-    if (max > 0 && scrollY >= max - 4) idx = sections.length - 1
+    if (max > 0 && scrollY >= max - 4) idx = navSections.length - 1
     setActive(idx)
-  }, [])
+  }, [navSections])
 
   useEffect(() => {
     const onScroll = () => {
@@ -80,13 +83,13 @@ export default function Rail() {
   }, [slim])
 
   const go = (e: React.MouseEvent, i: number) => {
-    const el = document.getElementById(sections[i].id)
+    const el = document.getElementById(navSections[i].id)
     if (!el) return
     e.preventDefault()
     setQueued(i)
     setTimeout(() => {
       el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
-      history.replaceState(null, '', `#${sections[i].id}`)
+      history.replaceState(null, '', `#${navSections[i].id}`)
       setQueued(null)
     }, 340)
   }
@@ -95,15 +98,15 @@ export default function Rail() {
     <>
       {/* desktop: sticky contents panel */}
       <aside className={`on-card rail hidden lg:flex fixed left-6 top-6 bottom-6 flex-col gap-4 overflow-y-auto overflow-x-hidden rounded-[28px] bg-card shadow-[inset_0_1px_0_rgb(255_255_255/0.45),0_30px_60px_-30px_rgb(0_0_0/0.6)] ${slim ? 'items-center p-3' : 'p-4'}`}>
-        <div className={`flex items-center gap-3 ${slim ? 'flex-col' : ''}`}>
+        <div className={`flex items-center justify-center gap-3 ${slim ? 'flex-col' : ''}`}>
           <Logo className={slim ? 'size-10 shrink-0' : 'size-11 shrink-0'} />
-          {slim ? null : <p className="min-w-0 flex-1 text-lg font-extrabold leading-tight">Jud</p>}
+          {slim ? null : <p className="min-w-0 text-lg font-extrabold leading-tight">Jud</p>}
           <button
             type="button"
             onClick={() => setSlim((v) => !v)}
             aria-pressed={slim}
-            aria-label={slim ? 'Expand sidebar' : 'Collapse sidebar'}
-            title={slim ? 'Expand sidebar' : 'Collapse sidebar'}
+            aria-label={slim ? ui.expandSidebar : ui.collapseSidebar}
+            title={slim ? ui.expandSidebar : ui.collapseSidebar}
             className="flex size-9 shrink-0 items-center justify-center rounded-full bg-ink/[0.08] hover:bg-ink hover:text-card"
           >
             <SidebarSimple size={18} weight="bold" aria-hidden />
@@ -129,7 +132,7 @@ export default function Rail() {
 
         <nav aria-label="Sections">
           <ol className="space-y-0.5">
-            {sections.map((s, i) => {
+            {navSections.map((s, i) => {
               const Icon = icons[s.id]
               const on = i === active
               return (
@@ -150,13 +153,14 @@ export default function Rail() {
             })}
           </ol>
         </nav>
+        <LangSwitch className={slim ? 'size-11 shrink-0 flex-col gap-0 rounded-2xl text-[10px]' : 'mt-auto py-2'} />
       </aside>
 
       {/* mobile: sticky track picker */}
       <nav id="mobile-nav" aria-label="Sections" className="on-card lg:hidden sticky top-0 z-20 flex items-center gap-3 bg-card px-4 py-2 shadow-[0_6px_16px_-8px_rgb(0_0_0/0.5)]">
         <Logo className="size-10 shrink-0" />
         <ol id="mobile-tracks" className="relative flex flex-1 gap-1 overflow-x-auto py-1">
-          {sections.map((s, i) => (
+          {navSections.map((s, i) => (
             <li key={s.id} className="shrink-0">
               <a
                 href={`#${s.id}`}
@@ -169,6 +173,7 @@ export default function Rail() {
             </li>
           ))}
         </ol>
+        <LangSwitch className="size-10 shrink-0 gap-0 text-xs" />
       </nav>
     </>
   )

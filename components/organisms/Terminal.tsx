@@ -1,44 +1,21 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useContent } from '@/lib/i18n'
+import TermImage from '../molecules/TermImage'
 import { complete, entries, resolve, suggestions, term, treeLines, type TNode } from '@/lib/terminal'
 
 type Out =
   | { kind: 'cmd'; prompt: string; text: string }
+  | { kind: 'motd' }
   | { kind: 'text'; lines: string[] }
   | { kind: 'ls'; base: string[]; names: string[] }
   | { kind: 'image'; node: Extract<TNode, { type: 'image' }> }
 
-/** A photo shown through a CRT filter so it looks like it lives in the terminal. Falls back to hand-made ASCII. */
-function TermImage({ node }: { node: Extract<TNode, { type: 'image' }> }) {
-  const [bad, setBad] = useState(false)
-  return (
-    <figure className="my-2">
-      {node.src && !bad ? (
-        <div className="relative inline-block max-w-full overflow-hidden rounded-sm border border-[#2e4a2c]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={node.src}
-            alt={node.caption ?? ''}
-            onError={() => setBad(true)}
-            className="block max-h-[300px] w-auto max-w-full [filter:grayscale(1)_contrast(1.25)_brightness(0.95)]"
-          />
-          {/* green phosphor tint + scanlines + vignette */}
-          <span aria-hidden className="pointer-events-none absolute inset-0 bg-[#3dff6a] mix-blend-multiply opacity-80" />
-          <span aria-hidden className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,rgb(0_0_0/0.28)_0_1px,transparent_1px_3px)]" />
-          <span aria-hidden className="pointer-events-none absolute inset-0 [background:radial-gradient(ellipse_at_center,transparent_55%,rgb(0_0_0/0.55)_100%)]" />
-        </div>
-      ) : (
-        <pre className="overflow-x-auto leading-[1.1] text-[#9fd08a]">{(node.ascii ?? ['[no image]']).join('\n')}</pre>
-      )}
-      {node.caption ? <figcaption className="mt-1 text-[#8a9a8c]"># {node.caption}</figcaption> : null}
-    </figure>
-  )
-}
-
 export default function Terminal() {
+  const { ui } = useContent()
   const [cwd, setCwd] = useState<string[]>([])
-  const [out, setOut] = useState<Out[]>([{ kind: 'text', lines: term.motd }])
+  const [out, setOut] = useState<Out[]>([{ kind: 'motd' }])
   const [value, setValue] = useState('')
   const [hist, setHist] = useState<string[]>([])
   const [hi, setHi] = useState(-1)
@@ -68,7 +45,7 @@ export default function Terminal() {
 
     switch (cmd) {
       case 'help':
-        next = say(...term.help)
+        next = say(...ui.terminal.help)
         break
       case 'clear':
         return setOut([])
@@ -192,6 +169,7 @@ export default function Terminal() {
                 <span className="text-[#86b87a]">{o.prompt}</span> {o.text}
               </p>
             )
+          if (o.kind === 'motd') return <pre key={i} className="whitespace-pre-wrap break-words font-[inherit]">{ui.terminal.motd.join('\n')}</pre>
           if (o.kind === 'text') return <pre key={i} className="whitespace-pre-wrap break-words font-[inherit]">{o.lines.join('\n')}</pre>
           if (o.kind === 'image') return <TermImage key={i} node={o.node} />
           const dir = resolve(o.base, '.')

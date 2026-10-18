@@ -2,9 +2,11 @@
 
 import { useRef, type ReactNode } from 'react'
 import { CaretLeft, CaretRight } from '@phosphor-icons/react'
+import { useContent } from '@/lib/i18n'
 
 /** Scroll-snap carousel with prev/next buttons. Children are the slides. */
 export default function Carousel({ children, label }: { children: ReactNode[]; label: string }) {
+  const { ui } = useContent()
   const track = useRef<HTMLUListElement>(null)
   const step = (dir: 1 | -1) => {
     const el = track.current
@@ -24,10 +26,10 @@ export default function Carousel({ children, label }: { children: ReactNode[]; l
         ))}
       </ul>
       <div className="mt-2 flex justify-end gap-2">
-        <button type="button" onClick={() => step(-1)} aria-label="Previous" className={btn}>
+        <button type="button" onClick={() => step(-1)} aria-label={ui.previous} className={btn}>
           <CaretLeft size={18} weight="bold" aria-hidden />
         </button>
-        <button type="button" onClick={() => step(1)} aria-label="Next" className={btn}>
+        <button type="button" onClick={() => step(1)} aria-label={ui.next} className={btn}>
           <CaretRight size={18} weight="bold" aria-hidden />
         </button>
       </div>
