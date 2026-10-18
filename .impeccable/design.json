@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-18T01:42:55.928785Z",
+  "title": "Design System: Juan Diego Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "desk": {
+        "role": "neutral",
+        "displayName": "Night Moss Desk",
+        "canonical": "#2f3b35",
+        "tonalRamp": [
+          "#222b26",
+          "#3c4b43",
+          "#566b61",
+          "#6f8c7e",
+          "#8fa69b",
+          "#b0c0b8",
+          "#d0dad5",
+          "#f1f4f2"
+        ]
+      },
+      "desk-deep": {
+        "role": "neutral",
+        "displayName": "Deep Desk Shadow",
+        "canonical": "#232d28",
+        "tonalRamp": [
+          "#212b26",
+          "#3b4c43",
+          "#546d61",
+          "#6e8d7e",
+          "#8ea79b",
+          "#afc1b8",
+          "#d0dad5",
+          "#f1f4f2"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Pale Sage Paper",
+        "canonical": "#e3e7df",
+        "tonalRamp": [
+          "#262c21",
+          "#434d3a",
+          "#616e53",
+          "#7e906c",
+          "#9ba98d",
+          "#b8c2ae",
+          "#d5dbcf",
+          "#f2f4f0"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Green-Black Ink",
+        "canonical": "#131815",
+        "tonalRamp": [
+          "#222b25",
+          "#3c4b42",
+          "#556c5e",
+          "#6f8c7b",
+          "#8fa698",
+          "#b0c0b6",
+          "#d0dad4",
+          "#f1f4f2"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Moss Ink",
+        "canonical": "#414a43",
+        "tonalRamp": [
+          "#242925",
+          "#3f4841",
+          "#5a675d",
+          "#768679",
+          "#94a197",
+          "#b3bdb5",
+          "#d2d8d4",
+          "#f1f3f2"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Lichen Rule",
+        "canonical": "#b4bcb1",
+        "tonalRamp": [
+          "#252923",
+          "#41493e",
+          "#5d6859",
+          "#798774",
+          "#97a293",
+          "#b6bdb3",
+          "#d4d8d2",
+          "#f2f3f1"
+        ]
+      },
+      "label": {
+        "role": "primary",
+        "displayName": "Fern Label Green",
+        "canonical": "#b4d08c",
+        "tonalRamp": [
+          "#293616",
+          "#486027",
+          "#688938",
+          "#87b249",
+          "#a2c571",
+          "#bdd69a",
+          "#d8e7c4",
+          "#f3f8ed"
+        ]
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Sage Panel",
+        "canonical": "#a4b9a1",
+        "tonalRamp": [
+          "#222c21",
+          "#3c4d3a",
+          "#566f52",
+          "#70906b",
+          "#90a98c",
+          "#b0c2ae",
+          "#d1dbcf",
+          "#f1f4f0"
+        ]
+      },
+      "moss": {
+        "role": "tertiary",
+        "displayName": "Moss Progress",
+        "canonical": "#4a7a40",
+        "tonalRamp": [
+          "#1e321a",
+          "#36582e",
+          "#4d7f42",
+          "#64a556",
+          "#86ba7c",
+          "#a9cea2",
+          "#cde2c8",
+          "#f0f6ee"
+        ]
+      },
+      "hi": {
+        "role": "tertiary",
+        "displayName": "Highlighter Lime",
+        "canonical": "#dbea8e",
+        "tonalRamp": [
+          "#38410c",
+          "#637215",
+          "#8da31e",
+          "#b8d427",
+          "#c9e056",
+          "#d9e987",
+          "#e8f2b8",
+          "#f8fbe9"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The name in the intro, once per page."
+      },
+      "headline": {
+        "displayName": "Section Head",
+        "purpose": "Section title in each numbered header."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Row, project and entry titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, capped 56-68ch."
+      },
+      "label": {
+        "displayName": "Data Label",
+        "purpose": "Numbers, chips, times, stacks in JetBrains Mono."
+      },
+      "hand": {
+        "displayName": "Marker Hand",
+        "purpose": "Tagline, Contents label, captions, small group heads in Permanent Marker."
+      },
+      "pixel": {
+        "displayName": "Pixel",
+        "purpose": "88x31 badges and the marquee only, in Silkscreen."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-lift",
+        "value": "0 24px 48px -24px rgb(0 0 0 / 0.65)",
+        "purpose": "Section sheets resting on the desk."
+      },
+      {
+        "name": "rail-lift",
+        "value": "0 24px 48px -20px rgb(0 0 0 / 0.6)",
+        "purpose": "Desktop contents panel."
+      },
+      {
+        "name": "photo-lift",
+        "value": "0 18px 30px -16px rgb(0 0 0 / 0.7)",
+        "purpose": "Polaroid photo frames."
+      },
+      {
+        "name": "mobile-bar",
+        "value": "0 6px 16px -8px rgb(0 0 0 / 0.5)",
+        "purpose": "Sticky mobile nav bar."
+      },
+      {
+        "name": "badge-bevel",
+        "value": "border: 2px solid; border-color: #f4f6f1 #131815 #131815 #f4f6f1",
+        "purpose": "88x31 badge raised bevel (borders, not shadow)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "marquee",
+        "value": "28s linear infinite, translateX(-50%)",
+        "purpose": "Ticker in Too online section; off under reduced motion."
+      },
+      {
+        "name": "caret",
+        "value": "1s steps(1) infinite",
+        "purpose": "Blinking cursor in the window prompt."
+      },
+      {
+        "name": "queued",
+        "value": "0.16s steps(1) 2",
+        "purpose": "Track number blinks hi lime before the 340ms-delayed scroll."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "scroll-behavior: smooth",
+        "purpose": "Anchor navigation; auto under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Contents Rail Item",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Numbered contents row with dotted leader and read time; active row inverts to ink.",
+      "html": "<ol style=\"margin:0;padding:16px;list-style:none;background:var(--color-card);width:300px\"><li><a class=\"ds-nav on\" href=\"#\"><span class=\"ds-n\">01</span><span>Intro</span><span class=\"ds-lead\"></span><span class=\"ds-n\">1m</span></a></li><li><a class=\"ds-nav\" href=\"#\"><span class=\"ds-n\">02</span><span>About</span><span class=\"ds-lead\"></span><span class=\"ds-n\">2m</span></a></li></ol>",
+      "css": ".ds-nav{display:flex;align-items:baseline;gap:8px;padding:6px 8px;border-radius:2px;font-size:15px;line-height:1.25;color:#131815;text-decoration:none}.ds-nav.on{background:#131815;color:#e3e7df;font-weight:600}.ds-nav:hover{background:#131815;color:#e3e7df}.ds-nav:focus-visible{outline:3px solid #2f3b35;outline-offset:3px}.ds-n{font-family:'JetBrains Mono',monospace;font-size:12px}.ds-lead{flex:1;border-bottom:1px dotted currentColor;opacity:.4;transform:translateY(-3px)}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Fern label green with ink border; hovers to highlighter lime.",
+      "html": "<a class=\"ds-btn\" href=\"#\">See the projects</a>",
+      "css": ".ds-btn{display:inline-block;background:#b4d08c;color:#131815;border:2px solid #131815;border-radius:2px;padding:10px 20px;font-weight:700;text-decoration:none}.ds-btn:hover{background:#dbea8e}.ds-btn:focus-visible{outline:3px solid #dbea8e;outline-offset:3px}"
+    },
+    {
+      "name": "Outline Pill",
+      "kind": "button",
+      "refersTo": "pill",
+      "description": "Link pill on cards; fills ink on hover.",
+      "html": "<a class=\"ds-pill\" href=\"#\">Repository</a>",
+      "css": ".ds-pill{display:inline-flex;gap:6px;align-items:center;border:2px solid #131815;border-radius:2px;padding:6px 12px;font-size:14px;font-weight:600;color:#131815;text-decoration:none}.ds-pill:hover{background:#131815;color:#e3e7df}.ds-pill:focus-visible{outline:3px solid #2f3b35;outline-offset:3px}"
+    },
+    {
+      "name": "Data Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Mono tag with 1.5px ink outline for stacks and facts.",
+      "html": "<span class=\"ds-chip\">TypeScript</span>",
+      "css": ".ds-chip{display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:12px;border:1.5px solid #131815;border-radius:2px;padding:2px 8px;color:#131815}"
+    },
+    {
+      "name": "Section Sheet",
+      "kind": "card",
+      "refersTo": "sheet",
+      "description": "Pale sage sheet on the desk with a ruled numbered header.",
+      "html": "<section class=\"ds-sheet\"><header class=\"ds-head\"><span class=\"ds-num\">02</span><h2>About</h2><span class=\"ds-num ds-t\">2m read</span></header><p>Body copy sits here.</p></section>",
+      "css": ".ds-sheet{background:#e3e7df;color:#131815;border-radius:6px;padding:32px;box-shadow:0 24px 48px -24px rgb(0 0 0/.65);max-width:520px}.ds-head{display:flex;align-items:flex-end;gap:16px;border-bottom:2px solid #131815;padding-bottom:12px}.ds-head h2{margin:0;font-size:48px;font-weight:800;line-height:1;letter-spacing:-.025em}.ds-num{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700}.ds-t{margin-left:auto;font-size:12px;font-weight:400;opacity:.8}"
+    },
+    {
+      "name": "Photo Placeholder",
+      "kind": "custom",
+      "refersTo": "polaroid",
+      "description": "Tilted polaroid with lime tape and hatched empty slot.",
+      "html": "<figure class=\"ds-photo\"><div class=\"ds-slot\">PHOTO GOES HERE</div><figcaption>that's me</figcaption></figure>",
+      "css": ".ds-photo{position:relative;width:200px;margin:12px;padding:10px 10px 12px;background:#e3e7df;color:#131815;transform:rotate(2.5deg);box-shadow:0 18px 30px -16px rgb(0 0 0/.7)}.ds-photo:before{content:'';position:absolute;top:-10px;left:50%;width:64px;height:20px;background:rgb(219 234 142/.8);transform:translateX(-50%) rotate(-2deg)}.ds-slot{aspect-ratio:4/5;border:2px solid #131815;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;letter-spacing:.05em;color:#414a43;background:repeating-linear-gradient(135deg,transparent 0 10px,rgb(19 24 21/.08) 10px 12px),#e3e7df}.ds-photo figcaption{margin-top:8px;font-family:'Permanent Marker',cursive;font-size:16px;line-height:1}"
+    },
+    {
+      "name": "Window Frame",
+      "kind": "custom",
+      "refersTo": "window",
+      "description": "Old-OS window: ink title bar with glyph controls around card content. Used once.",
+      "html": "<div class=\"ds-win\"><div class=\"ds-bar\"><span>how_the_internet_taught_me_to_code.txt</span><span class=\"ds-ctl\">_ &#9633; &times;</span></div><p class=\"ds-body\">C:\\Users\\juan\\internet&gt; _</p></div>",
+      "css": ".ds-win{border:2px solid #131815;border-radius:2px;background:#e3e7df;overflow:hidden;max-width:420px}.ds-bar{display:flex;justify-content:space-between;background:#131815;color:#e3e7df;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:12px}.ds-body{margin:0;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#414a43}"
+    },
+    {
+      "name": "88x31 Badge",
+      "kind": "custom",
+      "refersTo": "badge88",
+      "description": "Pixel-font badge with raised bevel.",
+      "html": "<span class=\"ds-b\">NEXT.JS</span>",
+      "css": ".ds-b{width:88px;height:31px;display:inline-flex;align-items:center;justify-content:center;background:#131815;color:#b4d08c;font-family:Silkscreen,monospace;font-size:10px;line-height:1;border:2px solid;border-color:#f4f6f1 #131815 #131815 #f4f6f1;image-rendering:pixelated}"
+    },
+    {
+      "name": "Progress Bar",
+      "kind": "custom",
+      "refersTo": "progress",
+      "description": "Segmented 'Page loaded' bar, 14 moss cells.",
+      "html": "<div class=\"ds-pg\"><i></i><i></i><i></i><i></i><i class=\"o\"></i><i class=\"o\"></i></div>",
+      "css": ".ds-pg{display:flex;gap:3px;width:240px;border:2px solid #131815;background:rgb(255 255 255/.6);padding:3px}.ds-pg i{flex:1;height:12px;background:#4a7a40}.ds-pg i.o{background:transparent}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Green Desk Scrapbook",
+    "overview": "A dim gray-green desk, and on it opaque pale-sage sheets, polaroids and one lime highlighter. The page reads as a personal scrapbook laid out for a visitor: a numbered contents panel is the navigation and the summary, each section is a sheet with the same ruled, numbered header, and ink-black print does the talking.\n\nThe 2000s web shows up as a thin layer, never the frame: an old-OS window, a marquee ticker, pixel sparkle and heart GIFs and 88x31 badges, concentrated in the 'Too online since 2012' section with small accents elsewhere. Everything else is flat, ruled and quiet, with soft lift shadows as the only depth.\n\nThe earlier cassette, cobalt and orange direction is retired; this system replaces it.",
+    "keyCharacteristics": [
+      "Opaque gray-green desk with a faint dotted texture; sheets are pale sage paper, never translucent.",
+      "One ruled header pattern (number, title, read time) opens every section.",
+      "Ink outlines (1.5-2px), 2px corners on controls, 6px on sheets.",
+      "Lime highlighter marks the single active or hovered thing; fern green is the one action fill.",
+      "Retro devices (window, marquee, badges, GIFs) are accents confined to one section and small touches."
+    ],
+    "rules": [
+      {
+        "name": "The Single Highlighter Rule",
+        "body": "Lime (#dbea8e) marks the active, focused or hovered mark and the tagline strip. It is never a large surface.",
+        "section": "colors"
+      },
+      {
+        "name": "The Opaque Paper Rule",
+        "body": "Content lives on opaque card, sage or ink sheets over the desk. No glass, no translucent panels.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ruled Header Rule",
+        "body": "Every section opens with the same TrackHead: mono number, 800-weight title at 3xl/5xl, mono read time, a 2px bottom rule.",
+        "section": "typography"
+      },
+      {
+        "name": "The Quarantined Nostalgia Rule",
+        "body": "Pixel font, marquee, GIFs, window chrome and 88x31 badges are accents. Pixel type stays on badges and the ticker; GIFs vanish under reduced motion.",
+        "section": "typography"
+      },
+      {
+        "name": "The Soft Lift Rule",
+        "body": "Depth is a single large, soft, low-opacity downward shadow on sheets, rail and photos. Borders, not shadows, define controls.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do put body and headings in Bricolage Grotesque, data (numbers, chips, times, stacks) in JetBrains Mono tabular, and handwriting only for tagline, Contents label, photo captions and small group heads.",
+      "Do outline controls and chips in ink (2px for buttons, 1.5px for chips) with 2px corners; invert to ink fill and card text on hover.",
+      "Do give every photo and certificate slot a labelled hatched placeholder with its target path until the real asset lands.",
+      "Do honor prefers-reduced-motion: marquee, caret, queued blink and GIFs stop or hide.",
+      "Do use the 3px lime focus outline on the desk and a 3px desk-green outline on cards."
+    ],
+    "donts": [
+      "Don't use gradients, blur or translucent surfaces for content; the only gradients are the hatch placeholder and the dotted desk texture.",
+      "Don't spread retro devices (window frames, marquees, badges, GIFs) beyond the Too online section and small accents.",
+      "Don't set body copy in the pixel or marker faces.",
+      "Don't use lime as a fill for large areas or fern green for text on card.",
+      "Don't reintroduce the retired cassette, cobalt desk or orange label."
+    ]
+  }
+}

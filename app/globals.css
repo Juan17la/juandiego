@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-desk: #2f3b35;
+  --color-desk-deep: #232d28;
+  --color-card: #e3e7df;
+  --color-ink: #131815;
+  --color-ink-soft: #414a43;
+  --color-rule: #b4bcb1;
+  --color-label: #b4d08c;
+  --color-sage: #a4b9a1;
+  --color-moss: #4a7a40;
+  --color-hi: #dbea8e;
+  --font-sans: var(--nf-body), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--nf-hand), cursive;
+  --font-data: var(--nf-data), ui-monospace, monospace;
+  --font-pixel: var(--nf-pixel), monospace;
+}
+
+html { scroll-behavior: smooth; background: var(--color-desk); color-scheme: light; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  background: var(--color-desk);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+h1, h2, h3 { text-wrap: balance; }
+
+::selection { background: var(--color-hi); color: var(--color-ink); }
+
+:focus-visible { outline: 3px solid var(--color-hi); outline-offset: 3px; border-radius: 2px; }
+.on-card :focus-visible { outline-color: var(--color-desk); }
+
+/* the terminal line has its own caret; no ring around it */
+.term-input:focus-visible { outline: none; }
+
+a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+
+* { scrollbar-width: thin; scrollbar-color: var(--color-ink) transparent; }
+
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+
+/* ruled J-card line */
+.rule { border-top: 2px solid var(--color-ink); }
+
+/* marquee ticker */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 28s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
+
+/* blinking text cursor */
+@keyframes caret { 50% { opacity: 0; } }
+.caret { animation: caret 1s steps(1) infinite; }
+@media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
+
+/* queued track number blinks before the scroll lands */
+@keyframes blink { 0%, 100% { background: transparent; } 50% { background: var(--color-hi); } }
+.queued { animation: blink 0.16s steps(1) 2; }
+@media (prefers-reduced-motion: reduce) { .queued { animation: none; background: var(--color-hi); } }
+
+/* hatched placeholder for missing screenshots */
+.pending {
+  background:
+    repeating-linear-gradient(135deg, transparent 0 10px, rgb(19 24 21 / 0.08) 10px 12px),
+    var(--color-card);
+}
+
+/* 88x31 pixel button, the old-web classic */
+.badge88 {
+  width: 88px; height: 31px; display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-pixel); font-size: 10px; line-height: 1; letter-spacing: 0.02em;
+  border: 2px solid; border-color: #f4f6f1 #131815 #131815 #f4f6f1; image-rendering: pixelated;
+}
+
+/* dotted star-field texture for the desk */
+body {
+  background-image: radial-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+/* sidebar width: expanded 240px, collapsed 64px (+24px gutters) */
+:root { --rail-w: 280px; }
+:root[data-rail="collapsed"] { --rail-w: 104px; }
+@media (min-width: 1024px) { .rail-offset { padding-left: var(--rail-w); } }
+.rail { width: calc(var(--rail-w) - 40px); }
+@media (prefers-reduced-motion: no-preference) {
+  .rail, .rail-offset { transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1), padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+}

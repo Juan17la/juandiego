@@ -1,0 +1,404 @@
+{
+  "_readme": "Edit this file to change the terminal in 'Too online since 2012'. Directories: {type:'dir', children:{...}}. Text files: {type:'text', lines:[...]}. Names starting with '.' are hidden (ls -a). No ASCII-art fallbacks are used; images should have a real src path if added.",
+  "user": "juan",
+  "host": "debian",
+  "motd": [
+    "Acer Aspire, Windows XP, and a slow connection.",
+    "Somewhere between Minecraft mods and Linux, I started learning how computers work.",
+    "",
+    "Type 'help' to see what you can do."
+  ],
+  "help": [
+    "This works like a tiny Linux terminal.",
+    "",
+    "  ls            list what is in this folder (ls -a shows hidden)",
+    "  cd <folder>   go into a folder         cd ..   go back one level",
+    "  cd            go home                  pwd     where am I?",
+    "  cat <file>    read a note",
+    "  tree          show every folder and file",
+    "  fastfetch     the system I use now",
+    "  clear         clean the screen",
+    "",
+    "Tab completes names. Arrow up repeats commands. You can also just click names."
+  ],
+  "fastfetch": [
+    "       _,met$$$$$gg.      juan@debian",
+    "    ,g$$$$$$$$$$$$$$$P.   ------------",
+    "  ,g$$P\"\"       \"\"Y$$.\"   OS: Debian GNU/Linux",
+    " ,$$P'              `$$$. Host: ASUS Zenbook 14",
+    "',$$P       ,ggs.     `$$b Desktop: GNOME",
+    "`d$$'     ,$P\"'   .    $$  Shell: curiosity",
+    " $$P      d$'     ,    $$  Uptime: online since 2012",
+    " $$:      $$.   -    ,d$$  Packages: too many tabs open",
+    " $$;      Y$b._   _,d$P'   Journey: Windows XP -> Linux",
+    " Y$$.    `.`\"Y$$$$P\"'      ",
+    " `$$b      \"-.__           ",
+    "  `Y$$                       ",
+    "   `Y$$.                     ",
+    "     `$$b.                   ",
+    "       `Y$$b.                ",
+    "          `\"Y$b._            "
+  ],
+  "root": {
+    "type": "dir",
+    "children": {
+      "readme.txt": {
+        "type": "text",
+        "lines": [
+          "My dad let me use his old Acer laptop. It ran Windows XP, and for a long time that machine was my way into the internet. I could spend entire afternoons watching videos, playing games, and following links without really thinking about how any of it worked.",
+          "That curiosity slowly changed shape. First I wanted to get games running, then I wanted to change them, host them for friends, and eventually build software of my own. A lot of what I know started with a practical problem and a stubborn refusal to leave it unsolved.",
+          "This directory is less a résumé than a map of the things that stayed with me: games, music, Linux, software, and the habit of taking things apart just enough to understand them.",
+          "",
+          "Start with: cd youtube-era"
+        ]
+      },
+      "youtube-era": {
+        "type": "dir",
+        "children": {
+          "creepypastas.txt": {
+            "type": "text",
+            "lines": [
+              "Jeff the Killer, Slenderman, and hours of Hispanic YouTube creepypasta videos.",
+              "I memorized a ridiculous amount of the famous stories and videos from that era.",
+              "Looking back, some of it was silly. At the time, it was the internet at its best."
+            ]
+          },
+          "vegetta777-and-the-classics.txt": {
+            "type": "text",
+            "lines": [
+              "I spent a lot of my time watching the big Spanish-speaking YouTubers of the 2010s.",
+              "Gaming videos, familiar voices, and entire afternoons disappearing into recommendations.",
+              "It was the kind of internet you could get lost in without noticing the time."
+            ]
+          },
+          "fnaf-theories.txt": {
+            "type": "text",
+            "lines": [
+              "FNAF was the peak of my YouTube era.",
+              "I watched theories about the Purple Guy, Golden Freddy, timelines, and clues I barely understood.",
+              "When FNAF 4 came out, it felt like we finally understood a lot more of the story.",
+              "Then the new hints opened the door to even more theories. I was hooked."
+            ]
+          },
+          "internet-rabbit-holes.txt": {
+            "type": "text",
+            "lines": [
+              "I could start with one video and end up three hours later watching a theory about a detail from a game, a creepypasta, or something a YouTuber mentioned in passing. Spanish-speaking YouTube in the 2010s had its own familiar voices and running jokes, and I remember how easy it was to spend an entire day in that world.",
+              "At the time, I was mostly there for entertainment. In hindsight, though, the habit of following a question through several sources is still familiar. The subject changed from game lore to operating systems and code, but the urge to find out how something works stayed around."
+            ]
+          }
+        }
+      },
+      "games": {
+        "type": "dir",
+        "children": {
+          "minecraft": {
+            "type": "dir",
+            "children": {
+              "modpacks.txt": {
+                "type": "text",
+                "lines": [
+                  "Mods turned Minecraft into a game I could rebuild however I wanted.",
+                  "I spent days finding mods, putting together modpacks, fixing conflicts, and trying to make everything work together.",
+                  "That was one of my first experiences with dependencies, compatibility, and troubleshooting."
+                ]
+              },
+              "building-worlds.txt": {
+                "type": "text",
+                "lines": [
+                  "I loved building cities, old kingdoms, and technical worlds that needed a lot of planning.",
+                  "I could spend days thinking about streets, districts, farms, and how every part connected.",
+                  "Minecraft was a creative sandbox, but it also taught me to think in systems."
+                ]
+              },
+              "pvp.txt": {
+                "type": "text",
+                "lines": [
+                  "I also spent plenty of time playing PvP on popular servers.",
+                  "Version 1.8 had its own feel, and newer versions brought a different kind of combat.",
+                  "I was never the best player, but competing against other people was a big part of the experience."
+                ]
+              },
+              "udeus-connection.txt": {
+                "type": "text",
+                "lines": [
+                  "Minecraft is both a game I grew up with and a source of ideas for things to build. I enjoy the contrast between creative worlds, carefully planned technical systems, PvP, and the very practical work of getting a modpack to launch.",
+                  "That is why Udeus Launcher feels personal to me. It comes from being the player who wanted to make a world or modpack work without spending the evening hunting through folders and fixing mismatched versions. The tool is a way of solving a problem I understand because I have been that user."
+                ]
+              }
+            }
+          },
+          "fnaf.txt": {
+            "type": "text",
+            "lines": [
+              "I worked through the FNAF games, including the later nights and some custom nights.",
+              "The challenge was part of the fun, but so was connecting the gameplay to the story and theories I had watched for years."
+            ]
+          },
+          "cry-of-fear.txt": {
+            "type": "text",
+            "lines": [
+              "Cry of Fear is one of the few story-driven games that really stuck with me.",
+              "Its atmosphere and psychological horror made it memorable in a way that went beyond just trying to win."
+            ]
+          },
+          "roblox.txt": {
+            "type": "text",
+            "lines": [
+              "Roblox was simply part of growing up online in the 2010s.",
+              "A little bit of everything, with friends or on my own."
+            ]
+          },
+          "horror-visual-novels.txt": {
+            "type": "text",
+            "lines": [
+              "Sally Face was the starting point for my interest in horror visual novels and story-driven games with unsettling worlds. I like stories that leave details to interpret, use atmosphere instead of relying only on jumpscares, and make me want to understand what happened after the game ends.",
+              "My wider horror-game shelf includes Doki Doki Literature Club!, The House in Fata Morgana, and other games that mix mystery, psychological horror, and unusual storytelling. Cry of Fear belongs here too, even though it plays differently.",
+              "I do not play every genre equally. When a game gets me invested in its world or makes me curious about the story, I am much more likely to stick with it."
+            ]
+          }
+        }
+      },
+      "music": {
+        "type": "dir",
+        "children": {
+          "silverstein.txt": {
+            "type": "text",
+            "lines": [
+              "Post-hardcore that keeps pulling me back.",
+              "Silverstein is one of the bands that got me interested in learning songs on guitar and dive more into this kind of music."
+            ]
+          },
+          "hawthorne-heights.txt": {
+            "type": "text",
+            "lines": [
+              "Hawthorne Heights, for the emo and post-hardcore side of my taste."
+            ]
+          },
+          "bring-me-the-horizon.txt": {
+            "type": "text",
+            "lines": [
+              "Bring Me the Horizon: favorite band I've been in their 1% yearly listener since 2022."
+            ]
+          },
+          "pierce-the-veil.txt": {
+            "type": "text",
+            "lines": [
+              "Pierce the Veil and the kind of guitar parts I still want to get good enough to play."
+            ]
+          },
+          "asking-alexandria.txt": {
+            "type": "text",
+            "lines": [
+              "A heavier part of my 2000s metal and metalcore rotation."
+            ]
+          },
+          "radiohead.txt": {
+            "type": "text",
+            "lines": [
+              "Radiohead for when I want something stranger and more atmospheric."
+            ]
+          },
+          "marilyn-manson.txt": {
+            "type": "text",
+            "lines": [
+              "Marilyn Manson was part of my introduction to darker industrial rock and metal."
+            ]
+          },
+          "type-o-negative.txt": {
+            "type": "text",
+            "lines": [
+              "Type O Negative: gloomy, slow, and unmistakable."
+            ]
+          },
+          "slipknot.txt": {
+            "type": "text",
+            "lines": [
+              "Slipknot for the heavier end of the playlist."
+            ]
+          },
+          "flyleaf.txt": {
+            "type": "text",
+            "lines": [
+              "Flyleaf, another band tied to the alternative rock I grew up listening to."
+            ]
+          },
+          "paramore.txt": {
+            "type": "text",
+            "lines": [
+              "Paramore brings the brighter, pop-punk side of the mix."
+            ]
+          },
+          "guitar.txt": {
+            "type": "text",
+            "lines": [
+              "I am learning acoustic guitar, and I am still at the stage where changing chords cleanly and keeping a steady rhythm can take more concentration than the song itself. I tend to gravitate toward emo, post-hardcore, alternative rock, and heavier music, so the songs I want to play are not always the easiest beginner material.",
+              "Silverstein, Hawthorne Heights, Bring Me the Horizon, Pierce the Veil, Asking Alexandria, Radiohead, Marilyn Manson, Type O Negative, Slipknot, Flyleaf, and Paramore all have a place in the rotation. I have also been learning bass parts, including The Nobodies by Marilyn Manson.",
+              "For now, learning an easier version of a song and getting the rhythm right matters more than playing something difficult badly. I like having a skill outside software that rewards repetition and patience in a completely different way."
+            ]
+          }
+        }
+      },
+      "formula-1": {
+        "type": "dir",
+        "children": {
+          "why-i-watch.txt": {
+            "type": "text",
+            "lines": [
+              "Formula 1 is the only sport I regularly follow, and technology was what pulled me in. The racing is exciting, but I also like the engineering, data, strategy, regulations, and constant work involved in finding small improvements to a car.",
+              "I tend to be interested in newer drivers and teams whose direction is compelling, rather than sticking to one favorite forever. At the moment Oscar Piastri and Kimi Antonelli are two drivers I enjoy following, and Mercedes is especially appealing to me.",
+              "I do not need to pretend I have followed every season since childhood. Part of the fun is learning the context as I go: why a strategy call matters, what a regulation changes, and how a technical decision can affect an entire weekend."
+            ]
+          },
+          "current-favorites.txt": {
+            "type": "text",
+            "lines": [
+              "I don't really have one permanent favorite driver.",
+              "Oscar Piastri and Kimi Antonelli are two of the drivers I enjoy following.",
+              "Mercedes is especially appealing to me at the moment."
+            ]
+          }
+        }
+      },
+      "technology": {
+        "type": "dir",
+        "children": {
+          "minecraft-was-the-start.txt": {
+            "type": "text",
+            "lines": [
+              "It started with Minecraft. Getting the game running led me to non-premium launchers, official game CDNs, folders, configuration files, and questions about what the operating system was doing. I was not trying to become a developer back then. I just wanted to understand enough to make things work.",
+              "Mods made the next step obvious: once I could change the game, I wanted to know how those changes were made. Building modpacks taught me to deal with versions, loaders, dependencies, and conflicts. Trying to play with friends taught me about servers, ports, networking, and how quickly a small setup can become a real troubleshooting session.",
+              "Looking back, Minecraft was one of my first practical computing environments. It gave me reasons to learn things that would later show up again in software engineering."
+            ]
+          },
+          "modding.txt": {
+            "type": "text",
+            "lines": [
+              "I have always liked making things fit my own preferences, and Minecraft modding gave that instinct somewhere to go. I started by assembling other people's work into modpacks, then got curious about making changes myself. Some early attempts were rough, but they were mine, and that mattered.",
+              "That same impulse eventually led me to build Udeus Launcher, an open-source desktop launcher intended to make managing modded Minecraft less of a chore. Instead of asking players to dig through folders and remember where everything belongs, I want one place for instances, loaders, mods, resource packs, and other add-ons.",
+              "The project uses Go and Wails with a React frontend. It is also a reminder that finishing a tool involves more than getting the main feature to work: documentation, maintainability, packaging, and explaining the project clearly are part of the job too."
+            ]
+          },
+          "local-servers.txt": {
+            "type": "text",
+            "lines": [
+              "Playing Minecraft with friends was harder when renting a server was not an option. I had a limited amount of knowledge, a lot of YouTube tutorials, and enough motivation to keep trying until we could play together.",
+              "Those experiments introduced me to configuration, local networking, ports, and the difference between a game working on my own machine and a service being reachable by somebody else. I did not know all the terminology at the time, but I was already dealing with real infrastructure problems on a small scale.",
+              "That is one reason I am interested in backend engineering and systems. I like the moment when a confusing collection of settings becomes a working system I can explain."
+            ]
+          },
+          "linux.txt": {
+            "type": "text",
+            "lines": [
+              "One of my laptops became painfully slow on Windows, so I started looking for alternatives on Reddit. I jumped straight into Arch because customization appealed to me. It was not the gentlest introduction, but it forced me to learn by doing: packages, configuration, boot issues, desktop environments, and the difference between a system that works and one I actually understand.",
+              "I tried more distributions after that, including Fedora and Mint, and spent time with Hyprland because I liked shaping the desktop around my own habits. Hardware support and networking could be frustrating, especially with Wi-Fi extenders and mesh setups. Those problems taught me that a Linux issue is not always a Linux issue; sometimes the useful answer is lower in the stack.",
+              "I use Debian now because I want a setup that feels predictable and gets out of the way when I need to study or build software. I still enjoy customization, but I am learning to value a system I can maintain just as much as one I can spend a weekend tweaking."
+            ]
+          },
+          "software-engineering.txt": {
+            "type": "text",
+            "lines": [
+              "I study Software Engineering in Pasto, Colombia. I like building things that people can actually use, but I am just as interested in what happens behind the interface: how requests move through a system, how data stays consistent, why something fails under load, and how to make the next change without breaking everything else.",
+              "My usual tools are TypeScript, React, Java, Spring Boot, Node.js, and PostgreSQL. I have also worked with Python, FastAPI, Go, Docker, Redis, and cloud services while figuring out which parts of the stack I want to understand deeply rather than merely list on a profile.",
+              "I am still early in my career, so I care a lot about fundamentals and feedback. I want to become a dependable engineer who can explain a decision, understand its trade-offs, test the important cases, and maintain a system after the excitement of the first release has passed."
+            ]
+          },
+          "projects": {
+            "type": "dir",
+            "children": {
+              "mikus-money.txt": {
+                "type": "text",
+                "lines": [
+                  "Miku's Money started as a personal finance app inspired by the straightforward experience of moving money between accounts in apps like Nequi. I wanted it to feel approachable while still treating financial operations seriously.",
+                  "The application uses React on the frontend and Java with Spring Boot on the backend, with PostgreSQL through Supabase. Authentication uses Spring Security, JWTs, and HttpOnly cookies. For money operations, I use BigDecimal instead of floating-point values, and I worked on duplicate-request protection and optimistic locking so concurrent updates are less likely to corrupt a balance.",
+                  "The interesting part was learning that a transfer is not just a button and a database update. It is a sequence of operations where precision, authorization, retries, and concurrent requests all matter."
+                ]
+              },
+              "alomedia.txt": {
+                "type": "text",
+                "lines": [
+                  "AloMedia is a browser-based, nonlinear video editor built as a university project. The idea was to bring a timeline-based editing workflow into the browser, with media management and editing tools rather than a page full of unrelated CRUD forms.",
+                  "The stack includes React, TypeScript, Zustand, Java, Spring Boot, and PostgreSQL. I also worked with media storage, OAuth, SRT subtitles, and FFmpeg. Browser-based FFmpeg processing proved too slow for the kind of exports we wanted, so I moved the heavier work into a separate export service and used Redis to coordinate communication between services.",
+                  "That redesign made export times roughly 84% faster in our measured workflow, while changes to uploading and caching reduced upload-related time by around 90%. The project taught me to measure bottlenecks, separate responsibilities, and choose architecture based on what the system actually needs."
+                ]
+              },
+              "udeus-launcher.txt": {
+                "type": "text",
+                "lines": [
+                  "Udeus Launcher comes from the same frustration that started my interest in computers: doing something simple should not require memorizing a maze of folders and manual steps. Modded Minecraft can involve separate versions, loaders, mods, resource packs, and datapacks, and I wanted to bring those pieces into a more coherent desktop experience.",
+                  "It is an open-source project built with Go, Wails, and React, with local instance management and integration with the Modrinth ecosystem. The goal is to make modded Minecraft easier to organize without turning a lightweight launcher into a huge application.",
+                  "I care about the project being useful to people who already know their way around modded Minecraft, while remaining approachable for people who do not. The next hard part is not only adding features; it is keeping the code understandable, documenting decisions, and making releases easy to try."
+                ]
+              },
+              "whiteboard.txt": {
+                "type": "text",
+                "lines": [
+                  "I have also been exploring a live whiteboard for people who want to sketch ideas together from a phone or a computer. The simple version is a board that can be opened through a link or short code, with a clear distinction between people who can edit and people who can only watch.",
+                  "The technical questions are what make it interesting: how to keep multiple clients in sync, how to handle reconnects, how to represent drawing operations, and how to avoid building a complicated backend before the product needs one. WebSockets and a small service are a natural fit for the collaborative part.",
+                  "It is the kind of project I like because the feature sounds simple to a user, but building it well requires thinking about state, network behavior, permissions, and the experience on different devices."
+                ]
+              }
+            }
+          }
+        }
+      },
+      ".secret": {
+        "type": "text",
+        "lines": [
+          "You checked the hidden files. Good instincts.",
+          "Some rabbit holes are worth following.",
+          "Email me."
+        ]
+      },
+      "career": {
+        "type": "dir",
+        "children": {
+          "what-i-am-working-toward.txt": {
+            "type": "text",
+            "lines": [
+              "I want to become a strong software engineer, with backend development as a center of gravity and enough frontend knowledge to build complete features. I am especially interested in application security because it connects practical backend work with questions about identity, authorization, data exposure, and how systems fail.",
+              "I am also studying cloud and infrastructure fundamentals. AWS is one part of that, but I do not want my knowledge to stop at memorizing service names. Networking, Linux, operating systems, containers, storage, distributed systems, security, and deployment all matter because cloud services are built on top of those ideas.",
+              "For my first professional role, I am looking for a place where I can contribute, get useful feedback, and learn how experienced engineers make decisions. I would rather build sound habits and understand the work than pretend I already know everything."
+            ]
+          },
+          "learning-to-explain.txt": {
+            "type": "text",
+            "lines": [
+              "One thing I am actively improving is how I explain technical ideas out loud. I can often recognize a concept when I see it, but an interview is different: I have to define it clearly, describe why it matters, and give an example without getting lost halfway through the answer.",
+              "I practise topics like HTTP methods and status codes, interfaces and abstract classes, API design, idempotency, concurrency, and system design. I want to be able to explain not only what a solution does, but why I chose it and what trade-offs come with it.",
+              "The goal is not to sound like a textbook. It is to be precise enough that another engineer can follow my reasoning and ask a useful next question."
+            ]
+          },
+          "support-and-small-fixes.txt": {
+            "type": "text",
+            "lines": [
+              "Before thinking of software as a career, I was already helping people around me with practical computer problems. That included setting up Windows, improving a slow machine, connecting projectors and screens, cleaning computers, configuring basic network or VPN settings, and helping people use Excel.",
+              "I have also helped people get started with programming. These jobs were usually small, but they taught me to ask what someone is actually trying to do instead of assuming the problem is the first thing they describe.",
+              "That kind of troubleshooting still shapes how I approach development: understand the situation, isolate the cause, make the smallest useful change, and check that the original problem is really solved."
+            ]
+          }
+        }
+      },
+      "projects-and-process": {
+        "type": "dir",
+        "children": {
+          "why-i-build.txt": {
+            "type": "text",
+            "lines": [
+              "I have a habit of wanting to make my own version of something once I have used it enough to notice what annoys me. That started with Minecraft modpacks and launchers, but it also shows up in web applications and desktop tools.",
+              "I like the whole path from idea to working software: deciding what the smallest useful version should do, choosing a stack, figuring out the data model, building the interface, and then discovering the edge cases I forgot. I am learning that a project is not finished just because the happy path works.",
+              "The part I want to get better at is the less visible work: tests, documentation, readable architecture, security, deployment, and maintenance. Those are the things that make a project easier for another person to trust and easier for me to return to months later."
+            ]
+          },
+          "working-with-limits.txt": {
+            "type": "text",
+            "lines": [
+              "I often build with limited time and money, so I pay attention to hosting costs, resource use, and whether a service is worth adding. A free tier that suddenly requires a payment method or a bill that appears after a small experiment can change the plan pretty quickly.",
+              "That constraint has made me more interested in lightweight tools, local-first software when it makes sense, and understanding the infrastructure before choosing it. I do not want to use a complicated cloud setup just because it looks professional; I want to know what problem it solves and what it will cost to keep running."
+            ]
+          }
+        }
+      }
+    }
+  }
+}
