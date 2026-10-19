@@ -7,9 +7,9 @@ export const profile = {
   tagline: 'Still figuring it out, one commit at a time.',
   location: 'Colombia',
   pitch:
-    'I build things most people wouldn’t bother to: a Go desktop launcher, a video editor that runs FFmpeg in your browser, a smartwatch app that talks in Morse. Current tech, real products, good company.',
+    'I’m a software engineer who likes building applications that look good, are useful and try something new, mostly full stack. I care just as much about the logic underneath: business rules, data processing and making the whole thing feel easy and smooth.',
   // Photos: drop files in /public and set paths, e.g. '/photos/me.webp'. Empty = placeholder frame.
-  photos: { hero: 'photos/photo4.jpeg', about: 'photos/photo3.jpeg', online: 'photo6' },
+  photos: { hero: 'photos/photo4.jpeg', about: 'photos/photo.jpeg', online: 'photo6' },
   facts: ['Colombia', 'Open to work!', 'en/es'],
 }
 
@@ -29,9 +29,8 @@ export const navSections: NavSection[] = [
 ]
 
 export const aboutParagraphs = [
-  'I’m a software engineering student from Colombia who learns by building. I work mostly with TypeScript, React and Node, and reach for Java/Spring Boot, Python, Kotlin or Go when the problem asks for it.',
-  'I sit somewhere between logic and making things mine. I like clean backend design, tools that feel good to use, and shipping things people can actually open and try. I like patterns, and I like when everything follows them.',
-  'You’ll see it everywhere: my Linux setups, the cities I built in Minecraft for months, the fanfics I wrote when an anime went somewhere I didn’t like. I’m the person who will rewrite the ending, then build the tool to do it.',
+  'In 2012, my dad let me use his laptop, and I fell into an internet I barely understood. Hours on YouTube and forums introduced me to horror visual novels, game modding, and the joy of figuring out how things worked. Years later, learning basic HTML and PSeInt at school gave me my first glimpse into the world behind the technology I had grown up using.',
+  "Today, I spend my free time customizing Linux, watching Formula 1, and getting lost in horror and true crime stories. Before choosing software engineering, I also considered criminology and forensics. I've always been curious about how things work and what lies beneath the surface."
 ]
 
 export type Project = {
@@ -78,14 +77,6 @@ export const projects: Project[] = [
     techs: ['Kotlin', 'Wear OS', 'AI'],
     repo: gh('Morse'),
     logo: '/projects/morse-logo.svg',
-  },
-  {
-    name: 'Miku’s Money',
-    blurb: 'A Nequi/CashApp-style wallet where every user is a Miku with a unique public code. Transfers, balances and auth on a Java backend.',
-    techs: ['React', 'Java', 'Spring Boot'],
-    repo: gh('MikusMoneyReact'),
-    preview: 'https://mikus-money-react.vercel.app',
-    image: '/projects/mikus.webp',
   },
   {
     name: 'University Agreement Manager',

@@ -14,7 +14,7 @@ export const es: Content = {
     tagline: 'Todavía lo voy descubriendo, un commit a la vez.',
     location: 'Colombia',
     pitch:
-      'Construyo cosas que casi nadie se molestaría en hacer: un launcher de escritorio en Go, un editor de video que corre FFmpeg en tu navegador, una app de reloj que habla en código Morse. Tecnología actual, productos reales, buena compañía.',
+      'Soy ingeniero de software y me gusta construir aplicaciones que se vean bien, sean útiles y prueben algo nuevo, sobre todo full stack. Me importa igual la lógica de fondo: las reglas de negocio, el procesamiento de datos y que todo se sienta fácil y fluido.',
     facts: ['Colombia', '¡Abierto a trabajar!', 'en/es'],
   },
   navSections: [
@@ -29,9 +29,8 @@ export const es: Content = {
     { id: 'contact', title: 'Contacto', time: '0:10' },
   ],
   aboutParagraphs: [
-    'Soy estudiante de ingeniería de software en Colombia y aprendo construyendo. Trabajo sobre todo con TypeScript, React y Node, y recurro a Java/Spring Boot, Python, Kotlin o Go cuando el problema lo pide.',
-    'Estoy en algún punto entre la lógica y hacer las cosas mías. Me gusta el buen diseño de backend, las herramientas que da gusto usar y publicar cosas que la gente pueda abrir y probar. Me gustan los patrones, y me gusta cuando todo los sigue.',
-    'Se nota en todo: mis setups de Linux, las ciudades que construí en Minecraft durante meses, los fanfics que escribí cuando un anime iba a donde no me gustaba. Soy el tipo que reescribe el final y luego construye la herramienta para hacerlo.',
+    'En 2012 mi papá me dejó usar su portátil y me lancé de lleno a un internet que casi no entendía. YouTube y largas horas en foros me mostraron historias y conversaciones que de otro modo nunca habría encontrado, desde novelas visuales de terror hasta modificar los juegos que jugaba y ajustar mi computador para que corriera lo más rápido posible. En mi último año de colegio me enseñaron HTML básico y PSeInt, y por primera vez vi qué tan profundo era el mundo en el que vivía desde niño.',
+    'Hoy dedico mi tiempo libre a personalizar mi entorno de Linux, ver Fórmula 1 y descubrir cómo funcionan las cosas. El terror, el horror y las historias criminales me siguen atrayendo y me quitan bastante tiempo. Cuando decidía hacia dónde llevar mi vida, la criminalística y la ciencia forense eran las otras opciones.',
   ],
   projects: over(en.projects, [
     { blurb: 'Launcher de Minecraft de código abierto para Windows, Linux y macOS. Vanilla, Forge o Fabric, más biblioteca de addons, servidores locales, editor de skins y un asistente de IA integrado.' },
