@@ -82,6 +82,8 @@ export const es: Content = {
     switchLang: { short: 'EN', name: 'English' },
     expandSidebar: 'Expandir barra lateral',
     collapseSidebar: 'Contraer barra lateral',
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
     seeProjects: 'Ver los proyectos',
     emailMe: 'Escríbeme',
     mainTechs: 'Techs principales',

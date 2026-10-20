@@ -207,6 +207,8 @@ export const ui = {
   switchLang: { short: 'ES', name: 'Español' },
   expandSidebar: 'Expand sidebar',
   collapseSidebar: 'Collapse sidebar',
+  openMenu: 'Open menu',
+  closeMenu: 'Close menu',
   seeProjects: 'See the projects',
   emailMe: 'Email me',
   mainTechs: 'Main techs',

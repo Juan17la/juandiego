@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Briefcase, ChatCircleText, Code, EnvelopeSimple, GithubLogo, GraduationCap, House, LinkedinLogo, Stack, SidebarSimple, TerminalWindow, User, XLogo } from '@phosphor-icons/react'
+import { Briefcase, ChatCircleText, Code, EnvelopeSimple, GithubLogo, GraduationCap, House, LinkedinLogo, List, Stack, SidebarSimple, TerminalWindow, User, X, XLogo } from '@phosphor-icons/react'
 import { contacts } from '@/lib/data'
 import { useContent } from '@/lib/i18n'
 import LangSwitch from '../atoms/LangSwitch'
@@ -33,6 +33,7 @@ export default function Rail() {
   const [active, setActive] = useState(0)
   const [queued, setQueued] = useState<number | null>(null)
   const [slim, setSlim] = useState(false)
+  const [open, setOpen] = useState(false)
   const raf = useRef(0)
 
   const measure = useCallback(() => {
@@ -63,10 +64,16 @@ export default function Rail() {
   }, [measure])
 
   useEffect(() => {
-    const a = document.querySelector<HTMLElement>('#mobile-tracks a[aria-current]')
-    const list = a?.closest('ol')
-    if (a && list) list.scrollTo({ left: a.offsetLeft - 8, behavior: 'smooth' })
-  }, [active])
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    const onWide = () => innerWidth >= 1024 && setOpen(false)
+    addEventListener('keydown', onKey)
+    addEventListener('resize', onWide)
+    return () => {
+      removeEventListener('keydown', onKey)
+      removeEventListener('resize', onWide)
+    }
+  }, [open])
 
   useEffect(() => {
     try {
@@ -86,6 +93,7 @@ export default function Rail() {
     const el = document.getElementById(navSections[i].id)
     if (!el) return
     e.preventDefault()
+    setOpen(false)
     setQueued(i)
     setTimeout(() => {
       el.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
@@ -156,25 +164,64 @@ export default function Rail() {
         <LangSwitch className={slim ? 'size-11 shrink-0 flex-col gap-0 rounded-2xl text-[10px]' : 'mt-auto py-2'} />
       </aside>
 
-      {/* mobile: sticky track picker */}
-      <nav id="mobile-nav" aria-label="Sections" className="on-card lg:hidden sticky top-0 z-20 flex items-center gap-3 bg-card px-4 py-2 shadow-[0_6px_16px_-8px_rgb(0_0_0/0.5)]">
-        <Logo className="size-10 shrink-0" />
-        <ol id="mobile-tracks" className="relative flex flex-1 gap-1 overflow-x-auto py-1">
-          {navSections.map((s, i) => (
-            <li key={s.id} className="shrink-0">
-              <a
-                href={`#${s.id}`}
-                onClick={(e) => go(e, i)}
-                aria-current={i === active ? 'true' : undefined}
-                className={`block rounded-full px-3.5 py-2 text-sm ${i === active ? 'bg-ink font-semibold text-card' : 'text-ink'} ${queued === i ? 'queued' : ''}`}
-              >
-                {s.title}
-              </a>
-            </li>
-          ))}
-        </ol>
-        <LangSwitch className="size-10 shrink-0 gap-0 text-xs" />
-      </nav>
+      {/* mobile: sticky bar with burger menu */}
+      <div id="mobile-nav" className="on-card lg:hidden sticky top-0 z-20 bg-card shadow-[0_6px_16px_-8px_rgb(0_0_0/0.5)]">
+        <div className="flex items-center gap-3 px-4 py-2">
+          <Logo className="size-10 shrink-0" />
+          <p className="min-w-0 flex-1 truncate text-sm font-semibold">
+            <span className="num mr-2 text-ink-soft">{pad(active)}</span>
+            {navSections[active]?.title}
+          </p>
+          <LangSwitch className="size-10 shrink-0 gap-0 text-xs" />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? ui.closeMenu : ui.openMenu}
+            className="flex size-10 shrink-0 items-center justify-center rounded-full bg-ink text-card"
+          >
+            {open ? <X size={20} weight="bold" aria-hidden /> : <List size={20} weight="bold" aria-hidden />}
+          </button>
+        </div>
+
+        <nav id="mobile-menu" aria-label="Sections" hidden={!open} className="max-h-[calc(100dvh-56px)] overflow-y-auto border-t border-ink/10 px-4 pt-3 pb-5">
+          <ol className="grid gap-0.5 sm:grid-cols-2">
+            {navSections.map((s, i) => {
+              const Icon = icons[s.id]
+              const on = i === active
+              return (
+                <li key={s.id}>
+                  <a
+                    href={`#${s.id}`}
+                    onClick={(e) => go(e, i)}
+                    aria-current={on ? 'true' : undefined}
+                    className={`flex items-center gap-3 rounded-full px-4 py-3 ${on ? 'bg-ink font-semibold text-card' : 'hover:bg-ink/[0.08]'} ${queued === i ? 'queued' : ''}`}
+                  >
+                    <Icon size={18} weight={on ? 'fill' : 'bold'} aria-hidden className="shrink-0" />
+                    <span className="num text-xs opacity-60">{pad(i)}</span>
+                    {s.title}
+                  </a>
+                </li>
+              )
+            })}
+          </ol>
+          <ul className="mt-4 flex justify-center gap-2 border-t border-ink/10 pt-4">
+            {social.map(({ href, label, Icon }) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  aria-label={label}
+                  {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })}
+                  className="flex size-11 items-center justify-center rounded-full bg-ink/[0.08] hover:bg-ink hover:text-card"
+                >
+                  <Icon size={20} weight="bold" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </>
   )
 }
