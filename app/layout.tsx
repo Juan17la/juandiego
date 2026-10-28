@@ -8,6 +8,9 @@ const hand = Permanent_Marker({ subsets: ['latin'], weight: '400', variable: '--
 const data = JetBrains_Mono({ subsets: ['latin'], variable: '--nf-data', display: 'swap' })
 const pixel = Silkscreen({ subsets: ['latin'], weight: '400', variable: '--nf-pixel', display: 'swap' })
 
+// Runs before paint so the saved (or system) theme never flashes the wrong colors.
+const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){}`
+
 export const metadata: Metadata = {
   title: 'Juan Diego — Software developer & engineer',
   description:
@@ -16,7 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${body.variable} ${hand.variable} ${data.variable} ${pixel.variable}`}>
+    <html lang="en" className={`${body.variable} ${hand.variable} ${data.variable} ${pixel.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <LangProvider>{children}</LangProvider>
       </body>

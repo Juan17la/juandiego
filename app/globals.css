@@ -1,20 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-desk: #2f3b35;
-  --color-desk-deep: #232d28;
-  --color-card: #e3e7df;
+  --color-desk: #e8ece5;
+  --color-desk-deep: #dbe1d7;
+  --color-on-desk: #131815;
+  --color-panel: #a1ad9d; /* same green as --color-label (the "See the projects" button) */
+  --color-card: #fcfdfa;
   --color-ink: #131815;
-  --color-ink-soft: #414a43;
-  --color-rule: #b4bcb1;
+  --color-ink-soft: #4a544c;
+  --color-rule: #c9d0c5;
   --color-label: #b4d08c;
-  --color-sage: #a4b9a1;
+  --color-sage: #a1ad9d;
   --color-moss: #4a7a40;
   --color-hi: #dbea8e;
+  --color-on-hi: #131815;
   --font-sans: var(--nf-body), ui-sans-serif, system-ui, sans-serif;
   --font-hand: var(--nf-hand), cursive;
   --font-data: var(--nf-data), ui-monospace, monospace;
   --font-pixel: var(--nf-pixel), monospace;
+}
+
+/* dark theme: same tokens, swapped values. data-theme is set before paint in app/layout.tsx */
+:root[data-theme="dark"] {
+  --color-desk: #121814;
+  --color-desk-deep: #0c110e;
+  --color-on-desk: #e4eae1;
+  --color-panel: #24332a;
+  --color-card: #1c231f;
+  --color-ink: #e4eae1;
+  --color-ink-soft: #a7b3aa;
+  --color-rule: #36423a;
+  --color-sage: #2a382f;
+  --color-moss: #6f9f62;
+  color-scheme: dark;
 }
 
 html { scroll-behavior: smooth; background: var(--color-desk); color-scheme: light; }
@@ -31,10 +49,9 @@ body {
 
 h1, h2, h3 { text-wrap: balance; }
 
-::selection { background: var(--color-hi); color: var(--color-ink); }
+::selection { background: var(--color-hi); color: var(--color-on-hi); }
 
-:focus-visible { outline: 3px solid var(--color-hi); outline-offset: 3px; border-radius: 2px; }
-.on-card :focus-visible { outline-color: var(--color-desk); }
+:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; border-radius: 2px; }
 
 /* the terminal line has its own caret; no ring around it */
 .term-input:focus-visible { outline: none; }
@@ -66,7 +83,7 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 /* hatched placeholder for missing screenshots */
 .pending {
   background:
-    repeating-linear-gradient(135deg, transparent 0 10px, rgb(19 24 21 / 0.08) 10px 12px),
+    repeating-linear-gradient(135deg, transparent 0 10px, color-mix(in srgb, var(--color-ink) 8%, transparent) 10px 12px),
     var(--color-card);
 }
 
@@ -79,7 +96,7 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 
 /* dotted star-field texture for the desk */
 body {
-  background-image: radial-gradient(rgb(255 255 255 / 0.07) 1px, transparent 1.5px);
+  background-image: radial-gradient(color-mix(in srgb, var(--color-on-desk) 9%, transparent) 1px, transparent 1.5px);
   background-size: 22px 22px;
 }
 

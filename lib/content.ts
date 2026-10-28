@@ -11,7 +11,7 @@ export const es: Content = {
   profile: {
     ...en.profile,
     role: 'Desarrollador e ingeniero de software',
-    tagline: 'Todavía lo voy descubriendo, un commit a la vez.',
+    tagline: 'Solo hazlo',
     location: 'Colombia',
     pitch:
       'Soy ingeniero de software y me gusta construir aplicaciones que se vean bien, sean útiles y prueben algo nuevo, sobre todo full stack. Me importa igual la lógica de fondo: las reglas de negocio, el procesamiento de datos y que todo se sienta fácil y fluido.',
@@ -34,10 +34,9 @@ export const es: Content = {
   ],
   projects: over(en.projects, [
     { blurb: 'Launcher de Minecraft de código abierto para Windows, Linux y macOS. Vanilla, Forge o Fabric, más biblioteca de addons, servidores locales, editor de skins y un asistente de IA integrado.' },
-    { blurb: 'Editor de video no lineal en el navegador: línea de tiempo multipista, vista previa en tiempo real y procesamiento en el cliente con FFmpeg compilado a WebAssembly. Subtítulos automáticos y limpieza de audio con IA sobre un backend en Spring Boot.' },
-    { blurb: 'Pizarra colaborativa sin cuenta. Comparte un código de seis caracteres y dibujen juntos con cursores en vivo. Funciona sin conexión, en web y Android.' },
+    { blurb: 'Editor de video en el navegador: línea de tiempo multipista, vista previa en tiempo real y procesamiento en el cliente con FFmpeg compilado a WebAssembly. Subtítulos automáticos y limpieza de audio con IA sobre un backend en Spring Boot.' },
+    { blurb: 'Pizarra Colaborativa. Comparte un código de seis caracteres y dibujen juntos con cursores en vivo. Disponible en web y Android.' },
     { blurb: 'App de Wear OS que permite a grupos pequeños de relojes hablar en código Morse háptico, con dictado por IA y respuestas inteligentes.' },
-    { blurb: 'Una billetera estilo Nequi/CashApp donde cada usuario es una Miku con un código público único. Transferencias, saldos y autenticación sobre un backend en Java.' },
     { name: 'Gestor de Convenios Universitarios', blurb: 'Backend para un problema real de una universidad: gestionar convenios con documentos y firmas digitales en AWS S3, más de 5 roles y flujos por convenio.' },
     { blurb: 'Un sitio para simular cómo se comportan aerodinámicamente distintos autos de carreras (y otros autos) a diferentes velocidades.' },
     { blurb: 'Un reproductor de música web.' },
@@ -66,10 +65,25 @@ export const es: Content = {
     { detail: 'Curso gratuito completado: servicios centrales de AWS, infraestructura global, seguridad, precios y el modelo de responsabilidad compartida.', facts: ['Curso completado', 'Fundamentos de la nube'] },
   ]),
   experienceItems: over(en.experienceItems, [
-    { when: 'Desde septiembre', title: 'Constructor de escritorio de código abierto', text: 'Diseñé y publiqué un launcher multiplataforma en Go con cargadores de mods, editor de skins y asistente de IA, además de su sitio de descargas.' },
-    { when: 'Desde agosto', title: 'Full-stack: web, móvil y servidor', text: 'Construí una pizarra colaborativa en tiempo real en tres repos: web en React, app en React Native y un servidor en TypeScript.' },
-    { when: 'Desde mayo', title: 'Pipeline de medios e IA', text: 'FFmpeg en WebAssembly en el cliente, Spring Boot y PostgreSQL para los proyectos, y un servicio en Python para audio y subtítulos con IA.' },
-    { when: 'Noviembre 2025', title: 'Backend para una universidad', where: 'Gestor de Convenios', text: 'Flujos por rol, almacenamiento de documentos y firmas digitales en AWS S3 para convenios universitarios reales.' },
+    {
+      when: 'Ago 2025 – presente',
+      title: 'Desarrollador de software freelance',
+      where: 'Independiente',
+      text: 'Diseño, construyo y publico productos de principio a fin: web, móvil, escritorio y los servidores detrás.',
+      work: [
+        { name: 'Udeos Launcher', text: 'Launcher multiplataforma en Go con cargadores de mods, editor de skins y asistente de IA, además de su sitio de descargas.' },
+        { name: 'Shareboard', text: 'Pizarra colaborativa en tiempo real en tres repos: web en React, app en React Native y un servidor en TypeScript.' },
+        { name: 'Morse', text: 'App de Wear OS para mensajes en código Morse háptico entre relojes, con dictado por IA y respuestas inteligentes.' },
+        { name: 'AloMedia', text: 'FFmpeg en WebAssembly en el cliente, Spring Boot y PostgreSQL para los proyectos, y un servicio en Python para audio y subtítulos con IA.' },
+        { name: 'Gestor de Convenios', text: 'Flujos por rol, almacenamiento de documentos y firmas digitales en AWS S3 para convenios universitarios reales.' },
+      ],
+    },
+    {
+      when: 'Ago 2024 – presente',
+      title: 'Soporte de TI',
+      where: 'Colegios',
+      text: 'Soporte de TI básico para colegios: instalar y mantener computadores, instalar software, resolver problemas de red e impresoras y ayudar a docentes y estudiantes en el día a día.',
+    },
   ]),
   archive: {
     ...en.archive,
@@ -80,6 +94,7 @@ export const es: Content = {
   },
   ui: {
     switchLang: { short: 'EN', name: 'English' },
+    theme: { dark: 'Cambiar a tema oscuro', light: 'Cambiar a tema claro' },
     expandSidebar: 'Expandir barra lateral',
     collapseSidebar: 'Contraer barra lateral',
     openMenu: 'Abrir menú',
@@ -106,7 +121,7 @@ export const es: Content = {
     certificateAlt: (title) => `Certificado de ${title}`,
     verify: 'Verificar credencial',
     techsNote: 'He trabajado con todo esto, aunque no soy experto en cada cosa.',
-    experienceNote: 'Aún no hay cargos. Esto es el trabajo que he publicado.',
+    experienceNote: 'Freelance desde 2025 y soporte de TI desde 2024.',
     archivePrompt: 'Abre el archivo: escribe help, o simplemente haz clic en los nombres.',
     contactCta: 'Construyamos algo.',
     footer: {

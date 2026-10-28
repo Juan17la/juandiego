@@ -9,12 +9,12 @@ import Photo from '../molecules/Photo'
 export default function Intro() {
   const { profile, techs, ui } = useContent()
   return (
-    <section id="intro" aria-label="Intro" className="scroll-mt-16 pt-10 pb-6 text-card lg:pt-6">
+    <section id="intro" aria-label="Intro" className="scroll-mt-16 pt-10 pb-6 text-on-desk lg:pt-6">
       <div className="grid items-start gap-8 md:grid-cols-[minmax(0,1fr)_340px] md:items-center">
         <div>
           <h1 className="text-[clamp(3.5rem,11vw,6rem)] font-extrabold leading-[0.9] tracking-[-0.035em]">{profile.name}</h1>
           <p className="mt-4 text-2xl font-semibold sm:text-3xl">{profile.role}</p>
-          <p className="mt-3 inline-block -rotate-1 bg-hi px-3 py-1 font-hand text-xl text-ink sm:text-2xl">
+          <p className="mt-3 inline-block -rotate-1 bg-hi px-3 py-1 font-hand text-xl text-on-hi sm:text-2xl">
             {profile.tagline} <Gif name="sparkle" className="align-middle" />
           </p>
           <p className="mt-6 max-w-[56ch] text-lg leading-relaxed [text-wrap:balance]">{profile.pitch}</p>
@@ -27,7 +27,7 @@ export default function Intro() {
           </ul>
           <ul className="mt-3 flex flex-wrap gap-2" aria-label={ui.quickFacts}>
             {profile.facts.map((f) => (
-              <li key={f} className="num rounded-full bg-white/10 px-3 py-1 text-xs">
+              <li key={f} className="num rounded-full bg-on-desk/10 px-3 py-1 text-xs">
                 {f}
               </li>
             ))}
@@ -37,10 +37,10 @@ export default function Intro() {
       </div>
 
       <div className="mt-8 flex flex-wrap gap-3">
-        <a href="#projects" className="rounded-full bg-label px-6 py-3 font-bold text-ink hover:bg-hi">
+        <a href="#projects" className="rounded-full bg-label px-6 py-3 font-bold text-on-hi hover:bg-hi">
           {ui.seeProjects}
         </a>
-        <a href={`mailto:${contacts.email}`} className="rounded-full bg-white/10 px-6 py-3 font-bold hover:bg-white/20">
+        <a href={`mailto:${contacts.email}`} className="rounded-full bg-on-desk/10 px-6 py-3 font-bold hover:bg-on-desk/20">
           {ui.emailMe}
         </a>
       </div>

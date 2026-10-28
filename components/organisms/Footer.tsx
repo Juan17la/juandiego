@@ -15,16 +15,16 @@ export default function Footer() {
     { href: contacts.x, label: 'X', Icon: XLogo },
     { href: `mailto:${contacts.email}`, label: 'Email', Icon: EnvelopeSimple },
   ]
-  const col = 'text-sm font-bold uppercase tracking-wider text-card/60'
+  const col = 'text-sm font-bold uppercase tracking-wider text-on-desk/60'
   const link = 'rounded-sm py-0.5 hover:text-hi hover:underline'
   return (
-    <footer className="mt-4 px-2 pt-6 text-card sm:px-4">
-      <div className="grid gap-10 border-t border-white/15 pt-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer className="mt-4 px-2 pt-6 text-on-desk sm:px-4">
+      <div className="grid gap-10 border-t border-on-desk/15 pt-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Logo className="size-14" />
           <p className="mt-4 text-xl font-extrabold leading-tight">{profile.name}</p>
-          <p className="mt-1 text-card/80">{profile.role}</p>
-          <p className="mt-3 inline-block -rotate-1 bg-hi px-2 py-0.5 font-hand text-base text-ink">{profile.tagline}</p>
+          <p className="mt-1 text-on-desk/80">{profile.role}</p>
+          <p className="mt-3 inline-block -rotate-1 bg-hi px-2 py-0.5 font-hand text-base text-on-hi">{profile.tagline}</p>
         </div>
         <nav aria-label="Footer navSections">
           <h2 className={col}>{f.explore}</h2>
@@ -50,11 +50,11 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-          <p className="num mt-3 break-all text-xs text-card/70">{contacts.email}</p>
+          <p className="num mt-3 break-all text-xs text-on-desk/70">{contacts.email}</p>
         </div>
         <div>
           <h2 className={col}>{f.about}</h2>
-          <ul className="mt-3 space-y-1 text-sm text-card/85">
+          <ul className="mt-3 space-y-1 text-sm text-on-desk/85">
             <li>{f.builtWith}</li>
             <li>{f.fonts}</li>
             <li>{profile.location}</li>
@@ -64,7 +64,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <p className="mt-10 flex flex-wrap items-center gap-2 border-t border-white/15 py-5 text-sm text-card/70">
+      <p className="mt-10 flex flex-wrap items-center gap-2 border-t border-on-desk/15 py-5 text-sm text-on-desk/70">
         <span>© 2026 {profile.name}. {f.thanks}</span>
         <Gif name="sparkle" />
       </p>

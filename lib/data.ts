@@ -4,7 +4,7 @@
 export const profile = {
   name: 'Juan Diego',
   role: 'Software developer & engineer',
-  tagline: 'Still figuring it out, one commit at a time.',
+  tagline: 'Just do it.',
   location: 'Colombia',
   pitch:
     'I’m a software engineer who likes building applications that look good, are useful and try something new, mostly full stack. I care just as much about the logic underneath: business rules, data processing and making the whole thing feel easy and smooth.',
@@ -159,12 +159,30 @@ export const academicItems: AcademicItem[] = [
   },
 ]
 
-// No professional jobs yet, so "experience" is what was built.
-export const experienceItems = [
-  { when: 'Since September', title: 'Open-source desktop builder', where: 'Udeos Launcher', text: 'Designed and shipped a cross-platform Go launcher with mod loaders, a skin editor and an AI assistant, plus its download site.' },
-  { when: 'Since August', title: 'Full-stack: web, mobile and server', where: 'Shareboard', text: 'Built a realtime collaborative board across three repos: React web, React Native app and a TypeScript server.' },
-  { when: 'Since May', title: 'Media and AI pipeline', where: 'AloMedia', text: 'FFmpeg in WebAssembly on the client, Spring Boot and PostgreSQL for projects, and a Python service for AI audio and subtitles.' },
-  { when: 'November 2025', title: 'Backend for a university', where: 'Agreement Manager', text: 'Role-based workflows, document storage and digital signatures on AWS S3 for real university agreements.' },
+// A role, with the work done under it (empty when there's nothing to list).
+export type ExperienceItem = { when: string; title: string; where: string; text: string; work: { name: string; text: string }[] }
+
+export const experienceItems: ExperienceItem[] = [
+  {
+    when: 'Aug 2025 – present',
+    title: 'Freelance software developer',
+    where: 'Independent',
+    text: 'Designing, building and shipping products end to end: web, mobile, desktop and the servers behind them.',
+    work: [
+      { name: 'Udeos Launcher', text: 'Cross-platform Go launcher with mod loaders, a skin editor and an AI assistant, plus its download site.' },
+      { name: 'Shareboard', text: 'Realtime collaborative board across three repos: React web, React Native app and a TypeScript server.' },
+      { name: 'Morse', text: 'Wear OS app for haptic Morse messaging between smartwatches, with AI dictation and smart replies.' },
+      { name: 'AloMedia', text: 'FFmpeg in WebAssembly on the client, Spring Boot and PostgreSQL for projects, and a Python service for AI audio and subtitles.' },
+      { name: 'Agreement Manager', text: 'Role-based workflows, document storage and digital signatures on AWS S3 for real university agreements.' },
+    ],
+  },
+  {
+    when: 'Aug 2024 – present',
+    title: 'IT support',
+    where: 'Schools',
+    text: 'Basic IT support for schools: setting up and maintaining computers, installing software, troubleshooting network and printer issues, and helping staff and students day to day.',
+    work: [],
+  },
 ]
 
 export const archive = {
@@ -205,6 +223,7 @@ export const contacts = {
 // Interface strings. Spanish lives in lib/content.ts.
 export const ui = {
   switchLang: { short: 'ES', name: 'Español' },
+  theme: { dark: 'Switch to dark theme', light: 'Switch to light theme' },
   expandSidebar: 'Expand sidebar',
   collapseSidebar: 'Collapse sidebar',
   openMenu: 'Open menu',
@@ -231,7 +250,7 @@ export const ui = {
   certificateAlt: (title: string) => `${title} certificate`,
   verify: 'Verify credential',
   techsNote: 'I’ve worked with all of these, though I’m not an expert in every one.',
-  experienceNote: 'No job titles yet. This is the work I’ve shipped instead.',
+  experienceNote: 'Freelancing since 2025, and IT support since 2024.',
   archivePrompt: 'Open the archive: type help, or just click the names.',
   contactCta: 'Let’s build something.',
   footer: {

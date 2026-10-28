@@ -5,6 +5,7 @@ import { Briefcase, ChatCircleText, Code, EnvelopeSimple, GithubLogo, Graduation
 import { contacts } from '@/lib/data'
 import { useContent } from '@/lib/i18n'
 import LangSwitch from '../atoms/LangSwitch'
+import ThemeSwitch from '../atoms/ThemeSwitch'
 import Logo from '../atoms/Logo'
 
 const pad = (n: number) => String(n + 1).padStart(2, '0')
@@ -105,7 +106,7 @@ export default function Rail() {
   return (
     <>
       {/* desktop: sticky contents panel */}
-      <aside className={`on-card rail hidden lg:flex fixed left-6 top-6 bottom-6 flex-col gap-4 overflow-y-auto overflow-x-hidden rounded-[28px] bg-card shadow-[inset_0_1px_0_rgb(255_255_255/0.45),0_30px_60px_-30px_rgb(0_0_0/0.6)] ${slim ? 'items-center p-3' : 'p-4'}`}>
+      <aside className={`on-card rail hidden lg:flex fixed left-6 top-6 bottom-6 flex-col gap-4 overflow-y-auto overflow-x-hidden rounded-[28px] bg-panel shadow-[inset_0_1px_0_rgb(255_255_255/0.45),0_30px_60px_-30px_rgb(0_0_0/0.6)] ${slim ? 'items-center p-3' : 'p-4'}`}>
         <div className={`flex items-center justify-center gap-3 ${slim ? 'flex-col' : ''}`}>
           <Logo className={slim ? 'size-10 shrink-0' : 'size-11 shrink-0'} />
           {slim ? null : <p className="min-w-0 text-lg font-extrabold leading-tight">Jud</p>}
@@ -161,11 +162,14 @@ export default function Rail() {
             })}
           </ol>
         </nav>
-        <LangSwitch className={slim ? 'size-11 shrink-0 flex-col gap-0 rounded-2xl text-[10px]' : 'mt-auto py-2'} />
+        <div className={`mt-auto flex gap-1.5 ${slim ? 'flex-col' : ''}`}>
+          <LangSwitch className={slim ? 'size-11 shrink-0 flex-col gap-0 rounded-2xl text-[10px]' : 'flex-1 py-2'} />
+          <ThemeSwitch className={slim ? 'size-11 shrink-0 rounded-2xl' : 'size-9 shrink-0'} />
+        </div>
       </aside>
 
       {/* mobile: sticky bar with burger menu */}
-      <div id="mobile-nav" className="on-card lg:hidden sticky top-0 z-20 bg-card shadow-[0_6px_16px_-8px_rgb(0_0_0/0.5)]">
+      <div id="mobile-nav" className="on-card lg:hidden sticky top-0 z-20 bg-panel shadow-[0_6px_16px_-8px_rgb(0_0_0/0.5)]">
         <div className="flex items-center gap-3 px-4 py-2">
           <Logo className="size-10 shrink-0" />
           <p className="min-w-0 flex-1 truncate text-sm font-semibold">
@@ -173,6 +177,7 @@ export default function Rail() {
             {navSections[active]?.title}
           </p>
           <LangSwitch className="size-10 shrink-0 gap-0 text-xs" />
+          <ThemeSwitch className="size-10 shrink-0" />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}

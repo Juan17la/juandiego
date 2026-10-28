@@ -8,7 +8,7 @@ export default function ContactLink({ href, label, sub, Icon }: Props) {
     <a
       href={href}
       {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })}
-      className="flex items-center gap-3 rounded-2xl bg-white/10 px-4 py-3.5 hover:bg-hi hover:text-ink"
+      className="flex items-center gap-3 rounded-2xl bg-card/10 px-4 py-3.5 hover:bg-hi hover:text-on-hi"
     >
       <Icon size={24} weight="bold" aria-hidden />
       <span className="min-w-0">
