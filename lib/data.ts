@@ -4,10 +4,10 @@
 export const profile = {
   name: 'Juan Diego',
   role: 'Software developer & engineer',
-  tagline: 'Just do it.',
+  tagline: 'Open to ideas, willing to rethink my own.',
   location: 'Colombia',
   pitch:
-    'I’m a software engineer who likes building applications that look good, are useful and try something new, mostly full stack. I care just as much about the logic underneath: business rules, data processing and making the whole thing feel easy and smooth.',
+    'Full-stack developer driven by curiosity, constantly exploring AI, infrastructure, and new technologies. I care less about the tools I use and more about finding the right ones to build better things.',
   facts: ['Colombia', 'Open to work!', 'en/es'],
 }
 
@@ -28,18 +28,49 @@ export const navSections: NavSection[] = [
 
 // Kept short on purpose: the bento tiles carry the rest.
 export const aboutParagraphs = [
-  'In 2012 my dad lent me his laptop and I fell into the internet: YouTube, forums, horror visual novels and game modding. Basic HTML and PSeInt at school showed me what was behind it all.',
-  'Now I customize Linux, watch Formula 1 and get lost in horror and true crime. I’ve always wanted to know how things work underneath.',
+  'I’m someone who’s constantly curious and interested in learning about different things, especially from people who are passionate about what they do. Although I’m more of an introvert, I genuinely enjoy connecting with people, sharing ideas, and having conversations that introduce me to new perspectives.',
+  'Outside software, I enjoy keeping up with Formula 1, exploring theories and stories from the series and anime I follow, and personalizing my Linux environment. I like tweaking the little details until everything feels like my own, from the wallpapers and widgets to the overall layout.',
 ]
 
 // About bento: photos in /public/photos plus a few personal tiles.
+// `community`, `cars`, `anime` and `music.albums` each rotate inside their own tile.
+// Car photos: Wikimedia Commons (W11: Alberto-g-rovi, CC BY 3.0; AMG GT3 and Ferrari 499P: Calreyn88, CC BY-SA 4.0).
+// Anime covers and album art belong to their publishers and are shown as small illustrations of taste.
 export const aboutBento = {
-  photos: ['/photos/photo.jpeg', '/photos/photo3.jpeg', '/photos/photo10.jpeg', '/photos/photo5.jpeg'],
-  online: { big: '2012', text: 'Online since my dad’s Windows XP laptop.' },
-  planB: { title: 'Plan B', text: 'Criminology and forensics, before I chose software.' },
-  likes: { title: 'Off the clock', items: ['Formula 1', 'Linux ricing', 'Horror', 'True crime'] },
-  music: { title: 'On repeat', items: ['Garage punk', '2000s metal', 'Screamo'] },
+  photo: '/photos/photo.jpeg',
+  community: ['/photos/1783117172005.jpeg', '/photos/1778003933249.jpeg', '/photos/1778177775745.jpeg', '/photos/1778177667228.jpeg'],
+  communityAlt: 'Juan Diego at a tech community meetup',
+  cars: [
+    { src: '/cars/mercedes-w11.jpg', caption: 'Mercedes W11, 2020' },
+    { src: '/cars/amg-gt3.jpg', caption: 'Mercedes-AMG GT3' },
+    { src: '/cars/ferrari-499p.jpg', caption: 'Ferrari 499P hypercar' },
+  ],
+  anime: [
+    { src: '/anime/naruto.jpg', title: 'Naruto' },
+    { src: '/anime/mha.png', title: 'My Hero Academia' },
+    { src: '/anime/chainsaw-man.jpg', title: 'Chainsaw Man' },
+    { src: '/anime/claymore.jpg', title: 'Claymore' },
+    { src: '/anime/tokyo-ghoul.jpg', title: 'Tokyo Ghoul' },
+    { src: '/anime/blood-c.jpg', title: 'Blood-C' },
+    { src: '/anime/lain.jpg', title: 'Serial Experiments Lain' },
+  ],
+  online: { big: '2012', text: 'My first step into software: my dad’s old laptop, unrestricted internet access and videogames.' },
+  planB: { title: 'Before software', text: 'Before software, I was into forensic science, and that curiosity never really left.' },
+  likes: { title: 'Off the clock', items: ['Formula 1', 'Learning guitar & bass', 'Exploring Minecraft worlds', 'Series & anime theories'] },
+  music: {
+    title: 'On repeat',
+    items: ['Garage punk', '2000s metal', 'Screamo'],
+    albums: [
+      { src: '/albums/riot.jpg', title: 'Riot!', artist: 'Paramore', song: 'That’s What You Get' },
+      { src: '/albums/edge-of-your-seat.jpg', title: 'This Is What the Edge of Your Seat Was Made For', artist: 'Bring Me the Horizon', song: 'Who Wants Flowers When You’re Dead? Nobody.' },
+      { src: '/albums/silverstein.jpg', title: 'Discovering the Waterfront', artist: 'Silverstein', song: 'Already Dead' },
+      { src: '/albums/hawthorne.jpg', title: 'The Silence in Black and White', artist: 'Hawthorne Heights', song: 'Niki FM' },
+      { src: '/albums/let-go.jpg', title: 'Let Go', artist: 'Avril Lavigne', song: 'Complicated' },
+    ],
+  },
 }
+
+export type Link = { label: string; href: string }
 
 export type Project = {
   name: string
@@ -51,12 +82,22 @@ export type Project = {
   image?: string
   // Featured projects: three screenshots, stacked as cards. First is the hero shot.
   shots?: string[]
+  // Third shot is a phone screenshot: shown as a tall card instead of a landscape one.
+  portraitFront?: boolean
   logo?: string
+  // Modal content, taken from each public README at github.com/Juan17la.
+  story: string[]
+  highlights: string[]
+  stack: string[]
+  links: Link[]
 }
 
 const gh = (r: string) => `https://github.com/Juan17la/${r}`
 
-export const projects: Project[] = [
+type Brief = Omit<Project, 'story' | 'highlights' | 'stack' | 'links'>
+const L = (label: string, href: string): Link => ({ label, href })
+
+const base: Brief[] = [
   {
     name: 'Udeos Launcher',
     blurb: 'Open-source Minecraft launcher for Windows, Linux and macOS. Vanilla, Forge or Fabric, plus an addons library, local servers, a skin editor and a built-in AI assistant.',
@@ -74,6 +115,7 @@ export const projects: Project[] = [
     preview: 'https://shareboard-web.vercel.app/about',
     image: '/projects/shareboard.webp',
     shots: ['/projects/shareboard/1.webp', '/projects/shareboard/2.webp', '/projects/shareboard/3.webp'],
+    portraitFront: true,
   },
   {
     name: 'LazyCode',
@@ -132,8 +174,143 @@ export const projects: Project[] = [
   },
 ]
 
+// One entry per `base` project, same order. Spanish lives in lib/content.ts.
+const details: Pick<Project, 'story' | 'highlights' | 'stack' | 'links'>[] = [
+  {
+    story: [
+      'Udeos is a Minecraft: Java Edition launcher for players who just want to play. There is no sign-in screen and nothing to configure: you type a nickname, create an instance for any version of the game and the launcher downloads everything it needs, Java included.',
+      'Each instance is its own little world, with its own worlds, mods, resource packs and settings, so a heavily modded pack never touches a vanilla survival save. When you want more, the launcher finds it for you: thousands of mods, shaders and modpacks from Modrinth are one click away.',
+      'It runs on Windows, Linux and macOS, keeps everything on your computer, and is released as open source under the MIT licence.',
+    ],
+    highlights: [
+      'Every release, snapshot and classic version, with the right Java runtime downloaded for you',
+      'Fabric, Quilt, Forge and NeoForge install themselves',
+      'Modrinth browser with compatibility and dependency checks before anything is installed',
+      'Ask AI: describe a problem in plain words and get a short list of real mods that fit',
+      'One-minute servers with a shareable internet address, plus a 3D skin editor and library',
+      'Profiles for the whole family, each with its own instances, skins, language and theme',
+    ],
+    stack: ['Go', 'Wails', 'React', 'TypeScript', 'Tailwind CSS'],
+    links: [L('Repository', gh('Udeos_Launcher')), L('Download site', 'https://udeouslauncherwebsite.pages.dev/#download'), L('Releases', gh('Udeos_Launcher/releases')), L('Website repo', gh('UdeousLauncherWebsite'))],
+  },
+  {
+    story: [
+      'Shareboard is a collaborative whiteboard that opens ready to draw. Pick the pencil and sketch; when you want company, press Share and send a six-character code, a link or a QR code. Everyone who opens it draws on the same board at the same time and sees each other’s cursors live.',
+      'There is nothing to sign up for. Your first board lives on your device and works without internet, and sharing it puts a copy online, public or protected with a PIN, with control over who can edit and who can only watch.',
+      'It is three projects working together: this React web app, a React Native Android app, and a Fastify server that handles REST and a WebSocket for live sync, with boards written behind to MongoDB.',
+    ],
+    highlights: [
+      'Infinite canvas with pencil smoothing, shapes, arrows, text and pictures',
+      'Arrows snap to figures and follow them, with 15 end styles including database crow’s feet',
+      'Hold still on a rough scribble and it becomes a clean shape',
+      'Draw with AI: describe a login flow and get an editable drawing with a preview',
+      'PNG, JPG, SVG or JSON exports that carry the board inside, so they import back editable',
+      'Offline-first, light and dark boards, English and Spanish',
+    ],
+    stack: ['TypeScript', 'React', 'React Native', 'Fastify', 'Node.js', 'MongoDB'],
+    links: [L('Live app', 'https://shareboard-web.vercel.app'), L('Web repo', gh('shareboard_web')), L('Android repo', gh('shareboard_mobile')), L('Server repo', gh('shareboard_server')), L('Android releases', gh('shareboard_mobile/releases'))],
+  },
+  {
+    story: [
+      'LazyCode is a code editor that runs in your terminal, made for writing code next to AI tools. It sits between VS Code and Neovim: you edit with the keys you already know, with no modes to learn, and it runs anywhere a terminal does, from a laptop to a server over SSH.',
+      'It is built around a way of working most editors were not designed for: an AI coding tool does part of the work while you watch, review and steer. LazyCode runs those tools in its own tabs next to your code and shows what they change as they change it.',
+      'It ships as one small program of about 22 MB with nothing else to install, no telemetry, and an MIT licence.',
+    ],
+    highlights: [
+      'Projects made of several folders, switched with one key press',
+      'Claude Code, OpenCode, Codex or any command-line tool in a tab, with per-project sessions that sleep and resume',
+      'Edits by AI tools appear live and the changed lines are marked in the margin',
+      'Git view with status, staging, commits, branches, diffs and history',
+      'Syntax colours through tree-sitter, and go to definition, rename and format through language servers',
+      'Lua plugins and twelve themes, including Gruvbox, Nord and Catppuccin',
+    ],
+    stack: ['Go', 'Lua', 'Git', 'Linux'],
+    links: [L('Repository', gh('lazycode')), L('Latest release', gh('lazycode/releases/latest'))],
+  },
+  {
+    story: [
+      'Morse is a native Wear OS app for small groups that talk without speaking. Pick a word, send it, and it arrives on your friends’ watches as a Morse vibration they can read by feel, with no need to look at the screen.',
+      'A group is up to three watches. One person creates it and shares a 4-digit code, the others join over Wi-Fi Direct, and from then on every word plays on everyone’s wrist as a haptic pattern. It is made for places where phones or voices are out of place: a class, a meeting, a theatre.',
+      'It started as a university interface-design project.',
+    ],
+    highlights: [
+      'Haptic Morse at 120 ms per beat, with the dots and dashes lit up on screen in sync',
+      'Dictation: say a sentence and AI condenses it to 20 characters or fewer',
+      'Smart replies from the latest messages, online with Gemini or offline with built-in rules',
+      'Connection over Wi-Fi Direct with no phone, account or internet needed',
+      'A narrated SOS to learn the rhythm, and a unique vibration for each event',
+      'Round and square watches, English and Spanish, large text and TalkBack',
+    ],
+    stack: ['Kotlin', 'Wear OS', 'Android', 'Gemini'],
+    links: [L('Repository', gh('Morse'))],
+  },
+  {
+    story: [
+      'AloMedia is a browser-based video editor. It has a multi-track timeline, real-time preview and client-side media processing powered by FFmpeg compiled to WebAssembly, so editing happens in the browser without uploading your footage.',
+      'It adds AI for automatic audio transcription into subtitles and for audio cleanup. The core of the editor works on timelines, clips and time and space transforms, and renders through FFmpeg either in WASM or on a dedicated export server.',
+      'The project is a hybrid: pure functions and immutable state for the timeline, history and filters, and classes where the browser or FFmpeg hold mutable state, such as the video double buffer and the audio context.',
+    ],
+    highlights: [
+      'Multi-track timeline with real-time playback and gapless double-buffered video',
+      'Undo and redo built on two stacks of pure state transitions',
+      'Binary search over a clip index so the active clip is found each frame in O(log n)',
+      'FFmpeg WASM on the client or a server encoder for heavier exports',
+      'Auto-subtitles and audio cleanup through a Spring Boot backend and a Python AI service',
+    ],
+    stack: ['React', 'TypeScript', 'WASM', 'FFmpeg', 'Tailwind CSS', 'Spring Boot', 'PostgreSQL', 'Python'],
+    links: [L('Live app', 'https://alo-media.vercel.app'), L('Frontend repo', gh('AloMediaReact')), L('Spring Boot repo', gh('AloMediaSpringBoot')), L('Export server repo', gh('AloMediaServerExport')), L('AI service repo', gh('AlomediaAI'))],
+  },
+  {
+    story: [
+      'A Java backend built from a real university problem: managing agreements between the university and companies. It handles documents and digital signatures stored on AWS S3, defines more than five roles with different access levels, and supports several types of agreement, each with its own workflow and rules.',
+      'Requests flow through legal review and campus and national signatures before becoming an agreement. Scheduled jobs raise expiry alerts, and renewals link back to the original agreement.',
+    ],
+    highlights: [
+      'REST API in layers: controllers, services, Spring Data repositories, DTOs and MapStruct mappers',
+      'Documents and signatures stored on AWS S3',
+      'Role-based access with Spring Security and JWT',
+      'Scheduled expiry alerts and renewal tracking',
+      'Cascading relations between agreements, documents and alerts to keep data consistent',
+    ],
+    stack: ['Java', 'Spring Boot', 'PostgreSQL', 'AWS S3'],
+    links: [L('Repository', gh('UniversityAgreementManager'))],
+  },
+  {
+    story: [
+      'An interactive simulator to analyse how race cars, and other cars, behave aerodynamically at different speeds. It focuses on downforce and suspension, and shows how different parameters change performance on track.',
+      'You adjust a car with sliders and the charts update in real time. A second page compares several configurations side by side. It is a reference and teaching tool built on idealised track conditions.',
+    ],
+    highlights: [
+      'Downforce calculated from speed and vehicle configuration',
+      'Suspension behaviour under aerodynamic load',
+      'Side-by-side comparison of several car setups',
+      'Interactive charts with Chart.js and a custom physics module',
+    ],
+    stack: ['JavaScript', 'HTML', 'CSS', 'Tailwind CSS'],
+    links: [L('Live site', 'https://juan17la.github.io/Downforce-Analitics/'), L('Repository', gh('Downforce-Analitics'))],
+  },
+  {
+    story: [
+      'A web application for booking medical appointments, built with Django. A small project to practise a full request cycle: models, views, forms and templates around scheduling.',
+    ],
+    highlights: ['Appointment booking built on Django models, views and forms'],
+    stack: ['Python', 'Django'],
+    links: [L('Repository', gh('AgendadorCitasMedicas'))],
+  },
+  {
+    story: [
+      'A mechanical physics project that models the interception of a bomb dropped from an aircraft by an anti-aircraft system. It uses mathematical approximations and SciPy to compute values such as the optimal force and firing angle, applying real physical concepts.',
+    ],
+    highlights: ['Numerical approximation of the interception', 'Optimal firing force and angle computed with SciPy'],
+    stack: ['Python', 'SciPy'],
+    links: [L('Repository', gh('AntiAircraftSimulator'))],
+  },
+]
+
+export const projects: Project[] = base.map((b, i) => ({ ...b, ...details[i] }))
+
 export const techs = {
-  main: ['TypeScript', 'React', 'Node.js', 'Tailwind CSS'],
+  main: ['React', 'TypeScript', 'Go', 'Spring Boot', 'PostgreSQL'],
   groups: [
     { title: 'Languages and frameworks', items: ['Python', 'Go', 'Java', 'Kotlin', 'React Native', 'Next.js', 'NestJS', 'Fastify', 'Django', 'Spring Boot'] },
     { title: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
@@ -166,11 +343,10 @@ export type AcademicItem = { title: string; org: string; detail: string; facts: 
 
 export const academicItems: AcademicItem[] = [
   {
-    title: 'English, intensive course',
-    org: 'Institution name',
-    detail: 'Intensive English course, certified by an international exam.',
-    facts: ['Exam: name + score', 'Level: CEFR level'],
-    placeholder: true,
+    title: 'English, C1',
+    org: 'Cambridge Academy of Language, Pasto, Colombia',
+    detail: 'A one-year English course where I got certified at B2, then an MCER exam that certifies me as a C1 English speaker.',
+    facts: ['1-year course: B2', 'MCER exam: C1'],
     certificate: '',
     credentialUrl: '',
   },
@@ -179,6 +355,14 @@ export const academicItems: AcademicItem[] = [
     org: 'AWS Skill Builder',
     detail: 'Completed the free course: core AWS services, global infrastructure, security, pricing and the shared responsibility model.',
     facts: ['Course completed', 'Cloud fundamentals'],
+    certificate: '',
+    credentialUrl: '',
+  },
+  {
+    title: 'Software Engineering Major',
+    org: 'Universidad Cooperativa de Colombia',
+    detail: 'Undergraduate software engineering degree, in progress.',
+    facts: ['Aug 2024 – present'],
     certificate: '',
     credentialUrl: '',
   },
@@ -247,6 +431,13 @@ export const ui = {
   emailMe: 'Email me',
   cv: { label: 'Download CV', href: '/cv.pdf' },
   moreProjects: 'More projects',
+  moreInfo: 'View details',
+  close: 'Close',
+  story: 'The story',
+  highlights: 'Highlights',
+  stack: 'Stack',
+  links: 'Links',
+  shot: (n: number, total: number) => `Image ${n} of ${total}`,
   mainTechs: 'Main techs',
   livePreview: 'Live preview',
   repository: 'Repository',
@@ -255,7 +446,6 @@ export const ui = {
   certificateHere: 'Certificate goes here',
   certificateAlt: (title: string) => `${title} certificate`,
   verify: 'Verify credential',
-  techsNote: 'I’ve worked with all of these, though I’m not an expert in every one.',
   experienceNote: 'Freelancing since 2025, and IT support since 2024.',
   archivePrompt: 'Open the archive: type help, or just click the names.',
   contactCta: 'Let’s build something.',

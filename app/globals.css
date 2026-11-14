@@ -78,6 +78,7 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 
 /* blinking text cursor */
 @keyframes caret { 50% { opacity: 0; } }
+@keyframes fadein { from { opacity: 0; } }
 .caret { animation: caret 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
 
@@ -97,7 +98,7 @@ body {
 /* ---------- About bento ---------- */
 .bento {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-areas: "a a" "p1 on" "p1 li" "b b" "mu pl" "p2 p3";
+  grid-template-areas: "a a" "p1 on" "p1 li" "b b" "mu mu" "p2 pl" "p3 p3" "p4 p4";
 }
 @media (min-width: 1024px) {
   .bento {
