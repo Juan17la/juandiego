@@ -8,8 +8,6 @@ export const profile = {
   location: 'Colombia',
   pitch:
     'I’m a software engineer who likes building applications that look good, are useful and try something new, mostly full stack. I care just as much about the logic underneath: business rules, data processing and making the whole thing feel easy and smooth.',
-  // Photos: drop files in /public and set paths, e.g. '/photos/me.webp'. Empty = placeholder frame.
-  photos: { hero: 'photos/photo4.jpeg', about: 'photos/photo.jpeg', online: 'photo6' },
   facts: ['Colombia', 'Open to work!', 'en/es'],
 }
 
@@ -20,18 +18,28 @@ export const navSections: NavSection[] = [
   { id: 'intro', title: 'Intro', time: '0:20' },
   { id: 'about', title: 'About me', time: '0:40' },
   { id: 'projects', title: 'Projects', time: '2:30' },
-  { id: 'techs', title: 'Techs', time: '0:30' },
-  { id: 'voices', title: 'Voices', time: '0:40' },
-  { id: 'academic', title: 'Academic', time: '0:20' },
   { id: 'experience', title: 'Experience', time: '1:00' },
+  { id: 'techs', title: 'Techs', time: '0:30' },
+  { id: 'voices', title: 'Testimonials', time: '0:40' },
+  { id: 'academic', title: 'Academic', time: '0:20' },
   { id: 'archive', title: 'The Archive', time: '1:30' },
   { id: 'contact', title: 'Contact', time: '0:10' },
 ]
 
+// Kept short on purpose: the bento tiles carry the rest.
 export const aboutParagraphs = [
-  'In 2012, my dad let me use his laptop, and I fell into an internet I barely understood. Hours on YouTube and forums introduced me to horror visual novels, game modding, and the joy of figuring out how things worked. Years later, learning basic HTML and PSeInt at school gave me my first glimpse into the world behind the technology I had grown up using.',
-  "Today, I spend my free time customizing Linux, watching Formula 1, and getting lost in horror and true crime stories. Before choosing software engineering, I also considered criminology and forensics. I've always been curious about how things work and what lies beneath the surface."
+  'In 2012 my dad lent me his laptop and I fell into the internet: YouTube, forums, horror visual novels and game modding. Basic HTML and PSeInt at school showed me what was behind it all.',
+  'Now I customize Linux, watch Formula 1 and get lost in horror and true crime. I’ve always wanted to know how things work underneath.',
 ]
+
+// About bento: photos in /public/photos plus a few personal tiles.
+export const aboutBento = {
+  photos: ['/photos/photo.jpeg', '/photos/photo3.jpeg', '/photos/photo10.jpeg', '/photos/photo5.jpeg'],
+  online: { big: '2012', text: 'Online since my dad’s Windows XP laptop.' },
+  planB: { title: 'Plan B', text: 'Criminology and forensics, before I chose software.' },
+  likes: { title: 'Off the clock', items: ['Formula 1', 'Linux ricing', 'Horror', 'True crime'] },
+  music: { title: 'On repeat', items: ['Garage punk', '2000s metal', 'Screamo'] },
+}
 
 export type Project = {
   name: string
@@ -41,6 +49,8 @@ export type Project = {
   preview?: string
   // Screenshot path in /public, e.g. '/projects/udeos.webp'. Without one, `logo` (an SVG mark) is shown.
   image?: string
+  // Featured projects: three screenshots, stacked as cards. First is the hero shot.
+  shots?: string[]
   logo?: string
 }
 
@@ -54,6 +64,32 @@ export const projects: Project[] = [
     repo: gh('Udeos_Launcher'),
     preview: 'https://udeouslauncherwebsite.pages.dev/#download',
     image: '/projects/udeos.webp',
+    shots: ['/projects/udeos/1.webp', '/projects/udeos/2.webp', '/projects/udeos/3.webp'],
+  },
+  {
+    name: 'Shareboard',
+    blurb: 'Collaborative whiteboard, no account needed. Share a six-character code and draw together with live cursors. Works offline, on web and Android.',
+    techs: ['TypeScript', 'React Native', 'Realtime'],
+    repo: gh('shareboard_web'),
+    preview: 'https://shareboard-web.vercel.app/about',
+    image: '/projects/shareboard.webp',
+    shots: ['/projects/shareboard/1.webp', '/projects/shareboard/2.webp', '/projects/shareboard/3.webp'],
+  },
+  {
+    name: 'LazyCode',
+    blurb: 'A light, fast code editor for the terminal, written in Go. Aims to be the closest thing to VS Code in a terminal: ordinary keys, multi-folder projects, Git and AI sessions built in, on a fraction of the RAM.',
+    techs: ['Go', 'TUI', 'Lua'],
+    repo: gh('lazycode'),
+    image: '/projects/lazycode/1.webp',
+    shots: ['/projects/lazycode/1.webp', '/projects/lazycode/2.webp', '/projects/lazycode/3.webp'],
+  },
+  {
+    name: 'Morse',
+    blurb: 'Wear OS app that lets small groups of smartwatches talk in haptic Morse code, with AI dictation and smart replies.',
+    techs: ['Kotlin', 'Wear OS', 'AI'],
+    repo: gh('Morse'),
+    image: '/projects/morse.webp',
+    logo: '/projects/morse-logo.svg',
   },
   {
     name: 'AloMedia',
@@ -62,21 +98,6 @@ export const projects: Project[] = [
     repo: gh('AloMediaReact'),
     preview: 'https://alo-media.vercel.app',
     image: '/projects/alomedia.webp',
-  },
-  {
-    name: 'Shareboard',
-    blurb: 'Collaborative whiteboard, no account needed. Share a six-character code and draw together with live cursors. Works offline, on web and Android.',
-    techs: ['TypeScript', 'React Native', 'Realtime'],
-    repo: gh('shareboard_web'),
-    preview: 'https://shareboard-web.vercel.app',
-    image: '/projects/shareboard.webp',
-  },
-  {
-    name: 'Morse',
-    blurb: 'Wear OS app that lets small groups of smartwatches talk in haptic Morse code, with AI dictation and smart replies.',
-    techs: ['Kotlin', 'Wear OS', 'AI'],
-    repo: gh('Morse'),
-    logo: '/projects/morse-logo.svg',
   },
   {
     name: 'University Agreement Manager',
@@ -90,20 +111,15 @@ export const projects: Project[] = [
     blurb: 'A website for simulating how different race cars (and other kinds of cars) behave aerodynamically at different speeds.',
     techs: ['JavaScript', 'HTML', 'Aerodynamics'],
     repo: gh('Downforce-Analitics'),
+    image: '/projects/downforce.webp',
     logo: '/projects/downforce-logo.svg',
-  },
-  {
-    name: 'Muegy',
-    blurb: 'A web music player.',
-    techs: ['TypeScript', 'CSS'],
-    repo: gh('Muegy'),
-    logo: '/projects/muegy-logo.svg',
   },
   {
     name: 'Medical Appointment Scheduler',
     blurb: 'A web app for scheduling medical appointments, built with Django.',
     techs: ['Python', 'Django'],
     repo: gh('AgendadorCitasMedicas'),
+    image: '/projects/scheduler.webp',
     logo: '/projects/scheduler-logo.svg',
   },
   {
@@ -111,6 +127,7 @@ export const projects: Project[] = [
     blurb: 'Physics project modelling the interception of a falling bomb. Uses SciPy and numerical approximations to find the optimal firing force and angle.',
     techs: ['Python', 'SciPy', 'Physics'],
     repo: gh('AntiAircraftSimulator'),
+    image: '/projects/aaa.webp',
     logo: '/projects/aaa-logo.svg',
   },
 ]
@@ -130,10 +147,18 @@ export const techs = {
 export type Testimonial = { name: string; role: string; work?: string; quote: string; placeholder?: boolean }
 
 export const testimonials: Testimonial[] = [
-  { name: 'Teammate name', role: 'Teammate', work: 'Shareboard', quote: 'Replace with what a teammate said about building with you.', placeholder: true },
-  { name: 'Professor name', role: 'Professor', work: 'Software design', quote: 'Replace with a professor’s note on your work.', placeholder: true },
-  { name: 'Project owner', role: 'Project owner', work: 'University Agreement Manager', quote: 'Replace with feedback from the people who used the system.', placeholder: true },
-  { name: 'Friend name', role: 'Friend / user', work: 'Udeos Launcher', quote: 'Replace with what someone who knows you as a person says.', placeholder: true },
+  {
+    name: 'Emmanuel Gomez',
+    role: 'Graphic Designer',
+    work: 'UI design and game development mentoring',
+    quote: 'Juan mentored me in UI design and videogame development. He explains with patience and always finds a way to make the idea work on screen.',
+  },
+  {
+    name: 'Alan Cañar',
+    role: 'Chemical Engineering student',
+    work: 'Maths, data analysis and Python',
+    quote: 'We studied maths together, and Juan helped me with data analysis and Python. He made programming feel approachable and useful for my own field.',
+  },
 ]
 
 // certificate: path in /public (e.g. '/certs/aws.webp'); credentialUrl: optional verify link.
@@ -186,10 +211,6 @@ export const experienceItems: ExperienceItem[] = [
 ]
 
 export const archive = {
-  intro:
-    'My dad let me use his old Acer laptop. It ran Windows XP, and it was my way out into the internet. I’ve been too online ever since, and that’s honestly how I ended up writing code.',
-  intro2:
-    'I never planned to become a developer. I just kept wanting to change how things worked, and the internet kept handing me better tools to do it.',
   // The story, in order: how the internet taught me to build.
   path: [
     { title: 'The Acer laptop', text: 'Windows XP, a slow connection and unlimited curiosity. YouTube and forums were my school.' },
@@ -210,40 +231,25 @@ export const archive = {
     },
   ],
   ticker: ['Formula 1', 'Minecraft', 'Garage punk', 'FNaF', '2000s metal', 'Screamo', 'Horror visual novels', 'Linux', 'Roblox', 'Cry of Fear'],
-  aside: 'I like one pattern, applied everywhere. I’d rather have GNOME’s search bar than KDE’s calculator if they won’t match.',
 }
 
 export const contacts = {
   email: 'jdloar17@gmail.com',
   github: 'https://github.com/Juan17la',
   linkedin: 'https://www.linkedin.com/in/juan07diego',
-  x: 'https://x.com/1714Jud',
 }
 
 // Interface strings. Spanish lives in lib/content.ts.
 export const ui = {
   switchLang: { short: 'ES', name: 'Español' },
   theme: { dark: 'Switch to dark theme', light: 'Switch to light theme' },
-  expandSidebar: 'Expand sidebar',
-  collapseSidebar: 'Collapse sidebar',
-  openMenu: 'Open menu',
-  closeMenu: 'Close menu',
   seeProjects: 'See the projects',
   emailMe: 'Email me',
+  cv: { label: 'Download CV', href: '/cv.pdf' },
+  moreProjects: 'More projects',
   mainTechs: 'Main techs',
-  quickFacts: 'Quick facts',
-  captions: { hero: 'that’s me', about: 'off the clock', archive: 'the Acer era' },
-  photoHere: 'Photo goes here',
   livePreview: 'Live preview',
   repository: 'Repository',
-  screenshotPending: 'Screenshot pending',
-  projectsPages: 'Projects pages',
-  previousPage: 'Previous page',
-  nextPage: 'Next page',
-  page: (n: number) => `Page ${n}`,
-  pager: (count: number, page: number, pages: number) => `${count} projects · page ${page} of ${pages}`,
-  previous: 'Previous',
-  next: 'Next',
   testimonials: 'Testimonials',
   placeholder: 'Placeholder',
   certificateHere: 'Certificate goes here',
@@ -258,7 +264,7 @@ export const ui = {
     findMe: 'Find me',
     about: 'About this site',
     builtWith: 'Built with Next.js, TypeScript and Tailwind CSS',
-    fonts: 'Fonts: Bricolage Grotesque, JetBrains Mono, Permanent Marker, Silkscreen',
+    fonts: 'Fonts: Bricolage Grotesque, JetBrains Mono, Permanent Marker',
     top: 'Back to the top',
     thanks: 'Thanks for scrolling.',
   },

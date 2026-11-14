@@ -1,5 +1,6 @@
 import type { ComponentType } from 'react'
 import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
+import { external } from '@/lib/socials'
 
 type Props = { href: string; label: string; sub: string; Icon: ComponentType<{ size?: number; weight?: 'bold'; 'aria-hidden'?: boolean }> }
 
@@ -7,7 +8,7 @@ export default function ContactLink({ href, label, sub, Icon }: Props) {
   return (
     <a
       href={href}
-      {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })}
+      {...external(href)}
       className="flex items-center gap-3 rounded-2xl bg-card/10 px-4 py-3.5 hover:bg-hi hover:text-on-hi"
     >
       <Icon size={24} weight="bold" aria-hidden />

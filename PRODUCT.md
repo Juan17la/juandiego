@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-Next.js + TypeScript + Tailwind CSS (user-specified). Replaces the existing Vite + React + three.js draft in this folder; that draft's look is discarded, its content (`src/data.ts`) is reusable.
+Next.js 15 (static export to `out/`) + TypeScript + Tailwind CSS v4, Phosphor icons, simple-icons. Bilingual en/es: English content in `lib/data.ts`, Spanish text overrides in `lib/content.ts`, switched via `lib/i18n.tsx`. Light and dark themes.
 
 ## Users
 
@@ -16,52 +16,59 @@ Recruiters / hiring managers and tech peers / collaborators, equally. Both skim:
 
 ## Product Purpose
 
-Personal portfolio of Juan Diego (Juan17la), software developer and engineering student from Colombia. Success: a visitor grasps who he is, what he builds and how to reach him within seconds, and remembers him. Not generic; it must catch attention.
+Personal portfolio of Juan Diego (Juan17la), software developer and engineering student from Colombia. Success: a visitor grasps who Juan is, what Juan builds and how to reach Juan within seconds, and remembers the person. Not generic; it must catch attention.
 
 ## Positioning
 
-A portfolio where the person is visible: balance of creativity and logic, a lifelong-online childhood (2010s internet, Minecraft, fanfic, FNaF), and real shipped projects (Go launcher, WASM video editor, Wear OS Morse app) instead of work history.
+A portfolio where the person is visible: balance of creativity and logic, a lifelong-online childhood (2010s internet, Minecraft, fanfic, FNaF), and real shipped projects (Go launcher, WASM video editor, Wear OS Morse app, realtime whiteboard).
 
 ## Operating Context
 
-Sections, in order, per the owner's rules:
-1. Hero: Juan as software developer and engineer.
-2. About: closer to who he is and what he likes, personally.
-3. Projects: for each, brief, tech stack, preview, repository and images.
-4. Testimonials: what people say of him as employee, worker, teammate or person.
-5. Academic: two courses: an intensive English course certified by an international exam, and the free AWS Cloud Practitioner Essentials course completion.
-6. Experience: a timeline. He has no job experience, so selected projects stand in as experience.
-7. Beyond-code extra section, placed right before Contact: a deeper dive into his likes and life in tech and internet (series, games, music, below).
-8. Contact: Gmail, LinkedIn, GitHub, X.
+Sections, in page order (all kept):
+1. Hero: name, role, tagline, pitch, main techs, a Download CV button and social links (Email, LinkedIn, GitHub). No X link anywhere on the site.
+2. About: who Juan is personally, with a bento of photos and personal facts. **Primary section.**
+3. Projects: per project brief, stack, preview, repository and image. **Primary section.**
+4. Techs: short section.
+5. Testimonials ("Voices"): short section.
+6. Academic: intensive English course (certified by an international exam) and AWS Cloud Practitioner Essentials completion.
+7. Experience: timeline: freelance software developer (Aug 2025 – present, with project work under it) and IT support for schools (Aug 2024 – present). **Primary section.**
+8. The Archive: beyond-code deep dive (internet childhood, games, music), placed right before Contact.
+9. Contact: Gmail, LinkedIn, GitHub.
+
+Navigation: no sidebar. Section progress and context are carried by the scroll itself.
 
 ## Capabilities and Constraints
 
-- Profiles: GitHub https://github.com/Juan17la, LinkedIn https://www.linkedin.com/in/juan07diego, X https://x.com/1714Jud; Gmail (address to confirm, likely juandiegolopezarias07@gmail.com).
-- Existing project data (name, blurb, stack, repo, preview) in `src/data.ts`: Udeos Launcher, AloMedia, Shareboard, Morse, Miku's Money, University Agreement Manager, Anti-Aircraft Simulator.
-- Beyond-code section content: Formula 1; 2010s as childhood; online since an old Windows XP laptop from his dad (YouTube, forums); months building Minecraft cities; creepypasta and FNaF theories; making Minecraft mods (copies and bad ones, happily); writing/reading fanfics (mostly Naruto and My Hero Academia) when an anime's direction disappointed him; Linux distros and heavy personalization. Games: Minecraft, Roblox, Cry of Fear, FNaF, horror visual novels. Music: garage punk, 2000s metal, screamo.
-- 2000s webcore is not to be used as the UI style. Other 2000s content stays in scope where it is a real interest (e.g. 2000s metal in the music list); only the webcore look is excluded from the UI.
-- Open: English exam name/score/institution, testimonial wording and attributions, project screenshots and photos exist on his side but are not in the repo yet.
+- Profiles: GitHub https://github.com/Juan17la, LinkedIn https://www.linkedin.com/in/juan07diego. Email in `lib/data.ts` (`contacts.email`). X is removed from the site at the owner's request.
+- CV: owner will add `/public/cv.pdf` (English) and `/public/cv-es.pdf` (Spanish); the hero button links to the one matching the active language. Files not in the repo yet.
+- Project data in `lib/data.ts`: Udeos Launcher, AloMedia, Shareboard, Morse, University Agreement Manager, Downforce, Medical Appointment Scheduler, Anti-Aircraft Simulator.
+- Beyond-code content: Formula 1; online since 2012 on dad's Windows XP Acer; Minecraft cities; creepypasta and FNaF theories; own Minecraft mods; fanfics (Naruto, My Hero Academia); Linux distros and ricing. Games: Minecraft, Roblox, Cry of Fear, FNaF, horror visual novels. Music: garage punk, 2000s metal, screamo.
+- 2000s webcore is not to be used as the UI style; 2000s content stays where it is a real interest.
 
 ## Brand Commitments
 
-- Style is deliberately undefined; it must represent him and his preferences.
-- He values simplicity, consistent patterns and standardization; inconsistent styles or objectives bother him (example: dislikes mixing KDE's calculator with GNOME's search bar).
-- Tagline in current draft: "One day I'm gonna grow wings." (keep unless he changes it).
+- Style must represent Juan and Juan's preferences; it is not locked to a prior look.
+- Simplicity, consistent patterns and standardization; inconsistent styles or objectives bother the owner (example: dislikes mixing KDE's calculator with GNOME's search bar).
+- Tagline: "Just do it." / "Solo hazlo".
 
 ## Evidence on Hand
 
-- Real project list and repos (above).
-- Owner states he has real testimonials, English exam result, project screenshots and photos; none are in the repo yet. Never fabricate them; the current testimonial and English entries in `src/data.ts` are placeholders.
-- No professional work history exists; do not invent any.
+- Real project list, repos, screenshots (`public/projects/`).
+- 13 real photos of Juan in `public/photos/` (selfies; `photo2.jpeg` carries a watermark). Hero uses `photo4.jpeg`; the About bento uses a varied set of five chosen by the designer at the owner's request.
+- Testimonials (people real; wording drafted at the owner's request, owner to confirm with them):
+  - Emmanuel Gomez, Graphic Designer: Juan helped in UI design and videogame development classes.
+  - Alan Cañar, Chemical Engineering student: studied maths together; Juan helped with data analysis and Python.
+- English exam name/score/institution still placeholder; never fabricate it.
+- Work history is only what `experienceItems` states; do not invent more.
 
 ## Product Principles
 
 1. Scan first: key facts and proof within seconds, depth on demand.
-2. Real over invented: only his real projects, quotes, credentials and photos.
+2. Real over invented: only real projects, quotes, credentials and photos.
 3. One consistent pattern system across all sections.
 4. The person shows through, balancing logic and personal making.
-5. Beyond-code is a real section, not decoration.
+5. Weight follows importance: About, Projects and Experience lead; Techs and Testimonials stay brief.
 
 ## Accessibility & Inclusion
 
-None specified beyond web basics; sections should work on mobile and by keyboard.
+None specified beyond web basics; sections work on mobile, by keyboard, and respect reduced motion.

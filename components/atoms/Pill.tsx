@@ -7,7 +7,7 @@ export default function Pill({ href, children, solid = false }: { href: string; 
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold ${solid ? 'bg-moss text-white hover:bg-ink' : 'bg-ink/[0.08] hover:bg-ink hover:text-card'}`}
+      className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold ${solid ? 'bg-label text-on-hi hover:bg-hi' : 'bg-ink/[0.08] hover:bg-ink hover:text-card'}`}
     >
       {children}
       <ArrowUpRight size={14} weight="bold" aria-hidden />
