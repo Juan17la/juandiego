@@ -9,7 +9,7 @@ import TechChip from '../atoms/TechChip'
 const card = 'absolute overflow-hidden rounded-xl bg-card shadow-[0_24px_50px_-20px_rgb(0_0_0/0.45)] ring-1 ring-ink/10 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none'
 
 /** A featured project: three screenshots stacked as cards on a dotted stage, beside its story. Alternates sides. */
-export default function ProjectRow({ p, flip, index }: { p: Project; flip?: boolean; index: number }) {
+export default function ProjectRow({ p, flip, index, onOpen }: { p: Project; flip?: boolean; index: number; onOpen: () => void }) {
   const { ui } = useContent()
   const [main, back, front] = p.shots ?? [p.image ?? p.logo]
   const img = (src: string, n: number, cls: string) => (
@@ -17,11 +17,11 @@ export default function ProjectRow({ p, flip, index }: { p: Project; flip?: bool
     <img src={src} alt={`${p.name} screenshot ${n}`} loading="lazy" className={cls} />
   )
   return (
-    <li id={projectAnchor(p.repo)} className={`group scroll-mt-6 grid items-center gap-8 lg:gap-14 ${flip ? 'lg:grid-cols-[2fr_3fr]' : 'lg:grid-cols-[3fr_2fr]'}`}>
+    <li id={projectAnchor(p.repo)} onClick={(e) => !(e.target as HTMLElement).closest('a,button') && onOpen()} className={`group scroll-mt-6 cursor-pointer grid items-center gap-8 lg:gap-14 ${flip ? 'lg:grid-cols-[2fr_3fr]' : 'lg:grid-cols-[3fr_2fr]'}`}>
       <div className={`stage relative aspect-[16/11] rounded-[28px] bg-desk ${flip ? 'lg:order-2' : ''}`}>
-        {back ? <div className={`${card} top-[6%] right-[5%] h-[48%] max-w-[46%] rotate-[5deg] group-hover:translate-x-[4%] group-hover:-translate-y-[6%] group-hover:rotate-[8deg]`}>{img(back, 2, 'h-full w-auto max-w-none')}</div> : null}
+        {back ? <div className={`${card} top-[6%] right-[5%] aspect-[16/10] w-[47%] rotate-[5deg] group-hover:translate-x-[4%] group-hover:-translate-y-[6%] group-hover:rotate-[8deg]`}>{img(back, 2, 'h-full w-full object-cover object-top')}</div> : null}
         {main ? <div className={`${card} top-[12%] left-[5%] aspect-[16/10] w-[72%] group-hover:-translate-y-[2%] group-hover:-rotate-1`}>{img(main, 1, 'h-full w-full object-cover object-top')}</div> : null}
-        {front ? <div className={`${card} right-[6%] bottom-[7%] h-[52%] max-w-[44%] -rotate-[4deg] group-hover:translate-y-[4%] group-hover:-rotate-[7deg]`}>{img(front, 3, 'h-full w-auto max-w-none')}</div> : null}
+        {front ? <div className={`${card} right-[6%] bottom-[7%] -rotate-[4deg] group-hover:translate-y-[4%] group-hover:-rotate-[7deg] ${p.portraitFront ? 'h-[62%] aspect-[9/20]' : 'aspect-[16/10] w-[47%]'}`}>{img(front, 3, 'h-full w-full object-cover object-top')}</div> : null}
       </div>
       <div>
         <p className="num text-sm font-semibold text-ink-soft">{String(index + 1).padStart(2, '0')}</p>
@@ -41,6 +41,9 @@ export default function ProjectRow({ p, flip, index }: { p: Project; flip?: bool
             </Pill>
           ) : null}
           <Pill href={p.repo}>{ui.repository}</Pill>
+          <button type="button" onClick={onOpen} className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-semibold text-card hover:bg-hi hover:text-on-hi">
+            {ui.moreInfo}
+          </button>
         </div>
       </div>
     </li>
