@@ -8,7 +8,7 @@ export type TNode =
 export const term = raw as unknown as {
   user: string
   host: string
-  neofetch: string[]
+  fastfetch: { logo: string[]; info: [string, string][] }
   root: Extract<TNode, { type: 'dir' }>
 }
 
@@ -43,7 +43,7 @@ export const treeLines = (dir: TNode, prefix = ''): string[] =>
         return [`${prefix}${last ? '└── ' : '├── '}${name}${child.type === 'dir' ? '/' : ''}`, ...treeLines(child, prefix + (last ? '    ' : '│   '))]
       })
 
-const CMDS = ['help', 'ls', 'cd', 'pwd', 'cat', 'tree', 'neofetch', 'clear', 'whoami']
+const CMDS = ['help', 'ls', 'cd', 'pwd', 'cat', 'tree', 'fastfetch', 'clear', 'whoami']
 
 /** Every full command line that extends the last word of `line`. */
 export function suggestions(cwd: string[], line: string): string[] {

@@ -1,36 +1,50 @@
 @import "tailwindcss";
 
+/* =====================================================================
+   PALETTE — every color on the site comes from here.
+   To try a new palette, change the hex values below (light theme), then
+   the matching ones in the dark block. Nothing else needs editing.
+   ===================================================================== */
 @theme {
-  --color-desk: #e8ece5;
-  --color-desk-deep: #dbe1d7;
-  --color-on-desk: #131815;
-  --color-panel: #a1ad9d; /* same green as --color-label (the "See the projects" button) */
-  --color-card: #fcfdfa;
-  --color-ink: #131815;
-  --color-ink-soft: #4a544c;
-  --color-rule: #c9d0c5;
-  --color-label: #b4d08c;
-  --color-sage: #a1ad9d;
-  --color-moss: #4a7a40;
-  --color-hi: #dbea8e;
-  --color-on-hi: #131815;
+  /* surfaces */
+  --color-desk: #e8ece5;     /* page background (behind the sheets) */
+  --color-on-desk: #131815;  /* text placed directly on the page background (hero, footer) */
+  --color-card: #fcfdfa;     /* section sheets, polaroid paper */
+  --color-sage: #a1ad9d;     /* alternate sheet: The Archive, "Off the clock" tile */
+
+  /* text */
+  --color-ink: #131815;      /* main text, outlines, the dock, Contact sheet */
+  --color-ink-soft: #4a544c; /* secondary text */
+
+  /* accents */
+  --color-label: #b4d08c;    /* primary buttons, "Live preview", logo tile, music tile */
+  --color-hi: #dbea8e;       /* highlighter: active dock item, tagline, hovers, selection */
+  --color-on-hi: #131815;    /* text on label / hi (keep dark: they stay light in both themes) */
+  --color-moss: #4a7a40;     /* timeline, quote marks, roles, focus ring */
+
+  /* Archive terminal (a dark screen in both themes) */
+  --color-term-bg: #0f1511;
+  --color-term-bar: #1a231d;
+  --color-term-bar-soft: #141c17;
+  --color-term-text: #cfe8c9;
+  --color-term-dim: #8a9a8c;
+  --color-term-prompt: #86b87a;
+  --color-term-link: #5c7a58;
+
   --font-sans: var(--nf-body), ui-sans-serif, system-ui, sans-serif;
   --font-hand: var(--nf-hand), cursive;
   --font-data: var(--nf-data), ui-monospace, monospace;
-  --font-pixel: var(--nf-pixel), monospace;
 }
 
-/* dark theme: same tokens, swapped values. data-theme is set before paint in app/layout.tsx */
+/* dark theme: same tokens, new values. Anything not listed here keeps its light value.
+   data-theme is set before paint in app/layout.tsx */
 :root[data-theme="dark"] {
   --color-desk: #121814;
-  --color-desk-deep: #0c110e;
   --color-on-desk: #e4eae1;
-  --color-panel: #24332a;
   --color-card: #1c231f;
+  --color-sage: #2a382f;
   --color-ink: #e4eae1;
   --color-ink-soft: #a7b3aa;
-  --color-rule: #36423a;
-  --color-sage: #2a382f;
   --color-moss: #6f9f62;
   color-scheme: dark;
 }
@@ -62,23 +76,10 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
 
 .num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
 
-/* ruled J-card line */
-.rule { border-top: 2px solid var(--color-ink); }
-
-/* marquee ticker */
-@keyframes marquee { to { transform: translateX(-50%); } }
-.marquee { animation: marquee 28s linear infinite; }
-@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
-
 /* blinking text cursor */
 @keyframes caret { 50% { opacity: 0; } }
 .caret { animation: caret 1s steps(1) infinite; }
 @media (prefers-reduced-motion: reduce) { .caret { animation: none; } }
-
-/* queued track number blinks before the scroll lands */
-@keyframes blink { 0%, 100% { background: transparent; } 50% { background: var(--color-hi); } }
-.queued { animation: blink 0.16s steps(1) 2; }
-@media (prefers-reduced-motion: reduce) { .queued { animation: none; background: var(--color-hi); } }
 
 /* hatched placeholder for missing screenshots */
 .pending {
@@ -87,24 +88,93 @@ a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
     var(--color-card);
 }
 
-/* 88x31 pixel button, the old-web classic */
-.badge88 {
-  width: 88px; height: 31px; display: inline-flex; align-items: center; justify-content: center;
-  font-family: var(--font-pixel); font-size: 10px; line-height: 1; letter-spacing: 0.02em;
-  border: 2px solid; border-color: #f4f6f1 #131815 #131815 #f4f6f1; image-rendering: pixelated;
-}
-
 /* dotted star-field texture for the desk */
 body {
   background-image: radial-gradient(color-mix(in srgb, var(--color-on-desk) 9%, transparent) 1px, transparent 1.5px);
   background-size: 22px 22px;
 }
 
-/* sidebar width: expanded 240px, collapsed 64px (+24px gutters) */
-:root { --rail-w: 280px; }
-:root[data-rail="collapsed"] { --rail-w: 104px; }
-@media (min-width: 1024px) { .rail-offset { padding-left: var(--rail-w); } }
-.rail { width: calc(var(--rail-w) - 40px); }
+/* ---------- About bento ---------- */
+.bento {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: "a a" "p1 on" "p1 li" "b b" "mu pl" "p2 p3";
+}
+@media (min-width: 1024px) {
+  .bento {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: minmax(140px, auto);
+    grid-template-areas:
+      "a a p1 on"
+      "a a p1 li"
+      "p2 b b mu"
+      "p2 pl p3 p4";
+  }
+}
+
+/* ---------- dock: hidden behind a "you are here" pill, slides up on hover/tap/focus ---------- */
+.dock { pointer-events: none; opacity: 0; transform: translateY(130%) scale(0.92); }
+/* open: a transparent 28px margin around the dock still counts as "on the dock", so the mouse has room for error */
+.dock-zone[data-open] .dock { pointer-events: auto; opacity: 1; transform: none; padding: 28px 28px 0; margin: -28px -28px 0; }
+/* the pill stays hoverable underneath, so opening never pulls the target out from under the mouse */
+.dock-zone[data-open] .dock-peek { opacity: 0; transform: translateY(10px) scale(0.9); }
+.page-progress { transform: scaleX(0); }
+
+/* hover lifts the item without changing the dock's width */
+@media (hover: hover) {
+  .dock li:hover > a { transform: translateY(-3px); }
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .rail, .rail-offset { transition: width 0.25s cubic-bezier(0.22, 1, 0.36, 1), padding-left 0.25s cubic-bezier(0.22, 1, 0.36, 1); }
+  .dock { transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s; }
+  .dock-peek { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s; }
+  .dock-item { transition: background-color 0.25s, color 0.25s, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+}
+
+/* ---------- scroll-driven motion: content is visible by default, motion only where supported ---------- */
+@keyframes rise { from { opacity: 0; transform: translateY(40px) scale(0.97); filter: blur(6px); } }
+@keyframes grow-x { to { transform: scaleX(1); } }
+@keyframes grow-y { from { transform: scaleY(0); } }
+@keyframes intro-in { from { opacity: 0; transform: translateY(24px); } }
+@keyframes intro-photo { from { opacity: 0; transform: rotate(8deg) translateY(40px); } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .intro-in { animation: intro-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .intro-photo { animation: intro-photo 1.1s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  @supports (animation-timeline: view()) {
+    .reveal, .bento-tile {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+    /* bento tiles land in a stagger: later tiles start a little later */
+    .bento-tile:nth-child(3n + 2) { animation-range: entry 10% entry 85%; }
+    .bento-tile:nth-child(3n) { animation-range: entry 20% entry 100%; }
+    .timeline-fill {
+      animation: grow-y linear both;
+      animation-timeline: view();
+      animation-range: cover 15% cover 65%;
+    }
+    .page-progress {
+      animation: grow-x linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+@supports not (animation-timeline: view()) {
+  .page-progress { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-progress { display: none; }
+}
+
+/* Project stage: dotted backdrop behind the stacked screenshots. */
+.stage {
+  background-image: radial-gradient(color-mix(in oklab, var(--color-ink) 16%, transparent) 1px, transparent 1.2px);
+  background-size: 18px 18px;
+}
+
+/* More projects: cards rise in when the drawer opens. */
+@media (prefers-reduced-motion: no-preference) {
+  details[open] .more-card { animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
 }

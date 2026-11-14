@@ -2,20 +2,34 @@
 
 import { useContent } from '@/lib/i18n'
 import { sheet } from '@/lib/styles'
-import TechGroup from '../molecules/TechGroup'
+import TechChip from '../atoms/TechChip'
 import TrackHead from '../molecules/TrackHead'
 
+/** Short section: one row per group, title left, chips right. */
 export default function Techs() {
   const { techs, ui } = useContent()
   return (
     <section id="techs" className={sheet}>
-      <TrackHead id="techs" />
-      <p className="mt-4 max-w-[60ch] text-ink-soft">{ui.techsNote}</p>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {techs.groups.map((g) => (
-          <TechGroup key={g.title} title={g.title} items={g.items} />
-        ))}
+      <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2">
+        <TrackHead id="techs" />
+        <p className="max-w-[46ch] text-sm text-ink-soft">{ui.techsNote}</p>
       </div>
+      <dl className="mt-6 divide-y divide-ink/10">
+        {techs.groups.map((g) => (
+          <div key={g.title} className="grid gap-2 py-3 sm:grid-cols-[200px_minmax(0,1fr)] sm:items-center">
+            <dt className="text-sm font-bold">{g.title}</dt>
+            <dd>
+              <ul className="flex flex-wrap gap-1.5">
+                {g.items.map((t) => (
+                  <li key={t}>
+                    <TechChip name={t} />
+                  </li>
+                ))}
+              </ul>
+            </dd>
+          </div>
+        ))}
+      </dl>
     </section>
   )
 }

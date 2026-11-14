@@ -1,141 +1,134 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T01:42:55.928785Z",
+  "generatedAt": "2026-11-13T23:41:46.398183+00:00",
   "title": "Design System: Juan Diego Portfolio",
   "extensions": {
     "colorMeta": {
       "desk": {
         "role": "neutral",
-        "displayName": "Night Moss Desk",
-        "canonical": "#2f3b35",
+        "displayName": "Pale Green Desk",
+        "canonical": "#e8ece5",
+        "darkValue": "#121814",
         "tonalRamp": [
-          "#222b26",
-          "#3c4b43",
-          "#566b61",
-          "#6f8c7e",
-          "#8fa69b",
-          "#b0c0b8",
-          "#d0dad5",
-          "#f1f4f2"
+          "#252c20",
+          "#414d38",
+          "#5c6d50",
+          "#788d67",
+          "#94a786",
+          "#b1bea7",
+          "#d0d8ca",
+          "#f2f4f0"
         ]
       },
-      "desk-deep": {
+      "on-desk": {
         "role": "neutral",
-        "displayName": "Deep Desk Shadow",
-        "canonical": "#232d28",
+        "displayName": "On-Desk",
+        "canonical": "#131815",
+        "darkValue": "#e4eae1",
         "tonalRamp": [
-          "#212b26",
-          "#3b4c43",
-          "#546d61",
-          "#6e8d7e",
-          "#8ea79b",
-          "#afc1b8",
-          "#d0dad5",
+          "#222b25",
+          "#3b4a41",
+          "#53695c",
+          "#6c8978",
+          "#8aa394",
+          "#aabbb1",
+          "#ccd6d0",
           "#f1f4f2"
         ]
       },
       "card": {
         "role": "neutral",
-        "displayName": "Pale Sage Paper",
-        "canonical": "#e3e7df",
+        "displayName": "Paper",
+        "canonical": "#fcfdfa",
+        "darkValue": "#1c231f",
         "tonalRamp": [
-          "#262c21",
-          "#434d3a",
-          "#616e53",
-          "#7e906c",
-          "#9ba98d",
-          "#b8c2ae",
-          "#d5dbcf",
-          "#f2f4f0"
+          "#2c3716",
+          "#4c5f26",
+          "#6c8736",
+          "#8caf46",
+          "#a5c36a",
+          "#bdd392",
+          "#d8e5bd",
+          "#f4f8ed"
         ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Green-Black Ink",
         "canonical": "#131815",
+        "darkValue": "#e4eae1",
         "tonalRamp": [
           "#222b25",
-          "#3c4b42",
-          "#556c5e",
-          "#6f8c7b",
-          "#8fa698",
-          "#b0c0b6",
-          "#d0dad4",
+          "#3b4a41",
+          "#53695c",
+          "#6c8978",
+          "#8aa394",
+          "#aabbb1",
+          "#ccd6d0",
           "#f1f4f2"
         ]
       },
       "ink-soft": {
         "role": "neutral",
-        "displayName": "Soft Moss Ink",
-        "canonical": "#414a43",
+        "displayName": "Soft Ink",
+        "canonical": "#4a544c",
+        "darkValue": "#a7b3aa",
         "tonalRamp": [
           "#242925",
-          "#3f4841",
-          "#5a675d",
-          "#768679",
-          "#94a197",
-          "#b3bdb5",
-          "#d2d8d4",
+          "#3e4640",
+          "#58645b",
+          "#738276",
+          "#909d92",
+          "#aeb7b0",
+          "#ced4cf",
           "#f1f3f2"
-        ]
-      },
-      "rule": {
-        "role": "neutral",
-        "displayName": "Lichen Rule",
-        "canonical": "#b4bcb1",
-        "tonalRamp": [
-          "#252923",
-          "#41493e",
-          "#5d6859",
-          "#798774",
-          "#97a293",
-          "#b6bdb3",
-          "#d4d8d2",
-          "#f2f3f1"
         ]
       },
       "label": {
         "role": "primary",
         "displayName": "Fern Label Green",
         "canonical": "#b4d08c",
+        "darkValue": "#b4d08c",
         "tonalRamp": [
           "#293616",
-          "#486027",
-          "#688938",
-          "#87b249",
-          "#a2c571",
-          "#bdd69a",
-          "#d8e7c4",
+          "#475e26",
+          "#658637",
+          "#83ae47",
+          "#9ec26b",
+          "#b8d392",
+          "#d4e4be",
           "#f3f8ed"
         ]
       },
       "sage": {
         "role": "secondary",
         "displayName": "Sage Panel",
-        "canonical": "#a4b9a1",
+        "canonical": "#a1ad9d",
+        "darkValue": "#2a382f",
         "tonalRamp": [
-          "#222c21",
-          "#3c4d3a",
-          "#566f52",
-          "#70906b",
-          "#90a98c",
-          "#b0c2ae",
-          "#d1dbcf",
-          "#f1f4f0"
+          "#252a23",
+          "#3f483c",
+          "#5a6756",
+          "#758570",
+          "#92a08d",
+          "#afb9ac",
+          "#cfd5cd",
+          "#f2f3f1"
         ]
       },
       "moss": {
         "role": "tertiary",
-        "displayName": "Moss Progress",
+        "displayName": "Moss",
         "canonical": "#4a7a40",
+        "darkValue": "#6f9f62",
         "tonalRamp": [
           "#1e321a",
-          "#36582e",
-          "#4d7f42",
-          "#64a556",
-          "#86ba7c",
-          "#a9cea2",
-          "#cde2c8",
+          "#35572e",
+          "#4b7c41",
+          "#61a154",
+          "#81b776",
+          "#a3ca9b",
+          "#c8dfc3",
           "#f0f6ee"
         ]
       },
@@ -143,95 +136,128 @@
         "role": "tertiary",
         "displayName": "Highlighter Lime",
         "canonical": "#dbea8e",
+        "darkValue": "#dbea8e",
         "tonalRamp": [
           "#38410c",
-          "#637215",
-          "#8da31e",
-          "#b8d427",
-          "#c9e056",
-          "#d9e987",
-          "#e8f2b8",
+          "#617015",
+          "#8a9f1e",
+          "#b3ce26",
+          "#c7de4f",
+          "#d6e77e",
+          "#e6f1b2",
           "#f8fbe9"
+        ]
+      },
+      "on-hi": {
+        "role": "neutral",
+        "displayName": "On-Highlight",
+        "canonical": "#131815",
+        "darkValue": "#131815",
+        "tonalRamp": [
+          "#222b25",
+          "#3b4a41",
+          "#53695c",
+          "#6c8978",
+          "#8aa394",
+          "#aabbb1",
+          "#ccd6d0",
+          "#f1f4f2"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The name in the intro, once per page."
+        "purpose": "The name, once, in the hero."
       },
       "headline": {
-        "displayName": "Section Head",
-        "purpose": "Section title in each numbered header."
+        "displayName": "Headline",
+        "purpose": "Every section title, 2.25rem mobile to 3rem from sm."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Row, project and entry titles."
+        "purpose": "Item titles: 1.875-2.25rem featured projects, 1.5-1.875rem experience, 1.125-1.25rem cards."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Reading text, capped 56-68ch."
+        "purpose": "Reading text, 52-62ch; secondary copy 0.875rem in ink-soft."
       },
       "label": {
-        "displayName": "Data Label",
-        "purpose": "Numbers, chips, times, stacks in JetBrains Mono."
+        "displayName": "Label",
+        "purpose": "Mono tabular dates, facts, chips, emails, terminal."
       },
       "hand": {
-        "displayName": "Marker Hand",
-        "purpose": "Tagline, Contents label, captions, small group heads in Permanent Marker."
-      },
-      "pixel": {
-        "displayName": "Pixel",
-        "purpose": "88x31 badges and the marquee only, in Silkscreen."
+        "displayName": "Hand",
+        "purpose": "Tagline, bento tile titles, polaroid captions, quote marks."
       }
     },
     "shadows": [
       {
         "name": "sheet-lift",
-        "value": "0 24px 48px -24px rgb(0 0 0 / 0.65)",
-        "purpose": "Section sheets resting on the desk."
+        "value": "inset 0 1px 0 rgb(255 255 255 / 0.45), 0 30px 60px -30px rgb(0 0 0 / 0.6)",
+        "purpose": "Every section sheet."
       },
       {
-        "name": "rail-lift",
-        "value": "0 24px 48px -20px rgb(0 0 0 / 0.6)",
-        "purpose": "Desktop contents panel."
+        "name": "dock-lift",
+        "value": "0 18px 40px -18px rgb(0 0 0 / 0.7)",
+        "purpose": "The floating dock."
       },
       {
         "name": "photo-lift",
         "value": "0 18px 30px -16px rgb(0 0 0 / 0.7)",
-        "purpose": "Polaroid photo frames."
+        "purpose": "Polaroids."
       },
       {
-        "name": "mobile-bar",
-        "value": "0 6px 16px -8px rgb(0 0 0 / 0.5)",
-        "purpose": "Sticky mobile nav bar."
-      },
-      {
-        "name": "badge-bevel",
-        "value": "border: 2px solid; border-color: #f4f6f1 #131815 #131815 #f4f6f1",
-        "purpose": "88x31 badge raised bevel (borders, not shadow)."
+        "name": "terminal-lift",
+        "value": "0 20px 40px -24px rgb(0 0 0 / 0.7)",
+        "purpose": "The Archive terminal."
       }
     ],
     "motion": [
       {
-        "name": "marquee",
-        "value": "28s linear infinite, translateX(-50%)",
-        "purpose": "Ticker in Too online section; off under reduced motion."
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All entrances and the dock label expansion."
       },
       {
-        "name": "caret",
-        "value": "1s steps(1) infinite",
-        "purpose": "Blinking cursor in the window prompt."
+        "name": "intro-in",
+        "value": "0.9s ease-out-expo; from opacity 0, translateY(24px)",
+        "purpose": "Hero text on load."
       },
       {
-        "name": "queued",
-        "value": "0.16s steps(1) 2",
-        "purpose": "Track number blinks hi lime before the 340ms-delayed scroll."
+        "name": "intro-photo",
+        "value": "1.1s 0.15s ease-out-expo; from opacity 0, rotate(8deg) translateY(40px)",
+        "purpose": "Hero polaroid on load."
       },
       {
-        "name": "smooth-scroll",
-        "value": "scroll-behavior: smooth",
-        "purpose": "Anchor navigation; auto under reduced motion."
+        "name": "rise",
+        "value": "view(); entry 0%-70% (staggered +10%/+20% for bento tiles); from opacity 0, translateY(40px) scale(0.97) blur(6px)",
+        "purpose": "Sections, bento tiles, project text, grid cards."
+      },
+      {
+        "name": "wipe",
+        "value": "view(); entry 0% to cover 40%; from clip-path inset(0 0 100% 0 round 24px) scale(1.04)",
+        "purpose": "Featured project screenshots."
+      },
+      {
+        "name": "grow-y",
+        "value": "view(); cover 15%-65%; from scaleY(0)",
+        "purpose": "Experience timeline fill."
+      },
+      {
+        "name": "grow-x",
+        "value": "scroll(root); to scaleX(1)",
+        "purpose": "Dock page-progress bar."
+      },
+      {
+        "name": "dock-label",
+        "value": "max-width/margin 0.45s ease-out-expo, opacity 0.3s",
+        "purpose": "Active dock label expansion."
+      },
+      {
+        "name": "gating",
+        "value": "@media (prefers-reduced-motion: no-preference) and @supports (animation-timeline: view())",
+        "purpose": "Every scroll-driven animation; content visible by default."
       }
     ],
     "breakpoints": [
@@ -251,128 +277,135 @@
   },
   "components": [
     {
-      "name": "Contents Rail Item",
-      "kind": "nav",
-      "refersTo": "nav-item-active",
-      "description": "Numbered contents row with dotted leader and read time; active row inverts to ink.",
-      "html": "<ol style=\"margin:0;padding:16px;list-style:none;background:var(--color-card);width:300px\"><li><a class=\"ds-nav on\" href=\"#\"><span class=\"ds-n\">01</span><span>Intro</span><span class=\"ds-lead\"></span><span class=\"ds-n\">1m</span></a></li><li><a class=\"ds-nav\" href=\"#\"><span class=\"ds-n\">02</span><span>About</span><span class=\"ds-lead\"></span><span class=\"ds-n\">2m</span></a></li></ol>",
-      "css": ".ds-nav{display:flex;align-items:baseline;gap:8px;padding:6px 8px;border-radius:2px;font-size:15px;line-height:1.25;color:#131815;text-decoration:none}.ds-nav.on{background:#131815;color:#e3e7df;font-weight:600}.ds-nav:hover{background:#131815;color:#e3e7df}.ds-nav:focus-visible{outline:3px solid #2f3b35;outline-offset:3px}.ds-n{font-family:'JetBrains Mono',monospace;font-size:12px}.ds-lead{flex:1;border-bottom:1px dotted currentColor;opacity:.4;transform:translateY(-3px)}"
-    },
-    {
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Fern label green with ink border; hovers to highlighter lime.",
-      "html": "<a class=\"ds-btn\" href=\"#\">See the projects</a>",
-      "css": ".ds-btn{display:inline-block;background:#b4d08c;color:#131815;border:2px solid #131815;border-radius:2px;padding:10px 20px;font-weight:700;text-decoration:none}.ds-btn:hover{background:#dbea8e}.ds-btn:focus-visible{outline:3px solid #dbea8e;outline-offset:3px}"
+      "description": "Fern pill for the main action (See projects).",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">See the projects</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: var(--color-label, #b4d08c); color: var(--color-on-hi, #131815); padding: 12px 24px; border-radius: 9999px; font-weight: 700; text-decoration: none; } .ds-btn-primary:hover { background: var(--color-hi, #dbea8e); } .ds-btn-primary:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; }"
     },
     {
-      "name": "Outline Pill",
+      "name": "Ink Button",
       "kind": "button",
-      "refersTo": "pill",
-      "description": "Link pill on cards; fills ink on hover.",
-      "html": "<a class=\"ds-pill\" href=\"#\">Repository</a>",
-      "css": ".ds-pill{display:inline-flex;gap:6px;align-items:center;border:2px solid #131815;border-radius:2px;padding:6px 12px;font-size:14px;font-weight:600;color:#131815;text-decoration:none}.ds-pill:hover{background:#131815;color:#e3e7df}.ds-pill:focus-visible{outline:3px solid #2f3b35;outline-offset:3px}"
+      "refersTo": "button-ink",
+      "description": "Ink pill with leading icon for Download CV.",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Download CV</a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; gap: 8px; background: var(--color-ink, #131815); color: var(--color-card, #fcfdfa); padding: 12px 24px; border-radius: 9999px; font-weight: 700; text-decoration: none; } .ds-btn-ink:hover { background: var(--color-moss, #4a7a40); } .ds-btn-ink:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; }"
     },
     {
-      "name": "Data Chip",
+      "name": "Pill Link",
+      "kind": "button",
+      "refersTo": "pill-link",
+      "description": "Outbound link pill (Repository) with trailing arrow; inverts to ink on hover.",
+      "html": "<a class=\"ds-pill\" href=\"#\">Repository <svg width=\"14\" height=\"14\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M204 64v104a12 12 0 0 1-24 0V93l-99.5 99.5a12 12 0 0 1-17-17L163 76H88a12 12 0 0 1 0-24h104a12 12 0 0 1 12 12Z\"/></svg></a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 9999px; font-size: 14px; font-weight: 600; color: var(--color-ink, #131815); background: color-mix(in srgb, var(--color-ink, #131815) 8%, transparent); text-decoration: none; } .ds-pill:hover { background: var(--color-ink, #131815); color: var(--color-card, #fcfdfa); } .ds-pill:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; }"
+    },
+    {
+      "name": "Fact Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Mono tag with 1.5px ink outline for stacks and facts.",
-      "html": "<span class=\"ds-chip\">TypeScript</span>",
-      "css": ".ds-chip{display:inline-flex;font-family:'JetBrains Mono',monospace;font-size:12px;border:1.5px solid #131815;border-radius:2px;padding:2px 8px;color:#131815}"
+      "description": "Mono tabular chip for dates and facts.",
+      "html": "<span class=\"ds-chip\">2024 - now</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 9999px; font-family: var(--font-data, 'JetBrains Mono', monospace); font-variant-numeric: tabular-nums; font-size: 12px; color: var(--color-ink, #131815); background: color-mix(in srgb, var(--color-ink, #131815) 8%, transparent); }"
+    },
+    {
+      "name": "Bottom Dock",
+      "kind": "nav",
+      "refersTo": "dock",
+      "description": "Auto-hiding ink pill: hidden behind a small you-are-here pill (with the progress bar), slides up on hover, tap or focus; every section shows icon and name at a fixed width; the active one is lime.",
+      "html": "<nav class=\"ds-dock\"><a class=\"ds-dock-item\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224 120v96a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8v-52h-48v52a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-96a16 16 0 0 1 4.7-11.3l80-80a16 16 0 0 1 22.6 0l80 80A16 16 0 0 1 224 120Z\"/></svg></a><a class=\"ds-dock-item ds-on\" href=\"#\" aria-current=\"true\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M71.7 86.3 25.4 128l46.3 41.7a12 12 0 1 1-16 17.8l-56-50a12 12 0 0 1 0-17.8l56-50a12 12 0 0 1 16 17.8Zm184 32.8-56-50a12 12 0 1 0-16 17.8L230.6 128l-46.3 41.7a12 12 0 1 0 16 17.8l56-50a12 12 0 0 0 0-17.8Z\"/></svg><span class=\"ds-dock-label\">Projects</span></a><a class=\"ds-dock-item\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M224 120v96a8 8 0 0 1-8 8h-56a8 8 0 0 1-8-8v-52h-48v52a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8v-96a16 16 0 0 1 4.7-11.3l80-80a16 16 0 0 1 22.6 0l80 80A16 16 0 0 1 224 120Z\"/></svg></a><span class=\"ds-dock-progress\"></span></nav>",
+      "css": ".ds-dock { position: relative; display: inline-flex; align-items: center; gap: 2px; padding: 6px; border-radius: 9999px; background: var(--color-ink, #131815); color: var(--color-card, #fcfdfa); box-shadow: 0 18px 40px -18px rgb(0 0 0 / 0.7); } .ds-dock-item { display: flex; align-items: center; height: 40px; padding: 0 11px; border-radius: 9999px; color: inherit; font-size: 14px; font-weight: 600; text-decoration: none; transition: background-color .25s, color .25s; } .ds-dock-item:hover { background: color-mix(in srgb, var(--color-card, #fcfdfa) 15%, transparent); } .ds-dock-item.ds-on { background: var(--color-hi, #dbea8e); color: var(--color-on-hi, #131815); } .ds-dock-label { margin-left: 8px; white-space: nowrap; } .ds-dock-item:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; } .ds-dock-progress { position: absolute; left: 20px; right: 20px; bottom: 2px; height: 2px; border-radius: 9999px; background: color-mix(in srgb, var(--color-hi, #dbea8e) 70%, transparent); transform: scaleX(.4); transform-origin: left; }"
     },
     {
       "name": "Section Sheet",
       "kind": "card",
       "refersTo": "sheet",
-      "description": "Pale sage sheet on the desk with a ruled numbered header.",
-      "html": "<section class=\"ds-sheet\"><header class=\"ds-head\"><span class=\"ds-num\">02</span><h2>About</h2><span class=\"ds-num ds-t\">2m read</span></header><p>Body copy sits here.</p></section>",
-      "css": ".ds-sheet{background:#e3e7df;color:#131815;border-radius:6px;padding:32px;box-shadow:0 24px 48px -24px rgb(0 0 0/.65);max-width:520px}.ds-head{display:flex;align-items:flex-end;gap:16px;border-bottom:2px solid #131815;padding-bottom:12px}.ds-head h2{margin:0;font-size:48px;font-weight:800;line-height:1;letter-spacing:-.025em}.ds-num{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700}.ds-t{margin-left:auto;font-size:12px;font-weight:400;opacity:.8}"
+      "description": "Opaque card sheet holding one section, bare headline on top.",
+      "html": "<section class=\"ds-sheet\"><h2>Projects</h2><p>Four featured builds, then the rest.</p></section>",
+      "css": ".ds-sheet { background: var(--color-card, #fcfdfa); color: var(--color-ink, #131815); border-radius: 28px; padding: 40px; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.45), 0 30px 60px -30px rgb(0 0 0 / 0.6); } .ds-sheet h2 { margin: 0; font-size: 3rem; font-weight: 800; line-height: 1; letter-spacing: -0.025em; } .ds-sheet p { margin: 16px 0 0; font-size: 1.125rem; line-height: 1.625; color: var(--color-ink-soft, #4a544c); }"
     },
     {
-      "name": "Photo Placeholder",
+      "name": "Bento Stat Tile",
       "kind": "custom",
-      "refersTo": "polaroid",
-      "description": "Tilted polaroid with lime tape and hatched empty slot.",
-      "html": "<figure class=\"ds-photo\"><div class=\"ds-slot\">PHOTO GOES HERE</div><figcaption>that's me</figcaption></figure>",
-      "css": ".ds-photo{position:relative;width:200px;margin:12px;padding:10px 10px 12px;background:#e3e7df;color:#131815;transform:rotate(2.5deg);box-shadow:0 18px 30px -16px rgb(0 0 0/.7)}.ds-photo:before{content:'';position:absolute;top:-10px;left:50%;width:64px;height:20px;background:rgb(219 234 142/.8);transform:translateX(-50%) rotate(-2deg)}.ds-slot{aspect-ratio:4/5;border:2px solid #131815;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;letter-spacing:.05em;color:#414a43;background:repeating-linear-gradient(135deg,transparent 0 10px,rgb(19 24 21/.08) 10px 12px),#e3e7df}.ds-photo figcaption{margin-top:8px;font-family:'Permanent Marker',cursive;font-size:16px;line-height:1}"
+      "refersTo": "bento-tile",
+      "description": "Ink tile from the About bento: big mono lime number over a short line.",
+      "html": "<div class=\"ds-tile\"><p class=\"ds-big\">2012</p><p>Online since, and never logged off.</p></div>",
+      "css": ".ds-tile { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-height: 190px; width: 220px; padding: 20px; border-radius: 24px; background: var(--color-ink, #131815); color: var(--color-card, #fcfdfa); } .ds-tile p { margin: 0; font-size: 14px; line-height: 1.375; } .ds-tile .ds-big { font-family: var(--font-data, 'JetBrains Mono', monospace); font-size: 3rem; font-weight: 700; line-height: 1; color: var(--color-hi, #dbea8e); }"
     },
     {
-      "name": "Window Frame",
-      "kind": "custom",
-      "refersTo": "window",
-      "description": "Old-OS window: ink title bar with glyph controls around card content. Used once.",
-      "html": "<div class=\"ds-win\"><div class=\"ds-bar\"><span>how_the_internet_taught_me_to_code.txt</span><span class=\"ds-ctl\">_ &#9633; &times;</span></div><p class=\"ds-body\">C:\\Users\\juan\\internet&gt; _</p></div>",
-      "css": ".ds-win{border:2px solid #131815;border-radius:2px;background:#e3e7df;overflow:hidden;max-width:420px}.ds-bar{display:flex;justify-content:space-between;background:#131815;color:#e3e7df;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:12px}.ds-body{margin:0;padding:12px 16px;font-family:'JetBrains Mono',monospace;font-size:12px;color:#414a43}"
+      "name": "Inner Card",
+      "kind": "card",
+      "refersTo": "bento-tile",
+      "description": "Ink-tint card inside a sheet (quotes, academic, project grid).",
+      "html": "<figure class=\"ds-inner\"><span class=\"ds-q\">“</span><blockquote>Ships clean code and asks the right questions.</blockquote><figcaption><b>Ana</b> · Tech lead</figcaption></figure>",
+      "css": ".ds-inner { margin: 0; padding: 24px; border-radius: 24px; background: color-mix(in srgb, var(--color-ink, #131815) 5%, transparent); color: var(--color-ink, #131815); } .ds-q { font-family: var(--font-hand, 'Permanent Marker', cursive); font-size: 2.25rem; line-height: 1; color: var(--color-moss, #4a7a40); } .ds-inner blockquote { margin: 4px 0 0; font-size: 1.125rem; font-weight: 500; line-height: 1.375; } .ds-inner figcaption { margin-top: 20px; font-size: 14px; }"
     },
     {
-      "name": "88x31 Badge",
-      "kind": "custom",
-      "refersTo": "badge88",
-      "description": "Pixel-font badge with raised bevel.",
-      "html": "<span class=\"ds-b\">NEXT.JS</span>",
-      "css": ".ds-b{width:88px;height:31px;display:inline-flex;align-items:center;justify-content:center;background:#131815;color:#b4d08c;font-family:Silkscreen,monospace;font-size:10px;line-height:1;border:2px solid;border-color:#f4f6f1 #131815 #131815 #f4f6f1;image-rendering:pixelated}"
-    },
-    {
-      "name": "Progress Bar",
-      "kind": "custom",
-      "refersTo": "progress",
-      "description": "Segmented 'Page loaded' bar, 14 moss cells.",
-      "html": "<div class=\"ds-pg\"><i></i><i></i><i></i><i></i><i class=\"o\"></i><i class=\"o\"></i></div>",
-      "css": ".ds-pg{display:flex;gap:3px;width:240px;border:2px solid #131815;background:rgb(255 255 255/.6);padding:3px}.ds-pg i{flex:1;height:12px;background:#4a7a40}.ds-pg i.o{background:transparent}"
+      "name": "Contact Link",
+      "kind": "card",
+      "refersTo": "contact-link-hover",
+      "description": "Link card on the ink Contact sheet; turns lime on hover.",
+      "html": "<div style=\"background:var(--color-ink,#131815);padding:16px;border-radius:28px\"><a class=\"ds-contact\" href=\"#\"><span><b>GitHub</b><small>Juan17la</small></span><svg width=\"14\" height=\"14\" viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M204 64v104a12 12 0 0 1-24 0V93l-99.5 99.5a12 12 0 0 1-17-17L163 76H88a12 12 0 0 1 0-24h104a12 12 0 0 1 12 12Z\"/></svg></a></div>",
+      "css": ".ds-contact { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px; color: var(--color-card, #fcfdfa); background: color-mix(in srgb, var(--color-card, #fcfdfa) 10%, transparent); text-decoration: none; } .ds-contact span { display: flex; flex-direction: column; } .ds-contact small { font-family: var(--font-data, monospace); font-size: 12px; opacity: .8; } .ds-contact svg { margin-left: auto; } .ds-contact:hover { background: var(--color-hi, #dbea8e); color: var(--color-on-hi, #131815); } .ds-contact:focus-visible { outline: 3px solid var(--color-moss); outline-offset: 3px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Green Desk Scrapbook",
-    "overview": "A dim gray-green desk, and on it opaque pale-sage sheets, polaroids and one lime highlighter. The page reads as a personal scrapbook laid out for a visitor: a numbered contents panel is the navigation and the summary, each section is a sheet with the same ruled, numbered header, and ink-black print does the talking.\n\nThe 2000s web shows up as a thin layer, never the frame: an old-OS window, a marquee ticker, pixel sparkle and heart GIFs and 88x31 badges, concentrated in the 'Too online since 2012' section with small accents elsewhere. Everything else is flat, ruled and quiet, with soft lift shadows as the only depth.\n\nThe earlier cassette, cobalt and orange direction is retired; this system replaces it.",
+    "northStar": "The Green Desk, Scrolled",
+    "overview": "**Creative North Star: \"The Green Desk, Scrolled\"**\n\nA pale green desk with a faint dotted texture, and on it large rounded card sheets, tilted polaroids with lime tape and one lime highlighter. There is no sidebar: the page is a single centred column that the visitor scrolls, and a floating ink dock at the bottom says where they are. Each section is one sheet; inside a sheet, content sits in soft ink-tinted cards or photo tiles rather than ruled rows.\n\nMotion is scroll-bound and optional. Sheets, tiles and project text rise into place, featured screenshots wipe open, the experience line fills and the dock's progress bar tracks the page, all driven by view() and scroll() timelines. Every one of these is gated behind support for animation-timeline and no-preference on reduced motion; without them, everything is simply present.\n\nThe 2000s web survives only as small accents: pixel sparkle and heart GIFs and the Archive's interactive terminal. The earlier cassette and J-card direction and the fixed contents rail are retired.\n\nThe world runs in light and dark. Dark keeps the same token names with swapped values, so ink surfaces (dock, Contact sheet, primary ink button) invert to pale and the desk goes near-black green.",
     "keyCharacteristics": [
-      "Opaque gray-green desk with a faint dotted texture; sheets are pale sage paper, never translucent.",
-      "One ruled header pattern (number, title, read time) opens every section.",
-      "Ink outlines (1.5-2px), 2px corners on controls, 6px on sheets.",
-      "Lime highlighter marks the single active or hovered thing; fern green is the one action fill.",
-      "Retro devices (window, marquee, badges, GIFs) are accents confined to one section and small touches."
+      "Pale dotted desk, opaque card sheets at 28px corners, inner cards at 24px.",
+      "Everything interactive is a pill (fully rounded); no outlined square controls.",
+      "Lime highlighter marks the one active or hovered thing; fern is the primary action fill.",
+      "Navigation is a floating bottom dock; the active item expands to show its label.",
+      "Scroll-driven reveals are progressive enhancement; content is visible by default."
     ],
     "rules": [
       {
         "name": "The Single Highlighter Rule",
-        "body": "Lime (#dbea8e) marks the active, focused or hovered mark and the tagline strip. It is never a large surface.",
+        "body": "Lime marks the active, focused or hovered thing and the tagline strip. It is never a sheet or a large tile.",
         "section": "colors"
       },
       {
         "name": "The Opaque Paper Rule",
-        "body": "Content lives on opaque card, sage or ink sheets over the desk. No glass, no translucent panels.",
+        "body": "Sheets and tiles are opaque card, desk, sage, fern or ink. Inner cards are flat ink tints (5%), never glass or backdrop blur.",
         "section": "colors"
       },
       {
-        "name": "The Ruled Header Rule",
-        "body": "Every section opens with the same TrackHead: mono number, 800-weight title at 3xl/5xl, mono read time, a 2px bottom rule.",
+        "name": "The Theme-Safe Ink Rule",
+        "body": "Ink and card swap in dark mode; anything that must stay dark on lime or fern uses `on-hi`, never `ink`.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Title Rule",
+        "body": "Sections open with the bare headline alone; no number, kicker, read time or rule above or below it.",
         "section": "typography"
       },
       {
-        "name": "The Quarantined Nostalgia Rule",
-        "body": "Pixel font, marquee, GIFs, window chrome and 88x31 badges are accents. Pixel type stays on badges and the ticker; GIFs vanish under reduced motion.",
+        "name": "The Marker Is a Note Rule",
+        "body": "Permanent Marker is for short human notes (tagline, captions, tile titles, quote marks), never a sentence of body copy.",
         "section": "typography"
       },
       {
         "name": "The Soft Lift Rule",
-        "body": "Depth is a single large, soft, low-opacity downward shadow on sheets, rail and photos. Borders, not shadows, define controls.",
+        "body": "Depth is one large, soft, low-opacity downward shadow on sheets, dock, photos and the terminal. Nothing inside a sheet is lifted.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do put body and headings in Bricolage Grotesque, data (numbers, chips, times, stacks) in JetBrains Mono tabular, and handwriting only for tagline, Contents label, photo captions and small group heads.",
-      "Do outline controls and chips in ink (2px for buttons, 1.5px for chips) with 2px corners; invert to ink fill and card text on hover.",
-      "Do give every photo and certificate slot a labelled hatched placeholder with its target path until the real asset lands.",
-      "Do honor prefers-reduced-motion: marquee, caret, queued blink and GIFs stop or hide.",
-      "Do use the 3px lime focus outline on the desk and a 3px desk-green outline on cards."
+      "**Do** gate scroll-driven motion behind `@supports (animation-timeline: view())` and `prefers-reduced-motion: no-preference`, with content fully visible without it.",
+      "**Do** make every control a full pill and every container 16-28px rounded, by the scale above.",
+      "**Do** put lime and fern text in `on-hi`, so it stays dark in both themes.",
+      "**Do** use the 3px moss focus outline at 3px offset.",
+      "**Do** give every photo and certificate slot a labelled hatched placeholder with its target path until the real asset lands.",
+      "**Do** route every outbound social link through the one shared list (Email, LinkedIn, GitHub)."
     ],
     "donts": [
-      "Don't use gradients, blur or translucent surfaces for content; the only gradients are the hatch placeholder and the dotted desk texture.",
-      "Don't spread retro devices (window frames, marquees, badges, GIFs) beyond the Too online section and small accents.",
-      "Don't set body copy in the pixel or marker faces.",
-      "Don't use lime as a fill for large areas or fern green for text on card.",
-      "Don't reintroduce the retired cassette, cobalt desk or orange label."
+      "**Don't** bring back a fixed side rail, sticky top nav or burger bar; the bottom dock is the navigation.",
+      "**Don't** hide content by default and rely on motion to reveal it.",
+      "**Don't** use glass, backdrop blur or gradient fills on surfaces; the only gradients are the hatch placeholder and the dotted desk texture.",
+      "**Don't** use lime as a sheet or large tile fill.",
+      "**Don't** set body copy in the marker face.",
+      "**Don't** reintroduce the retired cassette direction, ruled numbered section headers or square outlined controls."
     ]
   }
 }

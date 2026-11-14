@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Permanent_Marker, JetBrains_Mono, Silkscreen } from 'next/font/google'
+import { Bricolage_Grotesque, Permanent_Marker, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { LangProvider } from '@/lib/i18n'
 
 const body = Bricolage_Grotesque({ subsets: ['latin'], variable: '--nf-body', display: 'swap' })
 const hand = Permanent_Marker({ subsets: ['latin'], weight: '400', variable: '--nf-hand', display: 'swap' })
 const data = JetBrains_Mono({ subsets: ['latin'], variable: '--nf-data', display: 'swap' })
-const pixel = Silkscreen({ subsets: ['latin'], weight: '400', variable: '--nf-pixel', display: 'swap' })
 
 // Runs before paint so the saved (or system) theme never flashes the wrong colors.
 const themeScript = `try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t==='dark'||t==='light'?t:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}catch(e){}`
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${body.variable} ${hand.variable} ${data.variable} ${pixel.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${body.variable} ${hand.variable} ${data.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
