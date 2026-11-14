@@ -2,24 +2,69 @@
   "_readme": "Edit this file to change the terminal in 'Too online since 2012'. Directories: {type:'dir', children:{...}}. Text files: {type:'text', lines:[...]}. Names starting with '.' are hidden (ls -a). No ASCII-art fallbacks are used; images should have a real src path if added.",
   "user": "juan",
   "host": "debian",
-  "fastfetch": [
-    "       _,met$$$$$gg.      juan@debian",
-    "    ,g$$$$$$$$$$$$$$$P.   ------------",
-    "  ,g$$P\"\"       \"\"Y$$.\"   OS: Debian GNU/Linux",
-    " ,$$P'              `$$$. Host: ASUS Zenbook 14",
-    "',$$P       ,ggs.     `$$b Desktop: GNOME",
-    "`d$$'     ,$P\"'   .    $$  Shell: curiosity",
-    " $$P      d$'     ,    $$  Uptime: online since 2012",
-    " $$:      $$.   -    ,d$$  Packages: too many tabs open",
-    " $$;      Y$b._   _,d$P'   Journey: Windows XP -> Linux",
-    " Y$$.    `.`\"Y$$$$P\"'      ",
-    " `$$b      \"-.__           ",
-    "  `Y$$                       ",
-    "   `Y$$.                     ",
-    "     `$$b.                   ",
-    "       `Y$$b.                ",
-    "          `\"Y$b._            "
-  ],
+  "fastfetch": {
+    "logo": [
+      "       _,met$$$$$gg.",
+      "    ,g$$$$$$$$$$$$$$$P.",
+      "  ,g$$P\"\"       \"\"\"Y$$.\".",
+      " ,$$P'              `$$$.",
+      "',$$P       ,ggs.     `$$b:",
+      "`d$$'     ,$P\"'   .    $$$",
+      " $$P      d$'     ,    $$P",
+      " $$:      $$.   -    ,d$$'",
+      " $$;      Y$b._   _,d$P'",
+      " Y$$.    `.`\"Y$$$$P\"'",
+      " `$$b      \"-.__",
+      "  `Y$$",
+      "   `Y$$.",
+      "     `$$b.",
+      "       `Y$$b.",
+      "          `\"Y$b._",
+      "              `\"\"\""
+    ],
+    "info": [
+      [
+        "OS",
+        "Debian GNU/Linux 13 (trixie) x86_64"
+      ],
+      [
+        "Host",
+        "ASUS Zenbook 14"
+      ],
+      [
+        "Shell",
+        "zsh + curiosity"
+      ],
+      [
+        "DE",
+        "GNOME"
+      ],
+      [
+        "Uptime",
+        "online since 2012"
+      ],
+      [
+        "Current project",
+        "lazycode"
+      ],
+      [
+        "Projects",
+        "20+"
+      ],
+      [
+        "Motivation",
+        "a lot of ideas"
+      ],
+      [
+        "Latest song",
+        "Miracle - Paramore"
+      ],
+      [
+        "Memory",
+        "too many tabs open"
+      ]
+    ]
+  },
   "root": {
     "type": "dir",
     "children": {

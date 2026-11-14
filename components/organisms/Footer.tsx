@@ -1,20 +1,15 @@
 'use client'
 
-import { ArrowUpRight, EnvelopeSimple, GithubLogo, LinkedinLogo, XLogo } from '@phosphor-icons/react/dist/ssr'
+import { ArrowUpRight } from '@phosphor-icons/react/dist/ssr'
 import { contacts } from '@/lib/data'
 import { useContent } from '@/lib/i18n'
+import { external, socials } from '@/lib/socials'
 import Gif from '../atoms/Gif'
 import Logo from '../atoms/Logo'
 
 export default function Footer() {
   const { navSections, profile, ui } = useContent()
   const f = ui.footer
-  const social = [
-    { href: contacts.github, label: 'GitHub', Icon: GithubLogo },
-    { href: contacts.linkedin, label: 'LinkedIn', Icon: LinkedinLogo },
-    { href: contacts.x, label: 'X', Icon: XLogo },
-    { href: `mailto:${contacts.email}`, label: 'Email', Icon: EnvelopeSimple },
-  ]
   const col = 'text-sm font-bold uppercase tracking-wider text-on-desk/60'
   const link = 'rounded-sm py-0.5 hover:text-hi hover:underline'
   return (
@@ -26,7 +21,7 @@ export default function Footer() {
           <p className="mt-1 text-on-desk/80">{profile.role}</p>
           <p className="mt-3 inline-block -rotate-1 bg-hi px-2 py-0.5 font-hand text-base text-on-hi">{profile.tagline}</p>
         </div>
-        <nav aria-label="Footer navSections">
+        <nav aria-label="Footer">
           <h2 className={col}>{f.explore}</h2>
           <ul className="mt-3 space-y-1">
             {navSections.map((s) => (
@@ -41,9 +36,9 @@ export default function Footer() {
         <div>
           <h2 className={col}>{f.findMe}</h2>
           <ul className="mt-3 space-y-1">
-            {social.map(({ href, label, Icon }) => (
+            {socials.map(({ href, label, Icon }) => (
               <li key={label}>
-                <a href={href} {...(href.startsWith('mailto:') ? {} : { target: '_blank', rel: 'noreferrer' })} className={`${link} inline-flex items-center gap-2`}>
+                <a href={href} {...external(href)} className={`${link} inline-flex items-center gap-2`}>
                   <Icon size={16} weight="bold" aria-hidden />
                   {label}
                 </a>

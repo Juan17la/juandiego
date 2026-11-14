@@ -25,7 +25,7 @@ export default function AcademicCard({ a }: { a: AcademicItem }) {
           ))}
         </ul>
       </div>
-      <Certificate src={a.certificate} title={a.title} url={a.credentialUrl} />
+      {a.certificate || a.credentialUrl ? <Certificate src={a.certificate} title={a.title} url={a.credentialUrl} /> : null}
     </li>
   )
 }
