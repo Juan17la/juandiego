@@ -1,10 +1,12 @@
 'use client'
 
+import { useState } from 'react'
 import { useContent } from '@/lib/i18n'
 import { sheet, projectAnchor } from '@/lib/styles'
 import Pill from '../atoms/Pill'
 import TechChip from '../atoms/TechChip'
 import ProjectRow from '../molecules/ProjectRow'
+import ProjectModal from '../organisms/ProjectModal'
 import TrackHead from '../molecules/TrackHead'
 
 const FEATURED = 3
@@ -12,12 +14,14 @@ const FEATURED = 3
 export default function Projects() {
   const { projects, ui } = useContent()
   const more = projects.slice(FEATURED)
+  const [open, setOpen] = useState<string | null>(null)
+  const current = projects.find((p) => p.name === open)
   return (
     <section id="projects" className={sheet}>
       <TrackHead id="projects" />
       <ul className="mt-10 grid gap-20">
         {projects.slice(0, FEATURED).map((p, i) => (
-          <ProjectRow key={p.name} p={p} index={i} flip={i % 2 === 1} />
+          <ProjectRow key={p.name} p={p} index={i} flip={i % 2 === 1} onOpen={() => setOpen(p.name)} />
         ))}
       </ul>
 
@@ -33,7 +37,7 @@ export default function Projects() {
         </summary>
         <ul className="grid gap-3 px-3 pb-3 sm:px-4 sm:pb-4 md:grid-cols-2">
           {more.map((p, i) => (
-            <li key={p.name} id={projectAnchor(p.repo)} style={{ animationDelay: `${i * 70}ms` }} className="more-card group/card scroll-mt-6 flex flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-ink/5 transition-shadow hover:shadow-[0_24px_50px_-28px_rgb(0_0_0/0.5)]">
+            <li key={p.name} id={projectAnchor(p.repo)} style={{ animationDelay: `${i * 70}ms` }} onClick={(e) => !(e.target as HTMLElement).closest('a,button') && setOpen(p.name)} className="more-card group/card scroll-mt-6 flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-ink/5 transition-shadow hover:shadow-[0_24px_50px_-28px_rgb(0_0_0/0.5)]">
               <div className="stage relative grid aspect-[16/9] place-items-center overflow-hidden bg-desk">
                 {p.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -65,12 +69,16 @@ export default function Projects() {
                     </Pill>
                   ) : null}
                   <Pill href={p.repo}>{ui.repository}</Pill>
+                  <button type="button" onClick={() => setOpen(p.name)} className="inline-flex items-center rounded-full bg-ink px-4 py-2 text-sm font-semibold text-card hover:bg-hi hover:text-on-hi">
+                    {ui.moreInfo}
+                  </button>
                 </div>
               </div>
             </li>
           ))}
         </ul>
       </details>
+      {current ? <ProjectModal key={current.name} p={current} onClose={() => setOpen(null)} /> : null}
     </section>
   )
 }

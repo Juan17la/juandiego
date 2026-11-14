@@ -7,12 +7,11 @@ import TrackHead from '../molecules/TrackHead'
 
 /** Short section: one row per group, title left, chips right. */
 export default function Techs() {
-  const { techs, ui } = useContent()
+  const { techs } = useContent()
   return (
     <section id="techs" className={sheet}>
       <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-2">
         <TrackHead id="techs" />
-        <p className="max-w-[46ch] text-sm text-ink-soft">{ui.techsNote}</p>
       </div>
       <dl className="mt-6 divide-y divide-ink/10">
         {techs.groups.map((g) => (
