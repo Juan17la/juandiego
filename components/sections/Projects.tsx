@@ -5,6 +5,7 @@ import { useContent } from '@/lib/i18n'
 import { sheet, projectAnchor } from '@/lib/styles'
 import Pill from '../atoms/Pill'
 import TechChip from '../atoms/TechChip'
+import Img from '../atoms/Img'
 import ProjectRow from '../molecules/ProjectRow'
 import ProjectModal from '../organisms/ProjectModal'
 import TrackHead from '../molecules/TrackHead'
@@ -38,18 +39,13 @@ export default function Projects() {
         <ul className="grid gap-3 px-3 pb-3 sm:px-4 sm:pb-4 md:grid-cols-2">
           {more.map((p, i) => (
             <li key={p.name} id={projectAnchor(p.repo)} style={{ animationDelay: `${i * 70}ms` }} onClick={(e) => !(e.target as HTMLElement).closest('a,button') && setOpen(p.name)} className="more-card group/card scroll-mt-6 flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-card ring-1 ring-ink/5 transition-shadow hover:shadow-[0_24px_50px_-28px_rgb(0_0_0/0.5)]">
-              <div className="stage relative grid aspect-[16/9] place-items-center overflow-hidden bg-desk">
+              <div className="stage relative grid aspect-[16/10] place-items-center overflow-hidden bg-desk">
                 {p.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={p.image}
-                    alt={`${p.name} screenshot`}
-                    loading="lazy"
-                    className={`absolute top-[14%] w-[82%] rounded-lg object-cover object-top shadow-[0_20px_40px_-16px_rgb(0_0_0/0.45)] ring-1 ring-ink/10 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:-translate-y-[4%] group-hover/card:rotate-0 group-hover/card:scale-[1.04] motion-reduce:transition-none ${i % 2 ? 'rotate-[2deg]' : '-rotate-[2deg]'}`}
-                  />
+                  <div className={`aspect-[16/10] w-[84%] overflow-hidden rounded-xl bg-card shadow-[0_24px_50px_-22px_rgb(0_0_0/0.5)] ring-1 ring-ink/10 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/card:-translate-y-[3%] group-hover/card:scale-[1.03] group-hover/card:rotate-0 motion-reduce:transition-none ${i % 2 ? 'rotate-[1.5deg]' : '-rotate-[1.5deg]'}`}>
+                    <Img src={p.image} alt={`${p.name} screenshot`} loading="lazy" className="size-full object-cover object-top" />
+                  </div>
                 ) : p.logo ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="size-20 transition-transform duration-500 group-hover/card:scale-110 group-hover/card:-rotate-6 motion-reduce:transition-none" />
+                  <Img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="size-20 rounded-2xl transition-transform duration-500 group-hover/card:scale-110 group-hover/card:-rotate-6 motion-reduce:transition-none" />
                 ) : null}
               </div>
               <div className="min-w-0 p-4 sm:p-5">

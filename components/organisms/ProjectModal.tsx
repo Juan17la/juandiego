@@ -1,11 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { X } from '@phosphor-icons/react'
+import { Play, X } from '@phosphor-icons/react'
 import { useContent } from '@/lib/i18n'
 import type { Project } from '@/lib/data'
 import Pill from '../atoms/Pill'
 import TechChip from '../atoms/TechChip'
+import Img from '../atoms/Img'
+import VideoPlayer from '../molecules/VideoPlayer'
 
 /** Full story of one project in a native <dialog>: Esc, focus trap and inert page come for free. */
 export default function ProjectModal({ p, onClose }: { p: Project; onClose: () => void }) {
@@ -15,6 +17,7 @@ export default function ProjectModal({ p, onClose }: { p: Project; onClose: () =
   const [portrait, setPortrait] = useState(false)
   const shots = [p.video, ...(p.shots ?? [p.image ?? p.logo])].filter((s): s is string => !!s)
   const isVideo = (s: string) => s.endsWith('.mp4')
+  const current = shots[shot]
 
   useEffect(() => {
     ref.current?.showModal()
@@ -43,52 +46,44 @@ export default function ProjectModal({ p, onClose }: { p: Project; onClose: () =
 
         {shots.length ? (
           <div className="mt-6">
-            <div className="stage relative grid aspect-[4/5] place-items-center overflow-hidden rounded-2xl bg-desk sm:aspect-[16/10]">
-              {portrait && !isVideo(shots[shot]) ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={shots[shot]} alt="" aria-hidden className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl" />
-              ) : null}
-              {isVideo(shots[shot]) ? (
-                <video
-                  key={shots[shot]}
-                  src={shots[shot]}
-                  controls
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  onLoadedMetadata={(e) => setPortrait(e.currentTarget.videoHeight > e.currentTarget.videoWidth)}
-                  aria-label={`${p.name} video`}
-                  className="relative max-h-full max-w-full animate-[fadein_0.4s]"
-                />
+            <div className={`stage relative grid place-items-center overflow-hidden rounded-2xl bg-desk ${isVideo(current) ? 'aspect-video' : 'aspect-[4/5] sm:aspect-[16/10]'}`}>
+              {isVideo(current) ? (
+                <VideoPlayer key={current} src={current} poster={p.image} label={`${p.name} ${ui.video}`} />
               ) : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={shots[shot]}
-                  src={shots[shot]}
-                  onLoad={(e) => setPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)}
-                  alt={`${p.name} ${ui.shot(shot + 1, shots.length)}`}
-                  className={`relative animate-[fadein_0.4s] ${p.image || p.shots ? 'object-contain' : 'size-28'} ${portrait ? 'h-[calc(100%-2rem)] w-auto rounded-[1.5rem] shadow-2xl ring-1 ring-black/20' : 'max-h-full max-w-full'}`}
-                />
+                <>
+                  {portrait ? <Img src={current} alt="" aria-hidden className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl" /> : null}
+                  <Img
+                    key={current}
+                    src={current}
+                    onLoad={(e) => setPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)}
+                    alt={`${p.name} ${ui.shot(shot + 1, shots.length)}`}
+                    className={`relative object-contain ${!p.image && !p.shots ? 'size-28' : portrait ? 'h-[calc(100%-2rem)] w-auto rounded-[1.5rem] shadow-2xl ring-1 ring-black/20' : 'size-full'}`}
+                  />
+                </>
               )}
             </div>
             {shots.length > 1 ? (
-              <ul className="mt-3 flex gap-2">
+              <ul className="mt-3 flex gap-2 overflow-x-auto p-0.5">
                 {shots.map((src, i) => (
-                  <li key={src}>
+                  <li key={src} className="shrink-0">
                     <button
                       type="button"
-                      onClick={() => setShot(i)}
-                      aria-label={ui.shot(i + 1, shots.length)}
+                      onClick={() => {
+                        setPortrait(false)
+                        setShot(i)
+                      }}
+                      aria-label={isVideo(src) ? ui.video : ui.shot(i + 1, shots.length)}
                       aria-current={i === shot}
-                      className={`block h-16 overflow-hidden rounded-lg bg-desk ring-2 transition sm:h-20 ${i === shot ? 'ring-moss' : 'opacity-60 ring-transparent hover:opacity-100'}`}
+                      className={`relative block aspect-[16/10] h-16 overflow-hidden rounded-lg bg-desk ring-2 transition sm:h-20 ${i === shot ? 'ring-moss' : 'opacity-60 ring-transparent hover:opacity-100'}`}
                     >
+                      <Img src={isVideo(src) ? (p.image ?? '') : src} alt="" loading="lazy" className="size-full object-cover object-top" />
                       {isVideo(src) ? (
-                        <video src={`${src}#t=0.5`} preload="metadata" muted aria-hidden className="h-full w-auto" />
-                      ) : (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={src} alt="" loading="lazy" className="h-full w-auto" />
-                      )}
+                        <span aria-hidden className="absolute inset-0 grid place-items-center bg-black/35">
+                          <span className="grid size-8 place-items-center rounded-full bg-hi text-on-hi">
+                            <Play size={14} weight="fill" />
+                          </span>
+                        </span>
+                      ) : null}
                     </button>
                   </li>
                 ))}

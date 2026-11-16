@@ -5,6 +5,7 @@ import { projectAnchor } from '@/lib/styles'
 import type { Project } from '@/lib/data'
 import Pill from '../atoms/Pill'
 import TechChip from '../atoms/TechChip'
+import Img from '../atoms/Img'
 
 const card = 'absolute overflow-hidden rounded-xl bg-card shadow-[0_24px_50px_-20px_rgb(0_0_0/0.45)] ring-1 ring-ink/10 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none'
 
@@ -13,8 +14,7 @@ export default function ProjectRow({ p, flip, index, onOpen }: { p: Project; fli
   const { ui } = useContent()
   const [main, back, front] = p.shots ?? [p.image ?? p.logo]
   const img = (src: string, n: number, cls: string) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img src={src} alt={`${p.name} screenshot ${n}`} loading="lazy" className={cls} />
+    <Img src={src} alt={`${p.name} screenshot ${n}`} loading="lazy" className={cls} />
   )
   return (
     <li id={projectAnchor(p.repo)} onClick={(e) => !(e.target as HTMLElement).closest('a,button') && onOpen()} className={`group scroll-mt-6 cursor-pointer grid items-center gap-8 lg:gap-14 ${flip ? 'lg:grid-cols-[2fr_3fr]' : 'lg:grid-cols-[3fr_2fr]'}`}>

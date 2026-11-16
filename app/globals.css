@@ -179,3 +179,30 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   details[open] .more-card { animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
 }
+
+/* ---------- loading: shimmer while an image or video is on its way, fade in once it lands ---------- */
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+@keyframes spin { to { transform: rotate(1turn); } }
+.skeleton {
+  color: transparent; /* hide alt text while loading */
+  background: linear-gradient(100deg,
+      color-mix(in oklab, var(--color-ink) 7%, transparent) 30%,
+      color-mix(in oklab, var(--color-ink) 15%, transparent) 50%,
+      color-mix(in oklab, var(--color-ink) 7%, transparent) 70%) 0 0 / 300% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+.loaded { animation: fadein 0.5s ease-out; }
+.spinner { width: 44px; height: 44px; border-radius: 50%; border: 3px solid rgb(255 255 255 / 0.25); border-top-color: var(--color-hi); animation: spin 0.8s linear infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .skeleton { animation: none; background-position: 50% 0; }
+  .loaded { animation: none; }
+  .spinner { animation-duration: 2.4s; }
+}
+
+/* video scrubber: slim track, highlighter fill up to --p */
+.scrub { appearance: none; height: 18px; background: transparent; cursor: pointer; }
+.scrub::-webkit-slider-runnable-track { height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--color-hi) var(--p), rgb(255 255 255 / 0.28) var(--p)); }
+.scrub::-moz-range-track { height: 4px; border-radius: 4px; background: linear-gradient(90deg, var(--color-hi) var(--p), rgb(255 255 255 / 0.28) var(--p)); }
+.scrub::-webkit-slider-thumb { appearance: none; width: 14px; height: 14px; margin-top: -5px; border-radius: 50%; background: var(--color-hi); border: 0; transition: transform 0.15s; }
+.scrub::-moz-range-thumb { width: 14px; height: 14px; border-radius: 50%; background: var(--color-hi); border: 0; }
+.scrub:hover::-webkit-slider-thumb, .scrub:focus-visible::-webkit-slider-thumb { transform: scale(1.25); }

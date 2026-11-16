@@ -1,6 +1,7 @@
 'use client'
 
 import { useContent } from '@/lib/i18n'
+import Img from '../atoms/Img'
 
 /** Framed slot for a certificate scan. Empty `src` shows a labelled placeholder. */
 export default function Certificate({ src, title, url }: { src?: string; title: string; url?: string }) {
@@ -9,8 +10,7 @@ export default function Certificate({ src, title, url }: { src?: string; title: 
     <div className="mt-4">
       <div className="pending relative aspect-[4/3] overflow-hidden rounded-2xl border-2 border-dashed border-ink/40">
         {src ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={src} alt={ui.certificateAlt(title)} className="h-full w-full object-contain" />
+          <Img src={src} alt={ui.certificateAlt(title)} className="h-full w-full object-contain" />
         ) : (
           <div className="flex h-full flex-col items-center justify-center gap-1.5 p-3 text-center">
             <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden className="size-10 text-ink-soft" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -5,6 +5,7 @@ import { MagnifyingGlass } from '@phosphor-icons/react'
 import { useContent } from '@/lib/i18n'
 import { sheet } from '@/lib/styles'
 import TrackHead from '../molecules/TrackHead'
+import Img from '../atoms/Img'
 
 const tile = 'bento-tile rounded-3xl'
 
@@ -22,8 +23,7 @@ function useCycle(length: number, ms: number) {
 /** Stacked images that crossfade to the one at `active`. */
 function Fade({ srcs, active, alt, pos = '50% 30%', fit = 'object-cover', hidden = false }: { srcs: string[]; active: number; alt: string; pos?: string; fit?: string; hidden?: boolean }) {
   return srcs.map((src, i) => (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Img
       key={src}
       src={src}
       alt={i === active && !hidden ? alt : ''}
