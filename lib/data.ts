@@ -82,6 +82,8 @@ export type Project = {
   image?: string
   // Featured projects: three screenshots, stacked as cards. First is the hero shot.
   shots?: string[]
+  // Promo video in /public/project_videos; shown first in the project modal.
+  video?: string
   // Third shot is a phone screenshot: shown as a tall card instead of a landscape one.
   portraitFront?: boolean
   logo?: string
@@ -105,6 +107,7 @@ const base: Brief[] = [
     repo: gh('Udeos_Launcher'),
     preview: 'https://udeouslauncherwebsite.pages.dev/#download',
     image: '/projects/udeos.webp',
+    video: '/project_videos/udeos-launcher-promo-creator.mp4',
     shots: ['/projects/udeos/1.webp', '/projects/udeos/2.webp', '/projects/udeos/3.webp'],
   },
   {
@@ -114,6 +117,7 @@ const base: Brief[] = [
     repo: gh('shareboard_web'),
     preview: 'https://shareboard-web.vercel.app/about',
     image: '/projects/shareboard.webp',
+    video: '/project_videos/shareboard-promo.mp4',
     shots: ['/projects/shareboard/1.webp', '/projects/shareboard/2.webp', '/projects/shareboard/3.webp'],
     portraitFront: true,
   },
@@ -131,6 +135,7 @@ const base: Brief[] = [
     techs: ['Kotlin', 'Wear OS', 'AI'],
     repo: gh('Morse'),
     image: '/projects/morse.webp',
+    video: '/project_videos/morse-promo.mp4',
     logo: '/projects/morse-logo.svg',
   },
   {
@@ -328,13 +333,13 @@ export const testimonials: Testimonial[] = [
     name: 'Emmanuel Gomez',
     role: 'Graphic Designer',
     work: 'UI design and game development mentoring',
-    quote: 'Juan mentored me in UI design and videogame development. He explains with patience and always finds a way to make the idea work on screen.',
+    quote: 'Juan mentored me in UI design and videogame development. He helped me understand the concepts clearly and develop the logic of my game effectively.',
   },
   {
     name: 'Alan Cañar',
     role: 'Chemical Engineering student',
     work: 'Maths, data analysis and Python',
-    quote: 'We studied maths together, and Juan helped me with data analysis and Python. He made programming feel approachable and useful for my own field.',
+    quote: 'We studied maths together, and Juan helped me with data analysis in Python and R for my research projects. With his help I got relevant results and could draw sound analyses and conclusions.',
   },
 ]
 
