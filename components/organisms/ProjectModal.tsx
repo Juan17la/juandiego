@@ -12,7 +12,9 @@ export default function ProjectModal({ p, onClose }: { p: Project; onClose: () =
   const { ui } = useContent()
   const ref = useRef<HTMLDialogElement>(null)
   const [shot, setShot] = useState(0)
-  const shots = p.shots ?? [p.image ?? p.logo].filter((s): s is string => !!s)
+  const [portrait, setPortrait] = useState(false)
+  const shots = [p.video, ...(p.shots ?? [p.image ?? p.logo])].filter((s): s is string => !!s)
+  const isVideo = (s: string) => s.endsWith('.mp4')
 
   useEffect(() => {
     ref.current?.showModal()
@@ -41,9 +43,34 @@ export default function ProjectModal({ p, onClose }: { p: Project; onClose: () =
 
         {shots.length ? (
           <div className="mt-6">
-            <div className="stage relative grid aspect-[16/10] place-items-center overflow-hidden rounded-2xl bg-desk">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img key={shots[shot]} src={shots[shot]} alt={`${p.name} ${ui.shot(shot + 1, shots.length)}`} className={`max-h-full max-w-full animate-[fadein_0.4s] ${p.image || p.shots ? 'object-contain' : 'size-28'}`} />
+            <div className="stage relative grid aspect-[4/5] place-items-center overflow-hidden rounded-2xl bg-desk sm:aspect-[16/10]">
+              {portrait && !isVideo(shots[shot]) ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={shots[shot]} alt="" aria-hidden className="absolute inset-0 size-full scale-110 object-cover opacity-40 blur-2xl" />
+              ) : null}
+              {isVideo(shots[shot]) ? (
+                <video
+                  key={shots[shot]}
+                  src={shots[shot]}
+                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  onLoadedMetadata={(e) => setPortrait(e.currentTarget.videoHeight > e.currentTarget.videoWidth)}
+                  aria-label={`${p.name} video`}
+                  className="relative max-h-full max-w-full animate-[fadein_0.4s]"
+                />
+              ) : (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={shots[shot]}
+                  src={shots[shot]}
+                  onLoad={(e) => setPortrait(e.currentTarget.naturalHeight > e.currentTarget.naturalWidth)}
+                  alt={`${p.name} ${ui.shot(shot + 1, shots.length)}`}
+                  className={`relative animate-[fadein_0.4s] ${p.image || p.shots ? 'object-contain' : 'size-28'} ${portrait ? 'h-[calc(100%-2rem)] w-auto rounded-[1.5rem] shadow-2xl ring-1 ring-black/20' : 'max-h-full max-w-full'}`}
+                />
+              )}
             </div>
             {shots.length > 1 ? (
               <ul className="mt-3 flex gap-2">
@@ -56,8 +83,12 @@ export default function ProjectModal({ p, onClose }: { p: Project; onClose: () =
                       aria-current={i === shot}
                       className={`block h-16 overflow-hidden rounded-lg bg-desk ring-2 transition sm:h-20 ${i === shot ? 'ring-moss' : 'opacity-60 ring-transparent hover:opacity-100'}`}
                     >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" loading="lazy" className="h-full w-auto" />
+                      {isVideo(src) ? (
+                        <video src={`${src}#t=0.5`} preload="metadata" muted aria-hidden className="h-full w-auto" />
+                      ) : (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img src={src} alt="" loading="lazy" className="h-full w-auto" />
+                      )}
                     </button>
                   </li>
                 ))}
