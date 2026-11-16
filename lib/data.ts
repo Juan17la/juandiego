@@ -333,13 +333,13 @@ export const testimonials: Testimonial[] = [
     name: 'Emmanuel Gomez',
     role: 'Graphic Designer',
     work: 'UI design and game development mentoring',
-    quote: 'Juan mentored me in UI design and videogame development. He explains with patience and always finds a way to make the idea work on screen.',
+    quote: 'Juan mentored me in UI design and videogame development. He helped me understand the concepts clearly and develop the logic of my game effectively.',
   },
   {
     name: 'Alan Cañar',
     role: 'Chemical Engineering student',
     work: 'Maths, data analysis and Python',
-    quote: 'We studied maths together, and Juan helped me with data analysis and Python. He made programming feel approachable and useful for my own field.',
+    quote: 'We studied maths together, and Juan helped me with data analysis in Python and R for my research projects. With his help I got relevant results and could draw sound analyses and conclusions.',
   },
 ]
 

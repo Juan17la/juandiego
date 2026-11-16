@@ -177,12 +177,12 @@ export const es: Content = {
     {
       role: 'Diseñador gráfico',
       work: 'Asesoría en diseño UI y desarrollo de videojuegos',
-      quote: 'Juan me asesoró en diseño UI y desarrollo de videojuegos. Explica con paciencia y siempre encuentra la forma de que la idea funcione en pantalla.',
+      quote: 'Juan me asesoró en diseño de interfaces y desarrollo de videojuegos. Logró que comprendiera los conceptos con claridad y que desarrollara la lógica de mi videojuego con eficacia.',
     },
     {
       role: 'Estudiante de Ingeniería Química',
       work: 'Matemáticas, análisis de datos y Python',
-      quote: 'Estudiamos matemáticas juntos y Juan me ayudó con análisis de datos y Python. Hizo que programar se sintiera accesible y útil para mi propia carrera.',
+      quote: 'Estudiamos matemáticas juntos y Juan me ayudó con el análisis de datos en Python y R para mis proyectos de investigación. Gracias a su apoyo obtuve resultados relevantes y pude elaborar análisis y conclusiones pertinentes.',
     },
   ]),
   academicItems: over(en.academicItems, [
