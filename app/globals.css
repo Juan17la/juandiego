@@ -134,7 +134,6 @@ body {
 /* ---------- scroll-driven motion: content is visible by default, motion only where supported ---------- */
 @keyframes rise { from { opacity: 0; transform: translateY(40px) scale(0.97); filter: blur(6px); } }
 @keyframes grow-x { to { transform: scaleX(1); } }
-@keyframes grow-y { from { transform: scaleY(0); } }
 @keyframes intro-in { from { opacity: 0; transform: translateY(24px); } }
 @keyframes intro-photo { from { opacity: 0; transform: rotate(8deg) translateY(40px); } }
 
@@ -151,11 +150,6 @@ body {
     /* bento tiles land in a stagger: later tiles start a little later */
     .bento-tile:nth-child(3n + 2) { animation-range: entry 10% entry 85%; }
     .bento-tile:nth-child(3n) { animation-range: entry 20% entry 100%; }
-    .timeline-fill {
-      animation: grow-y linear both;
-      animation-timeline: view();
-      animation-range: cover 15% cover 65%;
-    }
     .page-progress {
       animation: grow-x linear both;
       animation-timeline: scroll(root);
@@ -173,6 +167,12 @@ body {
 .stage {
   background-image: radial-gradient(color-mix(in oklab, var(--color-ink) 16%, transparent) 1px, transparent 1.2px);
   background-size: 18px 18px;
+}
+
+/* Newest experience entry: slow brightness pulse. */
+@media (prefers-reduced-motion: no-preference) {
+  .glow { animation: glow 2.4s ease-in-out infinite; }
+  @keyframes glow { 50% { filter: brightness(1.45) saturate(1.2); } }
 }
 
 /* More projects: cards rise in when the drawer opens. */

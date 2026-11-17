@@ -196,10 +196,10 @@ export const es: Content = {
     { title: 'Ingeniería de Software', org: 'Universidad Cooperativa de Colombia', detail: 'Carrera de ingeniería de software, en curso.', facts: ['Ago 2024 – presente'] },
   ]),
   experienceItems: over(en.experienceItems, [
-    { where: 'Proyecto' },
-    { where: 'Proyecto' },
-    { where: 'Proyecto' },
-    { where: 'Proyecto' },
+    { where: 'Proyecto', text: 'Construí un editor de código para terminal pensado para trabajar con IA.' },
+    { where: 'Proyecto', text: 'Construí un launcher de Minecraft en Go con sitio de descargas.' },
+    { where: 'Proyecto', text: 'Construí una pizarra colaborativa en tiempo real para web y móvil.' },
+    { where: 'Proyecto', text: 'Construí un editor de video en el navegador con FFmpeg en WebAssembly.' },
     {
       when: 'Ago 2024 – presente',
       title: 'Soporte de TI',

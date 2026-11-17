@@ -385,10 +385,10 @@ export const academicItems: AcademicItem[] = [
 export type ExperienceItem = { when: string; title: string; where: string; text?: string; project?: string }
 
 export const experienceItems: ExperienceItem[] = [
-  { when: '2026', title: 'LazyCode', where: 'Project', project: 'LazyCode' },
-  { when: '2026', title: 'Udeos Launcher', where: 'Project', project: 'Udeos' },
-  { when: '2026', title: 'Shareboard', where: 'Project', project: 'Shareboard' },
-  { when: '2026', title: 'AloMedia', where: 'Project', project: 'AloMedia' },
+  { when: '2026', title: 'LazyCode', where: 'Project', project: 'LazyCode', text: 'Built a terminal code editor for working with AI tools.' },
+  { when: '2026', title: 'Udeos Launcher', where: 'Project', project: 'Udeos', text: 'Built a Minecraft launcher in Go with a download site.' },
+  { when: '2026', title: 'Shareboard', where: 'Project', project: 'Shareboard', text: 'Built a realtime collaborative board for web and mobile.' },
+  { when: '2026', title: 'AloMedia', where: 'Project', project: 'AloMedia', text: 'Built a browser video editor with FFmpeg in WebAssembly.' },
   {
     when: 'Aug 2024 – present',
     title: 'IT support',

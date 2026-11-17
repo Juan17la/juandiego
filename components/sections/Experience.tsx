@@ -5,7 +5,7 @@ import { sheet } from '@/lib/styles'
 import ExperienceItem from '../molecules/ExperienceItem'
 import TrackHead from '../molecules/TrackHead'
 
-/** Heading sticks on the left while the timeline line fills with scroll. */
+/** Heading sticks on the left; the newest entry pulses. */
 export default function Experience() {
   const { experienceItems, ui } = useContent()
   return (
@@ -16,9 +16,8 @@ export default function Experience() {
       </div>
       <ol className="relative pl-8">
         <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-0.5 rounded-full bg-ink/15" />
-        <span aria-hidden className="timeline-fill absolute top-2 bottom-2 left-[5px] w-0.5 origin-top rounded-full bg-moss" />
-        {experienceItems.map((e) => (
-          <ExperienceItem key={e.title} e={e} />
+        {experienceItems.map((e, i) => (
+          <ExperienceItem key={e.title} e={e} latest={i === 0} />
         ))}
       </ol>
     </section>
