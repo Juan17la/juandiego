@@ -5,13 +5,13 @@ import { sheet } from '@/lib/styles'
 import TestimonialCard from '../molecules/TestimonialCard'
 import TrackHead from '../molecules/TrackHead'
 
-/** Short section: heading, then the two quotes side by side. */
+/** Short section: heading, then the quotes side by side. */
 export default function Voices() {
   const { testimonials } = useContent()
   return (
     <section id="voices" className={`${sheet} grid gap-6`}>
       <TrackHead id="voices" />
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((t) => (
           <TestimonialCard key={t.name} t={t} />
         ))}

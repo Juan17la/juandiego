@@ -18,7 +18,7 @@ export default function Experience() {
         <span aria-hidden className="absolute top-2 bottom-2 left-[5px] w-0.5 rounded-full bg-ink/15" />
         <span aria-hidden className="timeline-fill absolute top-2 bottom-2 left-[5px] w-0.5 origin-top rounded-full bg-moss" />
         {experienceItems.map((e) => (
-          <ExperienceItem key={e.where} e={e} />
+          <ExperienceItem key={e.title} e={e} />
         ))}
       </ol>
     </section>

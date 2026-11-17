@@ -34,16 +34,17 @@ export const aboutParagraphs = [
 
 // About bento: photos in /public/photos plus a few personal tiles.
 // `community`, `cars`, `anime` and `music.albums` each rotate inside their own tile.
-// Car photos: Wikimedia Commons (W11: Alberto-g-rovi, CC BY 3.0; AMG GT3 and Ferrari 499P: Calreyn88, CC BY-SA 4.0).
+// Car photos: Wikimedia Commons (Lotus Exige: exfordy, CC BY 2.0; Mercedes W12: Lukas Raich, CC BY-SA 4.0; Ferrari 296 GT3: Alexander-93, CC BY-SA 4.0; Valkyrie: Calreyn88, CC BY-SA 4.0).
 // Anime covers and album art belong to their publishers and are shown as small illustrations of taste.
 export const aboutBento = {
   photo: '/photos/photo.jpeg',
   community: ['/photos/1783117172005.jpeg', '/photos/1778003933249.jpeg', '/photos/1778177775745.jpeg', '/photos/1778177667228.jpeg'],
   communityAlt: 'Juan Diego at a tech community meetup',
   cars: [
-    { src: '/cars/mercedes-w11.jpg', caption: 'Mercedes W11, 2020' },
-    { src: '/cars/amg-gt3.jpg', caption: 'Mercedes-AMG GT3' },
-    { src: '/cars/ferrari-499p.jpg', caption: 'Ferrari 499P hypercar' },
+    { src: '/cars/lotus-exige-gt3.jpg', caption: 'Lotus Exige GT3, 2009' },
+    { src: '/cars/mercedes-w12.jpg', caption: 'Mercedes W12, 2021' },
+    { src: '/cars/ferrari-296-gt3.jpg', caption: 'Ferrari 296 GT3' },
+    { src: '/cars/valkyrie-lmh.jpg', caption: 'Aston Martin Valkyrie AMR-LMH' },
   ],
   anime: [
     { src: '/anime/naruto.jpg', title: 'Naruto' },
@@ -55,7 +56,7 @@ export const aboutBento = {
     { src: '/anime/lain.jpg', title: 'Serial Experiments Lain' },
   ],
   online: { big: '2012', text: 'My first step into software: my dad’s old laptop, unrestricted internet access and videogames.' },
-  planB: { title: 'Before software', text: 'Before software, I was into forensic science, and that curiosity never really left.' },
+  planB: { title: 'Before software', text: 'Before software, I wanted to study criminology or forensic science, which I found fascinating. I chose software because of the skills I had in tech.' },
   likes: { title: 'Off the clock', items: ['Formula 1', 'Learning guitar & bass', 'Exploring Minecraft worlds', 'Series & anime theories'] },
   music: {
     title: 'On repeat',
@@ -342,6 +343,12 @@ export const testimonials: Testimonial[] = [
     work: 'Maths, data analysis and Python',
     quote: 'We studied maths together, and Juan helped me with data analysis in Python and R for my research projects. With his help I got relevant results and could draw sound analyses and conclusions.',
   },
+  {
+    name: 'Carlos Bastidas',
+    role: 'Medicine student',
+    work: 'Study and tech help',
+    quote: 'Juan helped me with a few things and made them simple. Patient, clear and always willing to help.',
+  },
 ]
 
 // certificate: path in /public (e.g. '/certs/aws.webp'); credentialUrl: optional verify link.
@@ -374,29 +381,19 @@ export const academicItems: AcademicItem[] = [
   },
 ]
 
-// A role, with the work done under it (empty when there's nothing to list).
-export type ExperienceItem = { when: string; title: string; where: string; text: string; work: { name: string; text: string }[] }
+// A timeline entry: a role or a project (`project` links to its card when set).
+export type ExperienceItem = { when: string; title: string; where: string; text?: string; project?: string }
 
 export const experienceItems: ExperienceItem[] = [
-  {
-    when: 'Aug 2025 – present',
-    title: 'Freelance software developer',
-    where: 'Independent',
-    text: 'Designing, building and shipping products end to end: web, mobile, desktop and the servers behind them.',
-    work: [
-      { name: 'Udeos Launcher', text: 'Cross-platform Go launcher with mod loaders, a skin editor and an AI assistant, plus its download site.' },
-      { name: 'Shareboard', text: 'Realtime collaborative board across three repos: React web, React Native app and a TypeScript server.' },
-      { name: 'Morse', text: 'Wear OS app for haptic Morse messaging between smartwatches, with AI dictation and smart replies.' },
-      { name: 'AloMedia', text: 'FFmpeg in WebAssembly on the client, Spring Boot and PostgreSQL for projects, and a Python service for AI audio and subtitles.' },
-      { name: 'Agreement Manager', text: 'Role-based workflows, document storage and digital signatures on AWS S3 for real university agreements.' },
-    ],
-  },
+  { when: '2026', title: 'LazyCode', where: 'Project', project: 'LazyCode' },
+  { when: '2026', title: 'Udeos Launcher', where: 'Project', project: 'Udeos' },
+  { when: '2026', title: 'Shareboard', where: 'Project', project: 'Shareboard' },
+  { when: '2026', title: 'AloMedia', where: 'Project', project: 'AloMedia' },
   {
     when: 'Aug 2024 – present',
     title: 'IT support',
     where: 'Schools',
     text: 'Basic IT support for schools: setting up and maintaining computers, installing software, troubleshooting network and printer issues, and helping staff and students day to day.',
-    work: [],
   },
 ]
 

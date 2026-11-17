@@ -147,7 +147,7 @@ export const es: Content = {
     ...en.aboutBento,
     communityAlt: 'Juan Diego en un encuentro de una comunidad tech',
     online: { big: '2012', text: 'Mi primer paso al software: el viejo portátil de mi papá, internet sin restricciones y videojuegos.' },
-    planB: { title: 'Antes del software', text: 'Antes del software me apasionaba la ciencia forense, y esa curiosidad nunca se fue del todo.' },
+    planB: { title: 'Antes del software', text: 'Antes del software quería estudiar criminología o ciencia forense, que me parecía fascinante. Elegí el software por las habilidades que tenía en tecnología.' },
     likes: { title: 'Fuera de horario', items: ['Fórmula 1', 'Aprender guitarra y bajo', 'Explorar mundos de Minecraft', 'Teorías de series y anime'] },
     music: { ...en.aboutBento.music, title: 'En repetición', items: ['Garage punk', 'Metal de los 2000', 'Screamo'] },
   },
@@ -184,6 +184,11 @@ export const es: Content = {
       work: 'Matemáticas, análisis de datos y Python',
       quote: 'Estudiamos matemáticas juntos y Juan me ayudó con el análisis de datos en Python y R para mis proyectos de investigación. Gracias a su apoyo obtuve resultados relevantes y pude elaborar análisis y conclusiones pertinentes.',
     },
+    {
+      role: 'Estudiante de Medicina',
+      work: 'Apoyo en estudio y tecnología',
+      quote: 'Juan me ayudó con varias cosas y las hizo simples. Paciente, claro y siempre dispuesto a ayudar.',
+    },
   ]),
   academicItems: over(en.academicItems, [
     { title: 'Inglés, C1', org: 'Cambridge Academy of Language, Pasto, Colombia', detail: 'Un curso de inglés de un año donde me certifiqué en B2, y luego un examen MCER que me certifica como hablante de inglés C1.', facts: ['Curso de 1 año: B2', 'Examen MCER: C1'] },
@@ -191,19 +196,10 @@ export const es: Content = {
     { title: 'Ingeniería de Software', org: 'Universidad Cooperativa de Colombia', detail: 'Carrera de ingeniería de software, en curso.', facts: ['Ago 2024 – presente'] },
   ]),
   experienceItems: over(en.experienceItems, [
-    {
-      when: 'Ago 2025 – presente',
-      title: 'Desarrollador de software freelance',
-      where: 'Independiente',
-      text: 'Diseño, construyo y publico productos de principio a fin: web, móvil, escritorio y los servidores detrás.',
-      work: [
-        { name: 'Udeos Launcher', text: 'Launcher multiplataforma en Go con cargadores de mods, editor de skins y asistente de IA, además de su sitio de descargas.' },
-        { name: 'Shareboard', text: 'Pizarra colaborativa en tiempo real en tres repos: web en React, app en React Native y un servidor en TypeScript.' },
-        { name: 'Morse', text: 'App de Wear OS para mensajes en código Morse háptico entre relojes, con dictado por IA y respuestas inteligentes.' },
-        { name: 'AloMedia', text: 'FFmpeg en WebAssembly en el cliente, Spring Boot y PostgreSQL para los proyectos, y un servicio en Python para audio y subtítulos con IA.' },
-        { name: 'Gestor de Convenios', text: 'Flujos por rol, almacenamiento de documentos y firmas digitales en AWS S3 para convenios universitarios reales.' },
-      ],
-    },
+    { where: 'Proyecto' },
+    { where: 'Proyecto' },
+    { where: 'Proyecto' },
+    { where: 'Proyecto' },
     {
       when: 'Ago 2024 – presente',
       title: 'Soporte de TI',
