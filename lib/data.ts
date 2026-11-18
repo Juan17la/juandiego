@@ -432,7 +432,7 @@ export const ui = {
   theme: { dark: 'Switch to dark theme', light: 'Switch to light theme' },
   seeProjects: 'See the projects',
   emailMe: 'Email me',
-  cv: { label: 'Download CV', href: '/cv.pdf' },
+  cv: { label: 'Download CV', href: '/Juan-Lopez-CV.pdf' },
   moreProjects: 'More projects',
   moreInfo: 'View details',
   close: 'Close',

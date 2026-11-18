@@ -212,7 +212,7 @@ export const es: Content = {
     theme: { dark: 'Cambiar a tema oscuro', light: 'Cambiar a tema claro' },
     seeProjects: 'Ver los proyectos',
     emailMe: 'Escríbeme',
-    cv: { label: 'Descargar CV', href: '/cv-es.pdf' },
+    cv: { label: 'Descargar CV', href: '/Juan-Lopez-CV.pdf' },
     moreProjects: 'Más proyectos',
     moreInfo: 'Ver detalles',
     close: 'Cerrar',
